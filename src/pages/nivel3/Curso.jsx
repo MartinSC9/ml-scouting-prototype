@@ -77,7 +77,7 @@ export default function Curso() {
               {[
                 {q:'Necesito estudios previos?',a:'No, el curso esta disenado para todos los niveles.'},
                 {q:'Puedo hacerlo desde cualquier parte del mundo?',a:'Si, las clases son online en vivo con acceso a grabaciones.'},
-                {q:'Otorgan certificacion?',a:'Si, certificacion oficial de ML Scouting Academy.'},
+                {q:'Otorgan certificacion?',a:'Si, certificacion oficial de ML Scouting.'},
                 {q:'Hay posibilidades reales de trabajo?',a:'Si, nuestros egresados trabajan en clubes de diferentes ligas.'},
                 {q:'Cual es el precio?',a:'El precio se anunciara cuando abramos inscripciones. Unite a la lista de espera para ser el primero en enterarte.'},
               ].map((f,i)=>(

@@ -1,6 +1,7 @@
 import PlayerLayout from '../../components/PlayerLayout'
 import FifaCard from '../../components/FifaCard'
 import Icon from '../../components/Icon'
+import { images } from '../../assets/images'
 
 export default function JugadorPerfil() {
   return (
@@ -10,8 +11,8 @@ export default function JugadorPerfil() {
           {/* Player Info */}
           <div className="bg-white rounded-xl border border-slate-100 p-6">
             <div className="flex items-center gap-6 mb-6">
-              <div className="w-24 h-24 rounded-full bg-[#e6e8eb] flex items-center justify-center border-4 border-white shadow-lg">
-                <Icon name="person" className="text-4xl text-slate-400" />
+              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <img className="w-full h-full object-cover" alt="Juan Perez" src={images.playerPhoto} />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-[#0A1A3A]" style={{fontFamily:"'Noto Serif'"}}>Juan Perez</h1>

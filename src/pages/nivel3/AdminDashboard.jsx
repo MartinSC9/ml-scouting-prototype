@@ -1,5 +1,6 @@
 import AdminLayout from '../../components/AdminLayout'
 import Icon from '../../components/Icon'
+import { images } from '../../assets/images'
 
 export default function AdminDashboard() {
   const metrics = [
@@ -143,9 +144,7 @@ export default function AdminDashboard() {
             <div className="bg-white p-6 rounded-xl shadow-[0_10px_40px_rgba(10,26,58,0.03)]">
               <h3 className="text-xl font-bold text-[#0A1A3A] mb-4" style={{ fontFamily: "'Noto Serif'" }}>Alcance Global</h3>
               <div className="aspect-video bg-slate-100 rounded-lg overflow-hidden relative">
-                <div className="w-full h-full bg-slate-200 flex items-center justify-center">
-                  <Icon name="public" className="text-slate-300" style={{ fontSize: '60px' }} />
-                </div>
+                <img className="w-full h-full object-cover" alt="Alcance global" src={images.adminWorldMap} />
                 <div className="absolute top-[40%] left-[45%] w-3 h-3 bg-[#0A1A3A] rounded-full animate-pulse"></div>
                 <div className="absolute top-[55%] left-[30%] w-2 h-2 bg-[#0A1A3A] rounded-full opacity-50"></div>
                 <div className="absolute top-[45%] left-[75%] w-2 h-2 bg-[#0A1A3A] rounded-full opacity-50"></div>

@@ -97,7 +97,7 @@ export default function AdminConfiguracion() {
             {activeTab === 'emails' && (
               <div className="space-y-4">
                 {[
-                  { title: 'Bienvenida', subject: 'Bienvenido a ML Scouting Academy', body: 'Hola {nombre}, gracias por registrarte en ML Scouting Academy. Estamos emocionados de acompanarte en tu carrera futbolistica.' },
+                  { title: 'Bienvenida', subject: 'Bienvenido a ML Scouting', body: 'Hola {nombre}, gracias por registrarte en ML Scouting. Estamos emocionados de acompanarte en tu carrera futbolistica.' },
                   { title: 'Confirmacion de compra', subject: 'Confirmacion de tu compra - {servicio}', body: 'Hola {nombre}, tu compra de {servicio} ha sido confirmada. Nos pondremos en contacto pronto para los proximos pasos.' },
                   { title: 'Recordatorio de reunion', subject: 'Recordatorio: Tu reunion con ML Scouting es manana', body: 'Hola {nombre}, te recordamos que tenes una reunion agendada para manana a las {hora}.' },
                   { title: 'Informe listo', subject: 'Tu informe esta listo para descargar', body: 'Hola {nombre}, tu {tipo_informe} esta listo. Podes descargarlo desde tu panel de jugador.' },
@@ -117,7 +117,7 @@ export default function AdminConfiguracion() {
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                 <h3 className="font-bold text-[#0A1A3A] text-lg mb-6">WhatsApp Business</h3>
                 <div className="mb-4"><label className="block text-sm font-medium text-slate-700 mb-1">Numero de WhatsApp</label><input type="tel" defaultValue="+54 9 11 2345-6789" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
-                <div className="mb-6"><label className="block text-sm font-medium text-slate-700 mb-1">Mensaje de bienvenida</label><textarea rows="4" defaultValue="Hola! Gracias por contactar a ML Scouting Academy. Soy Marco Lujan. Contame en que puedo ayudarte: servicios de scouting, curso profesional o informacion general." className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm"></textarea></div>
+                <div className="mb-6"><label className="block text-sm font-medium text-slate-700 mb-1">Mensaje de bienvenida</label><textarea rows="4" defaultValue="Hola! Gracias por contactar a ML Scouting. Soy Marco Lujan. Contame en que puedo ayudarte: servicios de scouting, curso profesional o informacion general." className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm"></textarea></div>
                 <button className="bg-[#0A1A3A] text-white px-6 py-2.5 rounded-lg text-sm font-semibold">Guardar</button>
               </div>
             )}
@@ -194,7 +194,7 @@ export default function AdminConfiguracion() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Meta Title</label>
-                    <input type="text" defaultValue="ML Scouting Academy - Scouting Profesional de Futbol" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
+                    <input type="text" defaultValue="ML Scouting - Scouting Profesional de Futbol" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
                     <p className="text-xs text-slate-400 mt-1">50/60 caracteres</p>
                   </div>
                   <div>

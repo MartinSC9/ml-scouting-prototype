@@ -1,19 +1,4 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Index from './pages/Index'
-
-// Nivel 2 pages
-import N2Home from './pages/nivel2/Home'
-import N2Servicios from './pages/nivel2/Servicios'
-import N2Diagnostico from './pages/nivel2/Diagnostico'
-import N2Curso from './pages/nivel2/Curso'
-import N2Contacto from './pages/nivel2/Contacto'
-import N2Registro from './pages/nivel2/Registro'
-import N2JugadorPerfil from './pages/nivel2/JugadorPerfil'
-import N2AdminDashboard from './pages/nivel2/AdminDashboard'
-import N2AdminJugadores from './pages/nivel2/AdminJugadores'
-import N2AdminJugadorDetalle from './pages/nivel2/AdminJugadorDetalle'
-import N2AdminCurso from './pages/nivel2/AdminCurso'
-import N2AdminLeads from './pages/nivel2/AdminLeads'
 
 // Nivel 3 pages
 import N3Home from './pages/nivel3/Home'
@@ -42,21 +27,7 @@ import N3AdminConfiguracion from './pages/nivel3/AdminConfiguracion'
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Index />} />
-
-      {/* Nivel 2 */}
-      <Route path="/nivel-2/home" element={<N2Home />} />
-      <Route path="/nivel-2/servicios" element={<N2Servicios />} />
-      <Route path="/nivel-2/diagnostico" element={<N2Diagnostico />} />
-      <Route path="/nivel-2/curso" element={<N2Curso />} />
-      <Route path="/nivel-2/contacto" element={<N2Contacto />} />
-      <Route path="/nivel-2/registro" element={<N2Registro />} />
-      <Route path="/nivel-2/jugador-perfil" element={<N2JugadorPerfil />} />
-      <Route path="/nivel-2/admin/dashboard" element={<N2AdminDashboard />} />
-      <Route path="/nivel-2/admin/jugadores" element={<N2AdminJugadores />} />
-      <Route path="/nivel-2/admin/jugador-detalle" element={<N2AdminJugadorDetalle />} />
-      <Route path="/nivel-2/admin/curso" element={<N2AdminCurso />} />
-      <Route path="/nivel-2/admin/leads" element={<N2AdminLeads />} />
+      <Route path="/" element={<Navigate to="/nivel-3/home" replace />} />
 
       {/* Nivel 3 */}
       <Route path="/nivel-3/home" element={<N3Home />} />

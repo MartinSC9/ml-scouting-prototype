@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AdminLayout from '../../components/AdminLayout'
 import Icon from '../../components/Icon'
+import { images } from '../../assets/images'
 
 export default function AdminJugadorDetalle() {
   const [activeTab, setActiveTab] = useState('servicios')
@@ -39,8 +40,8 @@ export default function AdminJugadorDetalle() {
           {/* Left: Player Card */}
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 text-center">
-              <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Icon name="person" className="text-slate-400" style={{ fontSize: '40px' }} />
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                <img className="w-full h-full object-cover" alt="Mateo Lopez" src={images.playerPhoto} />
               </div>
               <h3 className="font-bold text-[#0A1A3A] text-lg" style={{ fontFamily: "'Noto Serif'" }}>Mateo Lopez</h3>
               <p className="text-sm text-slate-500">Mediocampista Central · 22 anos</p>

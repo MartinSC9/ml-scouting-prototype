@@ -1,0 +1,63 @@
+// Centralized image URLs
+// Mix of real images from ml-scouting.com + Stitch AI-generated
+
+export const images = {
+  // Logo ML Scouting
+  logo: 'https://ml-scouting.com/wp-content/uploads/2024/12/LOGO_ML-removebg.png',
+
+  // Hero / Stadium
+  heroStadium: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDX26t5ZAL3guhJoFbXlDRdZUZ3MkPBBxnCJYrHKLNgyyC94lZ6-JK1A-fWIImU6eUljnyUbB2DnxuN8mNMIKzZLNKhLgnu-CdUj6nB7biztYHAxLrAX0Y8gq42P0TZMH9g6kAgzHD9QVc5FqUraQ9KW-KgX3QckZ_YCnv_428U8dMWXEm2D2OU71EUX-IgDhMFkOtMIUE5d6Xw0KsPFb7sms6yX-9SJeNONeSnXnkRDhBZWtmDaM20LXkPTWLeR34hY5Z991AC3fU',
+
+  // Marco Lujan portrait (from ml-scouting.com)
+  marcoLujan: 'https://ml-scouting.com/wp-content/uploads/2025/02/profile-827x1024.jpg',
+
+  // Real photos from ml-scouting.com
+  marcoPhoto1: 'https://ml-scouting.com/wp-content/uploads/2025/02/IMG_9798.jpeg',
+  marcoPhoto2: 'https://ml-scouting.com/wp-content/uploads/2025/02/IMG_9802.jpeg',
+  teamPhoto: 'https://ml-scouting.com/wp-content/uploads/2025/02/ml_tiendup.jpeg',
+  clubAdvice: 'https://ml-scouting.com/wp-content/uploads/2025/02/asesoria_clubes.png',
+
+  // Football player silhouette (diagnostic CTA)
+  playerSilhouette: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYqoPbRLcB9yJeXE5dltXkfx0_oXbEVR0dpXYleisSUatuJUBIrqxeXrxJaiKODxyYGeZGZNs8C2xfdYv_uE8x7Vlze5yLset0358aTyR3IoSPzijPYjJPL6azVo2DOU9BIh0LucG-fnvjRJov4QRtPOPTxhrUepJ3BGnvzPlxEaaTcL9E7ohbYF0GzuIJOLyQCTmIRtPQq50BDLbFrCD_lMn1qu30I7DCBLp-e7TyPqb0W0tBcRZbHTWnmGzA8B2jhZnd_Y53UCA',
+
+  // Aerial football pitch (course section)
+  aerialPitch: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAw5tuVok9Zc7PjTOtnhnI1Vdte-1v9wCnm6WRJw46MBTpZdUdRrN8bzCJdQCcI4cNYY18dmYCskmfQM2Z_VnOUsNSglOP3TTVkgnC4nAvO0XrBjSu070TFM1xuNfUBWikinGhiaQBn8TH4zvG0tposofJjSWDyzCqBc5A-E3hYR92LYYK87hQ79DPgF5EEbTwDzaLYDEMkr-CCQIq5_yE9BXzIhXYn27W1z4c2REPOcudMopq3Gf_usrt-YtWK54O1xaY1KAy-UM',
+
+  // Testimonial avatars
+  testimonial1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBlU8izgWHBtauNOkDYm2ZVfkMeOcomAvHgM371BMeT0v2Xnuqwm2OU-bbHl8LC0RLQ1tR7mN3HW98SWGKXvueyBLzd4D1Nd65GAwEaGq1lBxjE4vs0aWvAG631Kw_Ccq5HA4tpTxwfaYAz1tWMIzsB7TslZT-VYrWQltPFdmE7jmNqfI8MtAIyM8dKsholMy4GEAlTkGOhuCSM6yPrIoKKgVsAA1TERfMHAblauSKC45544DNcmsVWqDDSqmtCVDw0ufxD-j_hRqg',
+  testimonial2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBgLmfJI39MnuSGLaVxtSm-yW-jBwwrQH76YmcfqUYva3ENaEl3xrKNYX13yZ6Bdfh320EGtkgXcANO-kmRLzxsvxsoBz4aFWz5kyEUHlAyVRyY4Zn8gv7VwKn5IT5SFt7TdeHcAvUClrrnmnvY8wHyjcfbE9ThFkj70YbhDeTavaLWYzbCnNRzqDu11grF10TGX1l5D7ZC1aq2poz7-k7n5ygGpRissLj2F633KGZQ2zGd9qTQ2hfdl4o7Y9E2U-G_0MLIuwZ3uGA',
+  testimonial3: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWlNET8vfQttBcEXIZ44G1_lOBZgrAH3_XE6AdO5JGNkGuS5IWNWNtocSHJcf5Oux82fTBHS4HoHYR9leY5uW3T93kp7yAse-n6Suc2sYNmCXtjWxVV_uo9HFJuFIOAzkKp2ZzQ-NA3WOk5h-vvplSZ2BI1tl7Wt2l4MUEmJmCgVHkIY1BMobkR50zpZlcnDufSuJGlHAXU49ofi1-RASdiZJ8v0AsbXxI9ZJ7cz-jPC_g-2_MJlfdsF2PFRgyQrWUX4rYKCzA46o',
+
+  // Services page - tactical analysis
+  tacticalAnalysis: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrBHwZGQJYS9nH83Sa3w_JEs1wxUa6RkY4AjOTtCPkLTPvdws_GDeobJwebZDs7tBe4dHAE37Dq7wyLDKxYEi8mXj0FgA34A2AoduxR74inMvCj-TC_iLdpcfrvmqsetf0WN3D0IaNyq5lJka-5GNiCjQe_UzEsUqUlEg-ZWTFocAb4bvKNi1VwHXL2LE7ObFSdGDEyrW1VhTEzhboP_ezmP_cO6JfCASMQieQM2_HtmdbQr3qT4a3nCWZmf9tEsfb2gaQFDlhenY',
+
+  // Services page - world map
+  worldMap: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCUMpz7k6KA6O87GQI8VCR5aBOW2-W8Ch-Caj3LT1HmKwRk-QMkB5oqd_1bEZbx2Cs9_iUp1rWSMtYMdDCAxFq_S-4dGm97PwZ3llkfNGs8s3MAKarX2wAKOR7IqtORdXA2rBegb355g0yaDO6W0V8zbLwoVX5i5qsYRUsme5V52WvPfr9DW-aWo_V707-Q4t57Xs0pXOfTK0jUdCon49xFyaSaStgIZLYyy4B5fHol_pk-Bb5b9uowHHgVQUMfAXM3a5YlEx_T0k0',
+
+  // Services page - meeting room
+  meetingRoom: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBG-jhrDNgKYxCL1A9jxhyPW7ynDjsOoT62KAv14UwLGvHzflyrT0pJPP899jtfAKNj6ipN4xw0m79ZbSOn03nzD3uvwFDijPnCxgaw2ZnvXcxNfYvZatg8YuhT6X-U1u5N3re1rKWC2RYca-2k5wgQo9xdGp3X7NNJSjuo28013rBHArX7cPh3A1jgcuD3lyGpS0CO5Ym1xXXNvyfD_0rrm6yHaLyewtFqI2mAQCiRe0Pp9YZmL0RtdI3D1s6i8Acy0lAlxP9l8JQ',
+
+  // Player dashboard - player photo
+  playerPhoto: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBvlSrHJIDk5IfAf-LmZCZmpyMq6tk1HUAYJ0yyl5fE98dIHe2B-n6YiyN3K6Lx9GPVWhlwZz38krdPKRT6GMIiLQ6joLD_mztONK18OvpVGXs92trV52Hkmi05DwzcxL8pY1iQ3bqsNYR36z_U0Xf-5bvgOrVUF1xosM_R31y2HzMvmyhWd2Mtiy0Fhc3kHeU2WAuF9uJRLjL36hGcZiO_Rqwa6aueb76GP66PJFg1LVnHXQdcNPsxcrefceBI-YKqx_-JhVcaO58',
+
+  // Player dashboard - avatar
+  playerAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDTITCodq_vvr4wPvndbpUQcLS9I1LouK9X-ueNg-TDx27i3KxUWa6Bz5Fd1G37jNpGIM_8eFjyCxNwI3jc43JCLh_NtVZmDD3vMD8XLcYkJstFgTX3VUVYGJ3bZ87k8kzbhqNb--EWZunpEEuifEm1C4N4EY1r2l5dIvHNlqrbKUlWM8RZGrWMn06hvRoOx1r8XxMYUPNwtT831RoQA6fM5uEbRPSbU0Dr_r9PMJYwo2EpNtW_Vur2KXXbFFkgtIhP1-OHsJlcATU',
+
+  // Player dashboard - flag
+  playerFlag: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDlJ9Kb699RS8bvVF1rcFGC4b114L4ZoSYz0dMd4EzXc6EZKne5Nyl38cDXM0RTMNC8LAwCen4r8RAPwGs7golKlLfECSyHDyWGuo4G-8H6DifSbmwWEkuX7PTbitcR2mX7UkNzwqUU1hVPTEWqvRdd6Oy8dF0az6LQ60znlimPgB4YWvrCnrnFRl6v0FXbhLlpkh1bLwWCIexOzwKa5O91auCRO8_Etl92oIVtcuq1o8vRPO2blfdVytTCQDqaj9dAYjAI8GKI7yc',
+
+  // Scout avatar
+  scoutAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCPCswcKRHyONPD_SehnaOJDCUD8JSM2GS5ZAAD4IQ6rriZIC8r4biuElD68n79q0Xrao6Vot_Nm_05Wh_6kDytRhM8J8qMdgcIb1pKQPq9Z2Wois7InOQ3C2yagH8GOSeN6Cb-4WPl2knHDh-gomNtofBd1Sh420TBSOoNsvZhK3sy9M9Oab7beRU0jJa96IOGMy3I7Gy3QtXaqs3ZyjRf6O2_g9EdQdu5-R4Akq6lN6G3onMMR5TIiisuqK55vXpUUqd_OjpwXwM',
+
+  // Admin avatar
+  adminAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5E5OONSXODIJmRDP2x22rRJBzNePZlc8oP1RSopys81aEiWVdkMvCwzlFjS5cWxDkhsDKLhS5daKIBtUYacCXMkEakglM0ZpyL-y_aMkoMGwrXG1LPdby013SRweMDnpQh6qGknb7eAGca0unMGaHkecwkp33mYmC9qtYFSEPeUYToxPmEDKCllWl-vpXGhN2D2bNlBpLIP8VSwcmMEK_heNUuRoGjsuYB60yJ2RkD-CPOIFXa9DaFozktkqJMvxNiQX5LNWT4z4',
+
+  // Admin world map
+  adminWorldMap: 'https://lh3.googleusercontent.com/aida-public/AB6AXuABxxOb9t8jOdODfXpxQ3T_97jQs_94FKMdyW5PcxInj74yjrbmuLeZgo6DvP12RCI2qyQu8VOETpvQepsOkTjUozh9oI7CRS6dCLr7Q5NjC3BM32EVXkR4POa1ZhH1Cg9-kRdc5RaBizDmYLMsikVd3DQ6gyyFHpXDiO9_OS8T-DI5wdZolfzPVGKm0Y6OUfoBZWIiuxHhvDRcbGBRj0xUgBTBFcEqzUvHfQXtVn1vFApi6-eScoHaEyAX7WjaXmx7rwUr6OufX-0',
+
+  // CRM lead panel avatar
+  crmLeadAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB1qwtXjfYfc_njdj5Lyr2ha4Rz9xOa2L1U7XjVUIAsVjUPj8IFHYj0-1bQpnu-SlbbaJ18m-Jbe-3-oFGlmECjzZVXhsx-BvF7NKSE3aA5easkVuAGPKLWObX30HMt6JxuA5ddwz-ioUXk5nz8o4LJhxXE7xGDoejA7hFZjx9ViI3DoxhlgGjRbfEnN6WSX4ERBfCssEms6g9DfcViY9UKkJjjGItRymlawamorDS7ymJCI_m-kHHdAWK1ZO5q8UDTjkqNmFvPeHs',
+
+  // CRM sidebar user avatar
+  crmUserAvatar: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMzhNer7yJV7nlwuyFyDkra738qIcRib4sRCHzMxyahJY4zWY1gEd7uaUZdu_lINNzn6h5sYJK-gPGayDXgND9sRr7hCjFC5t_2NpMipUeaSpxBf437SapR3nzFjh5FETlSoNgXu68WUi2jF-BWLeguS1rO6JYTSpwZ_S60TKahdoblnWrVMOFOZeVXwaqYMKWiGWl4vcWSgQ3uP20jR7pEpIAN0cBSdncTrtivAi1sXpTjm43EmztwKZpZS4w5GFLn98_ujo-mxY',
+}

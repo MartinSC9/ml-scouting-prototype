@@ -1,22 +1,52 @@
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import Icon from '../../components/Icon'
+import { images } from '../../assets/images'
+
+const heroVideos = [
+  `${import.meta.env.BASE_URL}hero-video-2.mp4`,
+  `${import.meta.env.BASE_URL}hero-video.mp4`,
+]
 
 export default function Home() {
+  const [videoIndex, setVideoIndex] = useState(0)
+  const videoRef = useRef(null)
+  const [navTransparent, setNavTransparent] = useState(true)
+
+  useEffect(() => {
+    const onScroll = () => setNavTransparent(window.scrollY < 100)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <div className="bg-[#f7f9fc] text-[#191c1e]">
-      <Navbar activeItem="inicio" level={3} />
+      <Navbar activeItem="inicio" transparent={navTransparent} />
 
       {/* Hero */}
-      <section className="bg-[#0A1A3A] pt-32 pb-20 px-8" style={{marginTop:'80px'}}>
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="relative pt-52 pb-28 px-8 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover"
+            autoPlay muted playsInline
+            poster={images.heroStadium}
+            key={videoIndex}
+            onEnded={() => setVideoIndex((i) => (i + 1) % heroVideos.length)}
+          >
+            <source src={heroVideos[videoIndex]} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[#0A1A3A]/80 mix-blend-multiply"></div>
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6" style={{fontFamily:"'Noto Serif'"}}>Impulsamos el futbol con scouting profesional, estrategia y experiencia</h1>
           <p className="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">Conectamos jugadores con oportunidades reales en el futbol internacional a traves de analisis profesional, formacion y una red global de contactos.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold text-sm hover:bg-slate-100 transition">Soy Jugador</button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition">Soy Club</button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition">Quiero ser Scout</button>
+            <Link to="/nivel-3/servicios" className="bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold text-sm hover:bg-slate-100 transition">Soy Jugador</Link>
+            <Link to="/nivel-3/contacto" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition">Soy Club</Link>
+            <Link to="/nivel-3/curso" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition">Quiero ser Scout</Link>
           </div>
         </div>
       </section>
@@ -24,8 +54,8 @@ export default function Home() {
       {/* About Marco */}
       <section className="py-20 px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="w-full h-80 bg-slate-200 rounded-xl flex items-center justify-center">
-            <Icon name="person" className="text-slate-400" style={{fontSize:'80px'}} />
+          <div className="aspect-square rounded-full overflow-hidden border-[12px] border-white shadow-xl max-w-sm mx-auto">
+            <img className="w-full h-full object-cover object-top" alt="Marco Lujan" src={images.marcoLujan} />
           </div>
           <div>
             <p className="text-[#445d94] text-sm font-semibold uppercase tracking-wider mb-2">Sobre el Fundador</p>
@@ -83,12 +113,12 @@ export default function Home() {
         </div>
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           {[
-            {pais:'Argentina',pos:'Mediocampista',name:'Lucas Martinez',desc:'Paso de jugar en la tercera division a firmar contrato con un club de la Serie B italiana gracias al Plan de Mercado.',tag:'Plan de Mercado'},
-            {pais:'Colombia',pos:'Delantero',name:'Santiago Ruiz',desc:'El informe tecnico le permitio conocer sus fortalezas y mejorar sus debilidades. Hoy juega en Portugal.',tag:'Informe Tecnico'},
-            {pais:'Uruguay',pos:'Defensor',name:'Federico Gomez',desc:'Con la representacion integral, logro una prueba en un club de la segunda division espanola y quedo seleccionado.',tag:'Representacion'},
+            {pais:'Argentina',pos:'Mediocampista',name:'Lucas Martinez',desc:'Paso de jugar en la tercera division a firmar contrato con un club de la Serie B italiana gracias al Plan de Mercado.',tag:'Plan de Mercado',img:images.marcoPhoto1},
+            {pais:'Colombia',pos:'Delantero',name:'Santiago Ruiz',desc:'El informe tecnico le permitio conocer sus fortalezas y mejorar sus debilidades. Hoy juega en Portugal.',tag:'Informe Tecnico',img:images.marcoPhoto2},
+            {pais:'Uruguay',pos:'Defensor',name:'Federico Gomez',desc:'Con la representacion integral, logro una prueba en un club de la segunda division espanola y quedo seleccionado.',tag:'Representacion',img:images.teamPhoto},
           ].map((c,i)=>(
             <div key={i} className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100">
-              <div className="h-48 bg-slate-200 flex items-center justify-center"><Icon name="person" className="text-slate-400" style={{fontSize:'48px'}} /></div>
+              <div className="h-48 overflow-hidden"><img className="w-full h-full object-cover" alt={c.name} src={c.img} /></div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-2"><span className="text-xs bg-slate-100 px-2 py-1 rounded-full text-slate-600">{c.pais}</span><span className="text-xs text-slate-500">{c.pos}</span></div>
                 <h3 className="font-bold text-[#0A1A3A] mb-2">{c.name}</h3>
@@ -107,14 +137,17 @@ export default function Home() {
         </div>
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           {[
-            {q:'El informe tecnico fue increiblemente detallado. Me ayudo a entender exactamente en que tenia que mejorar para dar el siguiente paso en mi carrera.',n:'Diego Fernandez',r:'Jugador - Argentina'},
-            {q:'Marco tiene un ojo unico para detectar talento. Gracias a su red de contactos, pude hacer pruebas en tres clubes europeos.',n:'Andres Ramirez',r:'Jugador - Colombia'},
-            {q:'El curso de scouting cambio mi forma de ver el futbol. Ahora trabajo como scout freelance gracias a la formacion y la red de ML Scouting.',n:'Pablo Torres',r:'Scout - Mexico'},
+            {q:'El informe tecnico fue increiblemente detallado. Me ayudo a entender exactamente en que tenia que mejorar para dar el siguiente paso en mi carrera.',n:'Diego Fernandez',r:'Jugador - Argentina',img:images.testimonial1},
+            {q:'Marco tiene un ojo unico para detectar talento. Gracias a su red de contactos, pude hacer pruebas en tres clubes europeos.',n:'Andres Ramirez',r:'Jugador - Colombia',img:images.testimonial2},
+            {q:'El curso de scouting cambio mi forma de ver el futbol. Ahora trabajo como scout freelance gracias a la formacion y la red de ML Scouting.',n:'Pablo Torres',r:'Scout - Mexico',img:images.testimonial3},
           ].map((t,i)=>(
             <div key={i} className="bg-[#f7f9fc] p-6 rounded-xl">
               <div className="flex gap-1 mb-4 text-yellow-400">{[1,2,3,4,5].map(s=><Icon key={s} name="star" filled className="text-sm" />)}</div>
               <p className="text-slate-600 text-sm mb-4 italic">"{t.q}"</p>
-              <p className="font-semibold text-[#0A1A3A] text-sm">{t.n}</p><p className="text-xs text-slate-500">{t.r}</p>
+              <div className="flex items-center gap-3">
+                <img className="w-10 h-10 rounded-full object-cover" alt={t.n} src={t.img} />
+                <div><p className="font-semibold text-[#0A1A3A] text-sm">{t.n}</p><p className="text-xs text-slate-500">{t.r}</p></div>
+              </div>
             </div>
           ))}
         </div>
@@ -133,7 +166,7 @@ export default function Home() {
             </div>
             <Link to="/nivel-3/curso" className="inline-block bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition">Ver mas informacion</Link>
           </div>
-          <div className="w-64 h-48 bg-white/10 rounded-xl flex items-center justify-center"><Icon name="school" className="text-white/40" style={{fontSize:'64px'}} /></div>
+          <div className="w-64 h-48 rounded-xl overflow-hidden"><img className="w-full h-full object-cover" alt="Curso Scouting" src={images.aerialPitch} /></div>
         </div>
       </section>
 
@@ -170,12 +203,12 @@ export default function Home() {
           <Icon name="share" className="text-[#0A1A3A] mb-4" style={{fontSize:'48px'}} />
           <h2 className="text-3xl font-bold text-[#0A1A3A] mb-4" style={{fontFamily:"'Noto Serif'"}}>Invita a un companero y gana beneficios</h2>
           <p className="text-slate-500 mb-6 max-w-lg mx-auto">Comparte tu codigo de referido con otros jugadores. Por cada persona que contrate un servicio, ambos reciben un <strong className="text-[#0A1A3A]">10% de descuento</strong> en su proximo servicio.</p>
-          <button className="inline-block bg-[#0A1A3A] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0A1A3A]/90 transition">Conocer mas</button>
+          <Link to="/nivel-3/contacto" className="inline-block bg-[#0A1A3A] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0A1A3A]/90 transition">Conocer mas</Link>
         </div>
       </section>
 
       {/* WhatsApp Float */}
-      <a href="#" className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+      <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
         <Icon name="chat" className="text-white" style={{fontSize:'28px'}} />
       </a>
 
