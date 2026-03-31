@@ -4,13 +4,13 @@ import Icon from '../../components/Icon'
 
 export default function AdminJugadores() {
   const players = [
-    { name: 'Mateo Lopez', age: 22, pos: 'MC', club: 'Independiente', level: 'Elite', levelBg: 'bg-[#0A1A3A] text-white', country: 'Argentina', service: 'Plan Mercado', serviceBg: 'bg-blue-50 text-blue-700' },
-    { name: 'Lucas Martinez', age: 24, pos: 'MC', club: 'Racing Club', level: 'Elite', levelBg: 'bg-[#0A1A3A] text-white', country: 'Argentina', service: 'Representacion', serviceBg: 'bg-green-50 text-green-700' },
+    { name: 'Mateo Lopez', age: 22, pos: 'MC', club: 'Independiente', level: 'Élite', levelBg: 'bg-[#0A1A3A] text-white', country: 'Argentina', service: 'Plan Mercado', serviceBg: 'bg-blue-50 text-blue-700' },
+    { name: 'Lucas Martinez', age: 24, pos: 'MC', club: 'Racing Club', level: 'Élite', levelBg: 'bg-[#0A1A3A] text-white', country: 'Argentina', service: 'Representación', serviceBg: 'bg-green-50 text-green-700' },
     { name: 'Santiago Ruiz', age: 20, pos: 'DEL', club: 'Atletico Nacional', level: 'Avanzado', levelBg: 'bg-[#a7c0fd] text-[#0A1A3A]', country: 'Colombia', service: 'Informe', serviceBg: 'bg-purple-50 text-purple-700' },
-    { name: 'Federico Gomez', age: 23, pos: 'DEF', club: 'Penarol', level: 'Elite', levelBg: 'bg-[#0A1A3A] text-white', country: 'Uruguay', service: 'Representacion', serviceBg: 'bg-green-50 text-green-700' },
+    { name: 'Federico Gomez', age: 23, pos: 'DEF', club: 'Peñarol', level: 'Élite', levelBg: 'bg-[#0A1A3A] text-white', country: 'Uruguay', service: 'Representación', serviceBg: 'bg-green-50 text-green-700' },
     { name: 'Diego Fernandez', age: 21, pos: 'MD', club: 'Velez', level: 'Intermedio', levelBg: 'bg-slate-100 text-slate-600', country: 'Argentina', service: 'Informe', serviceBg: 'bg-purple-50 text-purple-700' },
     { name: 'Andres Ramirez', age: 25, pos: 'DEL', club: 'Millonarios', level: 'Avanzado', levelBg: 'bg-[#a7c0fd] text-[#0A1A3A]', country: 'Colombia', service: 'Plan Mercado', serviceBg: 'bg-blue-50 text-blue-700' },
-    { name: 'Pablo Torres', age: 19, pos: 'LI', club: 'Santos Laguna', level: 'Intermedio', levelBg: 'bg-slate-100 text-slate-600', country: 'Mexico', service: 'Curso', serviceBg: 'bg-yellow-50 text-yellow-700' },
+    { name: 'Pablo Torres', age: 19, pos: 'LI', club: 'Santos Laguna', level: 'Intermedio', levelBg: 'bg-slate-100 text-slate-600', country: 'México', service: 'Curso', serviceBg: 'bg-yellow-50 text-yellow-700' },
     { name: 'Gabriel Santos', age: 22, pos: 'POR', club: 'Flamengo', level: 'Avanzado', levelBg: 'bg-[#a7c0fd] text-[#0A1A3A]', country: 'Brasil', service: 'Informe', serviceBg: 'bg-purple-50 text-purple-700' },
   ]
 
@@ -37,7 +37,7 @@ export default function AdminJugadores() {
               <Icon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" />
               <input type="text" placeholder="Buscar jugador..." className="pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm w-64" />
             </div>
-            {['Posicion','Nivel','Nacionalidad','Estado servicio'].map(f => (
+            {['Posición','Nivel','Nacionalidad','Estado servicio'].map(f => (
               <select key={f} className="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-600"><option>{f}</option></select>
             ))}
           </div>
@@ -55,7 +55,7 @@ export default function AdminJugadores() {
             <thead>
               <tr className="bg-slate-50 border-b border-slate-100">
                 <th className="p-3 w-10"><input type="checkbox" className="rounded border-slate-300" /></th>
-                {['Nombre','Edad','Posicion','Club','Nivel','Pais','Servicios','Acciones'].map(h => (
+                {['Nombre','Edad','Posición','Club','Nivel','País','Servicios','Acciones'].map(h => (
                   <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>
                 ))}
               </tr>

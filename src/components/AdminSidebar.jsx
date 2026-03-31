@@ -13,7 +13,7 @@ const n3Items = [
   { key: 'finanzas', icon: 'payments', label: 'Pagos / Finanzas', href: '/admin/finanzas' },
   { key: 'referidos', icon: 'share', label: 'Referidos', href: '/admin/referidos' },
   { key: 'analytics', icon: 'analytics', label: 'Analytics', href: '/admin/analytics' },
-  { key: 'configuracion', icon: 'settings', label: 'Configuracion', href: '/admin/configuracion' },
+  { key: 'configuracion', icon: 'settings', label: 'Configuración', href: '/admin/configuracion' },
 ]
 
 export default function AdminSidebar({ activeItem }) {
@@ -27,7 +27,7 @@ export default function AdminSidebar({ activeItem }) {
         <Logo size={32} />
         <div>
           <h1 className="font-bold text-[#0A1A3A] text-lg tracking-tight leading-tight">ML Scouting</h1>
-          <p className="text-[10px] text-slate-500 font-medium">Panel de Administracion</p>
+          <p className="text-[10px] text-slate-500 font-medium">Panel de Administración</p>
         </div>
       </div>
       <nav className="flex-1 space-y-1">
@@ -57,7 +57,7 @@ export default function AdminSidebar({ activeItem }) {
           <Icon name="home" /> Ir al sitio
         </a>
         <button onClick={logout} className="w-full flex items-center gap-3 px-4 py-2.5 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
-          <Icon name="logout" /> Cerrar sesion
+          <Icon name="logout" /> Cerrar sesión
         </button>
       </div>
     </aside>

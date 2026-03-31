@@ -4,12 +4,12 @@ import Footer from '../../components/Footer'
 import Icon from '../../components/Icon'
 
 const articles = [
-  {cat:'Scouting',catBg:'bg-blue-50 text-blue-700',title:'Como preparar tu video highlight para scouts',desc:'Consejos clave para que tu video destaque entre cientos de jugadores y llame la atencion de scouts profesionales.',date:'15 Oct 2026 · 5 min',img:'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop'},
-  {cat:'Mercado',catBg:'bg-green-50 text-green-700',title:'Las ligas europeas que mas buscan talento sudamericano',desc:'Un analisis detallado de las oportunidades reales en Portugal, Italia, Belgica y otros mercados clave.',date:'10 Oct 2026 · 8 min',img:'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&h=400&fit=crop'},
+  {cat:'Scouting',catBg:'bg-blue-50 text-blue-700',title:'Cómo preparar tu video highlight para scouts',desc:'Consejos clave para que tu video destaque entre cientos de jugadores y llame la atención de scouts profesionales.',date:'15 Oct 2026 · 5 min',img:'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop'},
+  {cat:'Mercado',catBg:'bg-green-50 text-green-700',title:'Las ligas europeas que más buscan talento sudamericano',desc:'Un análisis detallado de las oportunidades reales en Portugal, Italia, Bélgica y otros mercados clave.',date:'10 Oct 2026 · 8 min',img:'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&h=400&fit=crop'},
   {cat:'Para Jugadores',catBg:'bg-purple-50 text-purple-700',title:'5 errores que cometen los jugadores al buscar club',desc:'Evita estos errores comunes que pueden arruinar tu oportunidad de firmar con un club.',date:'5 Oct 2026 · 6 min',img:'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&h=400&fit=crop'},
-  {cat:'Analisis Tactico',catBg:'bg-orange-50 text-orange-700',title:'Que buscan los scouts en un mediocampista moderno',desc:'Las metricas y cualidades que definen al mediocampista que todos los clubes quieren fichar.',date:'1 Oct 2026 · 7 min',img:'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&h=400&fit=crop'},
-  {cat:'Curso',catBg:'bg-cyan-50 text-cyan-700',title:'Por que formarte en scouting es una oportunidad unica',desc:'El mercado del scouting crece y la demanda de profesionales formados supera la oferta.',date:'25 Sep 2026 · 4 min',img:'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=600&h=400&fit=crop'},
-  {cat:'Para Jugadores',catBg:'bg-purple-50 text-purple-700',title:'La importancia de los datos en el futbol moderno',desc:'Como los datos estan cambiando la forma en que los clubes evaluan y fichan jugadores.',date:'20 Sep 2026 · 6 min',img:'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&h=400&fit=crop'},
+  {cat:'Análisis Táctico',catBg:'bg-orange-50 text-orange-700',title:'Qué buscan los scouts en un mediocampista moderno',desc:'Las métricas y cualidades que definen al mediocampista que todos los clubes quieren fichar.',date:'1 Oct 2026 · 7 min',img:'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&h=400&fit=crop'},
+  {cat:'Curso',catBg:'bg-cyan-50 text-cyan-700',title:'Por qué formarte en scouting es una oportunidad única',desc:'El mercado del scouting crece y la demanda de profesionales formados supera la oferta.',date:'25 Sep 2026 · 4 min',img:'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=600&h=400&fit=crop'},
+  {cat:'Para Jugadores',catBg:'bg-purple-50 text-purple-700',title:'La importancia de los datos en el fútbol moderno',desc:'Cómo los datos están cambiando la forma en que los clubes evalúan y fichan jugadores.',date:'20 Sep 2026 · 6 min',img:'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&h=400&fit=crop'},
 ]
 
 export default function Blog() {
@@ -19,11 +19,11 @@ export default function Blog() {
       <main className="pt-28 pb-16 px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold text-[#0A1A3A] mb-2" style={{fontFamily:"'Noto Serif'"}}>Blog ML Scouting</h1>
-          <p className="text-slate-500 mb-8">Articulos sobre scouting, mercado, analisis tactico y desarrollo profesional.</p>
+          <p className="text-slate-500 mb-8">Artículos sobre scouting, mercado, análisis táctico y desarrollo profesional.</p>
 
           {/* Category Tabs */}
           <div className="flex flex-wrap gap-2 mb-10">
-            {['Todos','Para Jugadores','Scouting','Mercado','Analisis Tactico','Curso'].map((c,i)=>(
+            {['Todos','Para Jugadores','Scouting','Mercado','Análisis Táctico','Curso'].map((c,i)=>(
               <button key={c} className={`px-4 py-2 rounded-full text-sm font-medium ${i===0?'bg-[#0A1A3A] text-white':'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'}`}>{c}</button>
             ))}
           </div>
@@ -50,14 +50,14 @@ export default function Blog() {
             <div className="space-y-8">
               <div className="bg-white rounded-xl p-6 border border-slate-100">
                 <h3 className="font-bold text-[#0A1A3A] mb-4">Newsletter</h3>
-                <p className="text-sm text-slate-500 mb-4">Recibe los mejores articulos sobre scouting en tu email.</p>
+                <p className="text-sm text-slate-500 mb-4">Recibe los mejores artículos sobre scouting en tu email.</p>
                 <input type="email" className="w-full border border-[#c5c6cf] rounded-lg px-4 py-2.5 text-sm mb-3" placeholder="Tu email"/>
                 <button className="w-full bg-[#0A1A3A] text-white py-2.5 rounded-lg text-sm font-semibold">Suscribirme</button>
               </div>
               <div className="bg-white rounded-xl p-6 border border-slate-100">
-                <h3 className="font-bold text-[#0A1A3A] mb-4">Categorias</h3>
+                <h3 className="font-bold text-[#0A1A3A] mb-4">Categorías</h3>
                 <ul className="space-y-2 text-sm text-slate-600">
-                  {['Scouting (8)','Para Jugadores (12)','Mercado (6)','Analisis Tactico (5)','Curso (3)'].map(c=>(
+                  {['Scouting (8)','Para Jugadores (12)','Mercado (6)','Análisis Táctico (5)','Curso (3)'].map(c=>(
                     <li key={c}><button className="hover:text-[#0A1A3A] transition">{c}</button></li>
                   ))}
                 </ul>

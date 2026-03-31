@@ -7,7 +7,7 @@ export default function PlanMercadoBanner({ variant = 'teal' }) {
 
   const items = [
     'Informe de scouting profesional',
-    'Video con analisis tecnico del jugador',
+    'Video con análisis técnico del jugador',
     'Contactos de clubes para presentar tu perfil',
     'Estrategia de ligas y equipos',
   ]

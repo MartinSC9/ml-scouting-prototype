@@ -6,17 +6,17 @@ import { images } from '../../assets/images'
 
 const steps = [
   {
-    title: 'Que edad tienes actualmente?',
+    title: '¿Qué edad tienes actualmente?',
     type: 'options',
     options: [
       { icon: 'child_care', label: 'Menos de 18' },
       { icon: 'person', label: '18 - 21' },
       { icon: 'sports_soccer', label: '22 - 25' },
-      { icon: 'elderly', label: 'Mas de 25' },
+      { icon: 'elderly', label: 'Más de 25' },
     ],
   },
   {
-    title: 'Cual es tu posicion en el campo?',
+    title: '¿Cuál es tu posición en el campo?',
     type: 'select',
     options: [
       { label: 'Portero' },
@@ -28,16 +28,16 @@ const steps = [
     ],
   },
   {
-    title: 'Tienes video de highlights?',
+    title: '¿Tienes video de highlights?',
     type: 'options',
     options: [
-      { icon: 'videocam', label: 'Si, tengo highlights' },
-      { icon: 'help_outline', label: 'Si, pero no estoy seguro de que esten bien estructurados' },
+      { icon: 'videocam', label: 'Sí, tengo highlights' },
+      { icon: 'help_outline', label: 'Sí, pero no estoy seguro de que estén bien estructurados' },
       { icon: 'videocam_off', label: 'No tengo video de highlights' },
     ],
   },
   {
-    title: 'En que nivel juegas actualmente?',
+    title: '¿En qué nivel juegas actualmente?',
     type: 'options',
     options: [
       { icon: 'emoji_events', label: 'Profesional' },
@@ -47,21 +47,21 @@ const steps = [
     ],
   },
   {
-    title: 'Tienes partidos completos grabados?',
+    title: '¿Tienes partidos completos grabados?',
     type: 'options',
     options: [
-      { icon: 'video_library', label: 'Si, tengo partidos completos' },
+      { icon: 'video_library', label: 'Sí, tengo partidos completos' },
       { icon: 'videocam_off', label: 'No' },
     ],
   },
   {
-    title: 'Cual es tu mayor dificultad actualmente como futbolista?',
+    title: '¿Cuál es tu mayor dificultad actualmente como futbolista?',
     type: 'options',
     options: [
-      { icon: 'description', label: 'No se como presentar mi perfil a clubes' },
-      { icon: 'help_outline', label: 'No tengo claro para que ligas o nivel tengo nivel' },
+      { icon: 'description', label: 'No sé cómo presentar mi perfil a clubes' },
+      { icon: 'help_outline', label: 'No tengo claro para qué ligas o nivel tengo nivel' },
       { icon: 'mail', label: 'Ya he enviado mi material pero no recibo respuestas' },
-      { icon: 'contacts', label: 'No tengo contactos ni se a donde enviar mi perfil' },
+      { icon: 'contacts', label: 'No tengo contactos ni sé a dónde enviar mi perfil' },
     ],
   },
 ]
@@ -69,33 +69,33 @@ const steps = [
 const resultCards = [
   {
     recommended: true,
-    title: 'EVALUACION INDIVIDUAL ORIENTADA AL SALTO DE NIVEL (€600)',
-    description: 'Es la opcion mas completa para tu caso si realmente quieres dar un salto de nivel.\n\nSe trabaja con partidos completos tuyos, analisis profesional con ejemplos de video en reunion 1a1 con nuestro equipo y un informe similar al que reciben los analistas de clubes de jugadores que observan.\n\nAdemas, se define una estrategia clara, entendiendo en que ligas encajas y se te posiciona en el mercado desde ahora hasta septiembre, realizando nosotros la oferta de tu informe y material a los clubes.',
+    title: 'EVALUACIÓN INDIVIDUAL ORIENTADA AL SALTO DE NIVEL (€600)',
+    description: 'Es la opción más completa para tu caso si realmente quieres dar un salto de nivel.\n\nSe trabaja con partidos completos tuyos, análisis profesional con ejemplos de video en reunión 1a1 con nuestro equipo y un informe similar al que reciben los analistas de clubes de jugadores que observan.\n\nAdemás, se define una estrategia clara, entendiendo en qué ligas encajas y se te posiciona en el mercado desde ahora hasta septiembre, realizando nosotros la oferta de tu informe y material a los clubes.',
     links: [
       { label: 'Mira el documento completo', url: 'https://drive.google.com/file/d/1atM_Ja-DDgvLJwDjymI8LrGMOHNtzeeX/view?usp=sharing' },
-      { label: 'Agendar reunion para informacion', url: 'https://calendly.com/lujanmarco15/30min' },
+      { label: 'Agendar reunión para información', url: 'https://calendly.com/lujanmarco15/30min' },
     ],
   },
   {
     recommended: false,
     title: 'PLAN DE MERCADO PERSONALIZADO (€200)',
-    description: 'Aqui analizamos tu perfil y tu material, y definimos a que ligas o equipos puedes apuntar y como es tu nivel actual, con devolucion y analisis en reunion 1 a 1 tambien.\n\nTe entregamos tu informe, video, la estrategia y los contactos, pero el envio y movimiento en el mercado lo haces tu. En este servicio no incluimos tu ofrecimiento en nuestra red.',
+    description: 'Aquí analizamos tu perfil y tu material, y definimos a qué ligas o equipos puedes apuntar y cómo es tu nivel actual, con devolución y análisis en reunión 1 a 1 también.\n\nTe entregamos tu informe, video, la estrategia y los contactos, pero el envío y movimiento en el mercado lo haces tú. En este servicio no incluimos tu ofrecimiento en nuestra red.',
     links: [
       { label: 'Detalle del servicio / Adquirir', url: 'https://mlscouting.gumroad.com/l/plandemercadopersonalizado' },
     ],
   },
   {
     recommended: false,
-    title: 'DIAGNOSTICO con Scout Profesional 1 A 1 (€100)',
-    description: 'Disenado para entender tu situacion actual de juego, que cuestiones mejorar y donde estas parado hoy futbolisticamente y que te falta para un proximo paso. Sin informe ni ofrecimiento, este servicio esta pensado para los jugadores que quieren una opinion profesional de ellos como jugador y entender como los ven dts, analistas, etc.',
+    title: 'DIAGNÓSTICO con Scout Profesional 1 A 1 (€100)',
+    description: 'Diseñado para entender tu situación actual de juego, qué cuestiones mejorar y dónde estás parado hoy futbolísticamente y qué te falta para un próximo paso. Sin informe ni ofrecimiento, este servicio está pensado para los jugadores que quieren una opinión profesional de ellos como jugador y entender cómo los ven DTs, analistas, etc.',
     links: [
       { label: 'Detalle del servicio / Adquirir', url: 'https://mlscouting.gumroad.com/l/diagosticodeperfilconscoutprofesional' },
     ],
   },
   {
     recommended: false,
-    title: 'ASESORIA PARA PERFIL Y VIDEO (€35)',
-    description: 'Si todavia no tienes bien estructurado tu perfil o tu material, este servicio te ayuda a entender como armar tu video, presentarte y enviar tu perfil correctamente a clubes.',
+    title: 'ASESORÍA PARA PERFIL Y VIDEO (€35)',
+    description: 'Si todavía no tienes bien estructurado tu perfil o tu material, este servicio te ayuda a entender cómo armar tu video, presentarte y enviar tu perfil correctamente a clubes.',
     links: [
       { label: 'Detalle del servicio / Adquirir', url: 'https://mlscouting.gumroad.com/l/mcgcsu' },
     ],
@@ -252,21 +252,21 @@ export default function Diagnostico() {
       readiness, material, visibility,
       insights: [
         { icon: 'person', label: 'Edad', value: age },
-        { icon: 'sports_soccer', label: 'Posicion', value: position },
+        { icon: 'sports_soccer', label: 'Posición', value: position },
         { icon: 'military_tech', label: 'Nivel actual', value: level },
       ],
       scores: [
-        { label: 'Preparacion del perfil', value: readiness, color: readiness >= 60 ? '#22c55e' : readiness >= 40 ? '#eab308' : '#ef4444' },
+        { label: 'Preparación del perfil', value: readiness, color: readiness >= 60 ? '#22c55e' : readiness >= 40 ? '#eab308' : '#ef4444' },
         { label: 'Material audiovisual', value: material, color: material >= 60 ? '#22c55e' : material >= 40 ? '#eab308' : '#ef4444' },
         { label: 'Visibilidad en el mercado', value: visibility, color: visibility >= 40 ? '#22c55e' : visibility >= 25 ? '#eab308' : '#ef4444' },
       ],
       summary: !hasHighlights && !hasFullGames
-        ? 'Tu material audiovisual es tu punto mas debil. Sin video, los clubes no pueden evaluarte. Es clave resolver esto primero.'
+        ? 'Tu material audiovisual es tu punto más débil. Sin video, los clubes no pueden evaluarte. Es clave resolver esto primero.'
         : visibility <= 20
-        ? 'Tenes buen material pero muy poca visibilidad. Necesitas una estrategia de posicionamiento para llegar a los clubes correctos.'
+        ? 'Tienes buen material pero muy poca visibilidad. Necesitas una estrategia de posicionamiento para llegar a los clubes correctos.'
         : unsureHighlights
-        ? 'Tenes material pero puede no estar bien estructurado. Un perfil mal presentado puede cerrarte puertas aunque tengas nivel.'
-        : 'Tenes una base solida. El siguiente paso es maximizar tu exposicion y posicionarte en las ligas adecuadas para tu perfil.',
+        ? 'Tienes material pero puede no estar bien estructurado. Un perfil mal presentado puede cerrarte puertas aunque tengas nivel.'
+        : 'Tienes una base sólida. El siguiente paso es maximizar tu exposición y posicionarte en las ligas adecuadas para tu perfil.',
     }
   }
 
@@ -501,9 +501,9 @@ export default function Diagnostico() {
           <div className="absolute inset-0 bg-[#0A1A3A]/80"></div>
         </div>
         <div className={`relative z-10 text-center max-w-3xl mx-auto ${mounted ? 'dx3-step-enter' : ''}`}>
-          <span className="text-[#a7c0fd] font-bold tracking-widest text-xs uppercase mb-3 block">Diagnostico Futbolistas</span>
-          <h1 className="text-3xl md:text-4xl text-white font-bold italic leading-tight mb-4" style={{fontFamily:"'Noto Serif'"}}>Quieres jugar futbol profesional o subir de nivel?</h1>
-          <p className="text-slate-300 text-base font-light max-w-2xl mx-auto mb-8">Detecta que te esta limitando y descubri el servicio que mejor encaja con tu situacion actual.</p>
+          <span className="text-[#a7c0fd] font-bold tracking-widest text-xs uppercase mb-3 block">Diagnóstico Futbolistas</span>
+          <h1 className="text-3xl md:text-4xl text-white font-bold italic leading-tight mb-4" style={{fontFamily:"'Noto Serif'"}}>¿Quieres jugar fútbol profesional o subir de nivel?</h1>
+          <p className="text-slate-300 text-base font-light max-w-2xl mx-auto mb-8">Detecta qué te está limitando y descubre el servicio que mejor encaja con tu situación actual.</p>
           {!started && (
             <>
               <button
@@ -563,7 +563,7 @@ export default function Diagnostico() {
                         }}
                         className="dx3-text-input w-full p-5 pr-12 rounded-xl bg-[#f2f4f7] text-[#0A1A3A] text-lg font-medium appearance-none cursor-pointer"
                       >
-                        <option value="" disabled>Selecciona tu posicion</option>
+                        <option value="" disabled>Selecciona tu posición</option>
                         {currentStep.options.map((opt, i) => (
                           <option key={i} value={opt.label}>{opt.label}</option>
                         ))}
@@ -643,7 +643,7 @@ export default function Diagnostico() {
                       <Icon name="analytics" className="text-[#445d94] text-4xl dx3-analyzing-spin" style={{ animation: 'spin 2s linear infinite' }} />
                     </div>
                     <h2 className="text-2xl md:text-3xl text-[#0A1A3A] font-bold italic mb-3" style={{fontFamily:"'Noto Serif'"}}>Analizando tu perfil<span className="dx3-analyzing-dots"><span>.</span><span>.</span><span>.</span></span></h2>
-                    <p className="text-[#45464e] max-w-md mx-auto">Evaluando tus respuestas para darte una recomendacion personalizada</p>
+                    <p className="text-[#45464e] max-w-md mx-auto">Evaluando tus respuestas para darte una recomendación personalizada</p>
                     <div className="mt-8 max-w-xs mx-auto">
                       <div className="h-1.5 bg-[#eceef1] rounded-full overflow-hidden">
                         <div className="h-full bg-gradient-to-r from-[#445d94] to-[#a7c0fd] rounded-full" style={{ animation: 'dx3-analyzeBar 2.5s ease-in-out forwards' }} />
@@ -663,8 +663,8 @@ export default function Diagnostico() {
                     <div className="dx3-check-anim inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#445d94]/10 mb-4">
                       <Icon name="check_circle" filled className="text-[#445d94] text-4xl" />
                     </div>
-                    <h2 className="text-2xl md:text-3xl text-[#0A1A3A] font-bold italic mb-2" style={{fontFamily:"'Noto Serif'"}}>Tu Analisis de Perfil</h2>
-                    <p className="text-[#45464e] text-sm max-w-lg mx-auto">Basado en tus respuestas, este es el panorama de tu situacion actual</p>
+                    <h2 className="text-2xl md:text-3xl text-[#0A1A3A] font-bold italic mb-2" style={{fontFamily:"'Noto Serif'"}}>Tu Análisis de Perfil</h2>
+                    <p className="text-[#45464e] text-sm max-w-lg mx-auto">Basado en tus respuestas, este es el panorama de tu situación actual</p>
                   </div>
 
                   {/* Profile summary chips */}
@@ -705,7 +705,7 @@ export default function Diagnostico() {
                 {/* Divider */}
                 <div className="text-center mb-8">
                   <h3 className="text-xl md:text-2xl text-[#0A1A3A] font-bold italic" style={{fontFamily:"'Noto Serif'"}}>Servicios recomendados para tu caso</h3>
-                  <p className="text-[#45464e] text-sm mt-1">Estas son las opciones que mejor encajan con tu situacion</p>
+                  <p className="text-[#45464e] text-sm mt-1">Estas son las opciones que mejor encajan con tu situación</p>
                 </div>
 
                 {/* Service Recommendation Cards */}
@@ -722,7 +722,7 @@ export default function Diagnostico() {
                     >
                       {card.recommended && (
                         <span className="absolute -top-3 left-6 bg-[#445d94] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
-                          OPCION RECOMENDADA
+                          OPCIÓN RECOMENDADA
                         </span>
                       )}
                       <h3 className="text-lg md:text-xl font-bold text-[#0A1A3A] mb-4 mt-1" style={{fontFamily:"'Noto Serif'", fontStyle: 'italic'}}>
@@ -760,7 +760,7 @@ export default function Diagnostico() {
                     <div>
                       <h3 className="font-bold text-lg mb-3">Ahora haz esto:</h3>
                       <p className="text-[#a7c0fd]/80 leading-relaxed mb-4">
-                        Enviame por Instagram (<strong className="text-white">@marcolujan7</strong>): la opcion que te salio (o la que mas te interesa) y tu material (video / highlights / partidos, historial de equipos) y vemos tu caso.
+                        Envíame por Instagram (<strong className="text-white">@marcolujan7</strong>): la opción que te salió (o la que más te interesa) y tu material (video / highlights / partidos, historial de equipos) y vemos tu caso.
                       </p>
                       <a
                         href="https://www.instagram.com/marcolujan7/"
@@ -781,7 +781,7 @@ export default function Diagnostico() {
                     onClick={() => { setStep(0); setAnswers({}); setShowResult(false); setTextInput('') }}
                     className="text-sm text-[#45464e] hover:text-[#0A1A3A] transition-colors"
                   >
-                    Volver a realizar el diagnostico
+                    Volver a realizar el diagnóstico
                   </button>
                 </div>
                   </>

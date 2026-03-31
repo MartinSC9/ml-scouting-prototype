@@ -4,12 +4,12 @@ import Icon from '../../components/Icon'
 import { images } from '../../assets/images'
 
 const opiniones = [
-  { q: 'ML Scouting es un curso que se destaca por ofrecer sesiones en vivo y evaluacion de jugadores en situaciones reales.', n: 'Alumno del Curso', r: 'Scout en formacion', img: images.testimonial1 },
-  { q: 'Este es un gran paso para tu formacion y carrera, ensenandote a crear informes profesionales con practicas en vivo y mentorias con gente que ya esta introducida en el maximo nivel.', n: 'Alumno del Curso', r: 'Scout en formacion', img: images.testimonial2 },
-  { q: 'Gracias al Plan de Mercado pude entender donde enfocar mi carrera y recibir contactos reales de clubes en Europa.', n: 'Jugador', r: 'Delantero - Argentina', img: images.testimonial3 },
-  { q: 'La devolucion fue super honesta y profesional. Me ayudo a ver cosas de mi juego que no tenia claras.', n: 'Jugador', r: 'Mediocampista - Uruguay', img: images.playerAvatar },
-  { q: 'El curso me dio herramientas concretas para analizar jugadores. Muy recomendable para cualquiera que quiera dedicarse al scouting.', n: 'Alumno del Curso', r: 'Scout en formacion', img: images.scoutAvatar },
-  { q: 'Excelente atencion y seguimiento. Se nota que conocen el mercado y saben como posicionar a un jugador.', n: 'Jugador', r: 'Lateral - Colombia', img: images.crmLeadAvatar },
+  { q: 'ML Scouting es un curso que se destaca por ofrecer sesiones en vivo y evaluación de jugadores en situaciones reales.', n: 'Alumno del Curso', r: 'Scout en formación', img: images.testimonial1 },
+  { q: 'Este es un gran paso para tu formación y carrera, enseñándote a crear informes profesionales con prácticas en vivo y mentorías con gente que ya está introducida en el máximo nivel.', n: 'Alumno del Curso', r: 'Scout en formación', img: images.testimonial2 },
+  { q: 'Gracias al Plan de Mercado pude entender dónde enfocar mi carrera y recibir contactos reales de clubes en Europa.', n: 'Jugador', r: 'Delantero - Argentina', img: images.testimonial3 },
+  { q: 'La devolución fue súper honesta y profesional. Me ayudó a ver cosas de mi juego que no tenía claras.', n: 'Jugador', r: 'Mediocampista - Uruguay', img: images.playerAvatar },
+  { q: 'El curso me dio herramientas concretas para analizar jugadores. Muy recomendable para cualquiera que quiera dedicarse al scouting.', n: 'Alumno del Curso', r: 'Scout en formación', img: images.scoutAvatar },
+  { q: 'Excelente atención y seguimiento. Se nota que conocen el mercado y saben cómo posicionar a un jugador.', n: 'Jugador', r: 'Lateral - Colombia', img: images.crmLeadAvatar },
 ]
 
 export default function Opiniones() {

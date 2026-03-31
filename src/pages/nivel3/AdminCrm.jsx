@@ -5,7 +5,7 @@ export default function AdminCrm() {
   const metrics = [
     { label: 'Total leads', value: '156', barW: '100%', barColor: 'bg-[#0A1A3A]' },
     { label: 'Contactados', value: '89', barW: '57%', barColor: 'bg-[#445d94]' },
-    { label: 'En negociacion', value: '23', barW: '15%', barColor: 'bg-[#6483c6]' },
+    { label: 'En negociación', value: '23', barW: '15%', barColor: 'bg-[#6483c6]' },
     { label: 'Convertidos', value: '18', barW: '11%', barColor: 'bg-[#2b467a]' },
   ]
 
@@ -21,7 +21,7 @@ export default function AdminCrm() {
   )
 
   return (
-    <AdminLayout activeItem="crm" title="CRM - Pipeline de Ventas" subtitle="Gestion estrategica de prospectos academicos" level={3} headerActions={headerActions}>
+    <AdminLayout activeItem="crm" title="CRM - Pipeline de Ventas" subtitle="Gestión estratégica de prospectos académicos" level={3} headerActions={headerActions}>
       {/* Metrics Bar */}
       <section className="px-8 py-6 grid grid-cols-5 gap-4">
         {metrics.map((m, i) => (
@@ -34,7 +34,7 @@ export default function AdminCrm() {
           </div>
         ))}
         <div className="bg-[#0A1A3A] p-4 rounded-xl shadow-lg">
-          <p className="text-[10px] font-bold text-[#7583a9] uppercase tracking-widest mb-1">Tasa de conversion</p>
+          <p className="text-[10px] font-bold text-[#7583a9] uppercase tracking-widest mb-1">Tasa de conversión</p>
           <p className="text-2xl font-bold text-white">11.5%</p>
           <p className="text-[10px] text-[#7583a9] mt-2">+2.4% vs mes anterior</p>
         </div>
@@ -55,7 +55,7 @@ export default function AdminCrm() {
           <div className="flex-1 space-y-4 overflow-y-auto pr-2">
             {[
               { source: 'Instagram', time: 'Hace 2h', name: 'Carlos Mendez', email: 'carlos.m@example.com', interest: 'Curso Scouting Pro', interestIcon: 'school', note: 'Interesado en becas para el programa intensivo de verano...' },
-              { source: 'Web Form', time: 'Hace 5h', name: 'Andres Villa', email: 'avilla.scout@club.it', interest: 'Diagnostico Club', interestIcon: 'analytics', note: 'Consulta sobre metodologia de captacion para academia...' },
+              { source: 'Web Form', time: 'Hace 5h', name: 'Andres Villa', email: 'avilla.scout@club.it', interest: 'Diagnóstico Club', interestIcon: 'analytics', note: 'Consulta sobre metodología de captación para academia...' },
             ].map((lead, i) => (
               <div key={i} className="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-400 cursor-pointer hover:shadow-md transition-all">
                 <div className="flex justify-between items-start mb-2">
@@ -98,12 +98,12 @@ export default function AdminCrm() {
           </div>
         </div>
 
-        {/* Column 3: En Negociacion */}
+        {/* Column 3: En Negociación */}
         <div className="flex-none w-72 flex flex-col">
           <div className="flex items-center justify-between mb-4 px-1">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-purple-500"></span>
-              <h3 className="font-bold text-[#0A1A3A] text-sm" style={{ fontFamily: "'Noto Serif'" }}>En Negociacion</h3>
+              <h3 className="font-bold text-[#0A1A3A] text-sm" style={{ fontFamily: "'Noto Serif'" }}>En Negociación</h3>
               <span className="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">8</span>
             </div>
           </div>
@@ -116,9 +116,9 @@ export default function AdminCrm() {
               <p className="font-bold text-[#0A1A3A] text-sm mb-1">Real Valladolid CF</p>
               <p className="text-xs text-slate-500 mb-3 truncate">cantera@realvalladolid.es</p>
               <div className="flex items-center gap-2 text-[10px] font-semibold text-[#445d94] mb-3">
-                <Icon name="groups" className="text-xs" /> Asesoria Integral
+                <Icon name="groups" className="text-xs" /> Asesoría Integral
               </div>
-              <p className="text-xs text-slate-600 line-clamp-2 bg-[#f2f4f7] p-2 rounded leading-relaxed">Revisando propuesta de formacion para 15 tecnicos de cantera.</p>
+              <p className="text-xs text-slate-600 line-clamp-2 bg-[#f2f4f7] p-2 rounded leading-relaxed">Revisando propuesta de formación para 15 técnicos de cantera.</p>
             </div>
           </div>
         </div>

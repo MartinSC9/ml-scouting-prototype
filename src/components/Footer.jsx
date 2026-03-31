@@ -11,13 +11,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4" style={{ fontFamily: "'Noto Serif'" }}>Nosotros</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              En ML Scouting, ayudamos a clubes, jugadores y profesionales del futbol a alcanzar su maximo potencial. Ofrecemos asesorias especializadas para equipos, servicios personalizados para jugadores y cursos de formacion en scouting, todo con un enfoque estrategico y personalizado que nos diferencia. Simplifica tus decisiones, maximiza resultados y lleva tu metodologia de trabajo al siguiente nivel con nuestro expertise y dedicacion.
+              En ML Scouting, ayudamos a clubes, jugadores y profesionales del fútbol a alcanzar su máximo potencial. Ofrecemos asesorías especializadas para equipos, servicios personalizados para jugadores y cursos de formación en scouting, todo con un enfoque estratégico y personalizado que nos diferencia. Simplifica tus decisiones, maximiza resultados y lleva tu metodología de trabajo al siguiente nivel con nuestro expertise y dedicación.
             </p>
           </div>
 
-          {/* Donde encontrarnos */}
+          {/* Dónde encontrarnos */}
           <div>
-            <h3 className="text-lg font-bold mb-4" style={{ fontFamily: "'Noto Serif'" }}>Donde encontrarnos</h3>
+            <h3 className="text-lg font-bold mb-4" style={{ fontFamily: "'Noto Serif'" }}>Dónde encontrarnos</h3>
             <div className="flex flex-wrap gap-3">
               <a href="http://youtube.com/@MLScouting1" aria-label="YouTube" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:bg-white/20 hover:text-white transition-all">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 28 28"><path d="M11.109 17.625l7.562-3.906-7.562-3.953v7.859zM14 4.156c5.891 0 9.797 0.281 9.797 0.281 0.547 0.063 1.75 0.063 2.812 1.188 0 0 0.859 0.844 1.109 2.781 0.297 2.266 0.281 4.531 0.281 4.531v2.125s0.016 2.266-0.281 4.531c-0.25 1.922-1.109 2.781-1.109 2.781-1.062 1.109-2.266 1.109-2.812 1.172 0 0-3.906 0.297-9.797 0.297v0c-7.281-0.063-9.516-0.281-9.516-0.281-0.625-0.109-2.031-0.078-3.094-1.188 0 0-0.859-0.859-1.109-2.781-0.297-2.266-0.281-4.531-0.281-4.531v-2.125s-0.016-2.266 0.281-4.531c0.25-1.937 1.109-2.781 1.109-2.781 1.062-1.125 2.266-1.125 2.812-1.188 0 0 3.906-0.281 9.797-0.281v0z" /></svg>
@@ -31,7 +31,7 @@ export default function Footer() {
               <a href="https://wa.me/34673195438" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:bg-white/20 hover:text-white transition-all">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 28"><path d="M15.391 15.219c0.266 0 2.812 1.328 2.922 1.516 0.031 0.078 0.031 0.172 0.031 0.234 0 0.391-0.125 0.828-0.266 1.188-0.359 0.875-1.813 1.437-2.703 1.437-0.75 0-2.297-0.656-2.969-0.969-2.234-1.016-3.625-2.75-4.969-4.734-0.594-0.875-1.125-1.953-1.109-3.031v-0.125c0.031-1.031 0.406-1.766 1.156-2.469 0.234-0.219 0.484-0.344 0.812-0.344 0.187 0 0.375 0.047 0.578 0.047 0.422 0 0.5 0.125 0.656 0.531 0.109 0.266 0.906 2.391 0.906 2.547 0 0.594-1.078 1.266-1.078 1.625 0 0.078 0.031 0.156 0.078 0.234 0.344 0.734 1 1.578 1.594 2.141 0.719 0.688 1.484 1.141 2.359 1.578 0.109 0.063 0.219 0.109 0.344 0.109 0.469 0 1.25-1.516 1.656-1.516zM12.219 23.5c5.406 0 9.812-4.406 9.812-9.812s-4.406-9.812-9.812-9.812-9.812 4.406-9.812 9.812c0 2.063 0.656 4.078 1.875 5.75l-1.234 3.641 3.781-1.203c1.594 1.047 3.484 1.625 5.391 1.625zM12.219 1.906c6.5 0 11.781 5.281 11.781 11.781s-5.281 11.781-11.781 11.781c-1.984 0-3.953-0.5-5.703-1.469l-6.516 2.094 2.125-6.328c-1.109-1.828-1.687-3.938-1.687-6.078 0-6.5 5.281-11.781 11.781-11.781z" /></svg>
               </a>
-              <a href="mailto:info@ml-scouting.com" aria-label="Correo electronico" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:bg-white/20 hover:text-white transition-all">
+              <a href="mailto:info@ml-scouting.com" aria-label="Correo electrónico" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:bg-white/20 hover:text-white transition-all">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M15 2h-14c-0.55 0-1 0.45-1 1v10c0 0.55 0.45 1 1 1h14c0.55 0 1-0.45 1-1v-10c0-0.55-0.45-1-1-1zM5.831 9.773l-3 2.182c-0.1 0.073-0.216 0.108-0.33 0.108-0.174 0-0.345-0.080-0.455-0.232-0.183-0.251-0.127-0.603 0.124-0.786l3-2.182c0.251-0.183 0.603-0.127 0.786 0.124s0.127 0.603-0.124 0.786zM13.955 11.831c-0.11 0.151-0.282 0.232-0.455 0.232-0.115 0-0.23-0.035-0.33-0.108l-3-2.182c-0.251-0.183-0.307-0.534-0.124-0.786s0.535-0.307 0.786-0.124l3 2.182c0.251 0.183 0.307 0.535 0.124 0.786zM13.831 4.955l-5.5 4c-0.099 0.072-0.215 0.108-0.331 0.108s-0.232-0.036-0.331-0.108l-5.5-4c-0.251-0.183-0.307-0.534-0.124-0.786s0.535-0.307 0.786-0.124l5.169 3.759 5.169-3.759c0.251-0.183 0.603-0.127 0.786 0.124s0.127 0.603-0.124 0.786z" /></svg>
               </a>
               <a href="https://www.linkedin.com/company/ml-scouting/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-slate-300 hover:bg-white/20 hover:text-white transition-all">
@@ -45,8 +45,8 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-4">
           <p>&copy; 2025 ML Scouting Academy · Desarrollado por <a href="https://cu-digital-nu.vercel.app/projects" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition">CU Digital</a></p>
           <div className="flex gap-4">
-            <button onClick={() => { navigate('/legal?tab=privacidad'); window.scrollTo(0, 0) }} className="hover:text-white">Politica de Privacidad</button>
-            <button onClick={() => { navigate('/legal?tab=terminos'); window.scrollTo(0, 0) }} className="hover:text-white">Terminos de Uso</button>
+            <button onClick={() => { navigate('/legal?tab=privacidad'); window.scrollTo(0, 0) }} className="hover:text-white">Política de Privacidad</button>
+            <button onClick={() => { navigate('/legal?tab=terminos'); window.scrollTo(0, 0) }} className="hover:text-white">Términos de Uso</button>
           </div>
         </div>
       </div>

@@ -4,8 +4,8 @@ import Icon from '../../components/Icon'
 export default function AdminAnalytics() {
   const funnel = [
     { label: 'Visitas', value: '5,420', pct: '', w: '100%', color: 'bg-[#0A1A3A]' },
-    { label: 'Diagnosticos iniciados', value: '890', pct: '16.4%', w: '75%', color: 'bg-[#445d94]' },
-    { label: 'Diagnosticos completados', value: '456', pct: '51.2%', w: '50%', color: 'bg-[#a7c0fd]' },
+    { label: 'Diagnósticos iniciados', value: '890', pct: '16.4%', w: '75%', color: 'bg-[#445d94]' },
+    { label: 'Diagnósticos completados', value: '456', pct: '51.2%', w: '50%', color: 'bg-[#a7c0fd]' },
     { label: 'Registros', value: '247', pct: '54.2%', w: '30%', color: 'bg-[#b8c6ef]' },
     { label: 'Compras', value: '42', pct: '17%', w: '12%', color: 'bg-[#7583a9]' },
   ]
@@ -19,18 +19,18 @@ export default function AdminAnalytics() {
   ]
 
   return (
-    <AdminLayout activeItem="analytics" title="Analytics" subtitle="Metricas y rendimiento" level={3}>
+    <AdminLayout activeItem="analytics" title="Analytics" subtitle="Métricas y rendimiento" level={3}>
       <section className="p-8 space-y-8">
         {/* Date Tabs */}
         <div className="flex gap-2">
-          {['Ultimos 7 dias','30 dias','3 meses','Este ano','Personalizado'].map((t, i) => (
+          {['Últimos 7 días','30 días','3 meses','Este año','Personalizado'].map((t, i) => (
             <button key={t} className={`px-4 py-2 rounded-lg text-sm font-medium ${i === 1 ? 'bg-[#0A1A3A] text-white' : 'bg-white border border-slate-200 text-slate-600'}`}>{t}</button>
           ))}
         </div>
 
-        {/* Conversion Funnel */}
+        {/* Conversión Funnel */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-          <h3 className="font-bold text-[#0A1A3A] mb-6">Embudo de Conversion</h3>
+          <h3 className="font-bold text-[#0A1A3A] mb-6">Embudo de Conversión</h3>
           <div className="space-y-3">
             {funnel.map((f, i) => (
               <div key={i}>
@@ -45,13 +45,13 @@ export default function AdminAnalytics() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-slate-500 mt-4">Tasa de conversion total: <strong className="text-[#0A1A3A]">0.77%</strong> (visitas a compras)</p>
+          <p className="text-xs text-slate-500 mt-4">Tasa de conversión total: <strong className="text-[#0A1A3A]">0.77%</strong> (visitas a compras)</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Traffic Sources */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-            <h3 className="font-bold text-[#0A1A3A] mb-4">Fuentes de Trafico</h3>
+            <h3 className="font-bold text-[#0A1A3A] mb-4">Fuentes de Tráfico</h3>
             <div className="flex items-center gap-6">
               <svg viewBox="0 0 200 200" width="140" height="140">
                 <circle cx="100" cy="100" r="80" fill="none" stroke="#e0e3e6" strokeWidth="25" />
@@ -62,7 +62,7 @@ export default function AdminAnalytics() {
                 <circle cx="100" cy="100" r="80" fill="none" stroke="#e6e8eb" strokeWidth="25" strokeDasharray="50 503" strokeDashoffset="-453" transform="rotate(-90 100 100)" />
               </svg>
               <div className="space-y-2 text-sm">
-                {[['#0A1A3A','Organico','35%'],['#445d94','Instagram','25%'],['#a7c0fd','WhatsApp','20%'],['#d9e2ff','Referidos','10%'],['#e6e8eb','Directo','10%']].map(([color,label,pct]) => (
+                {[['#0A1A3A','Orgánico','35%'],['#445d94','Instagram','25%'],['#a7c0fd','WhatsApp','20%'],['#d9e2ff','Referidos','10%'],['#e6e8eb','Directo','10%']].map(([color,label,pct]) => (
                   <div key={label} className="flex items-center gap-2"><div className="w-3 h-3 rounded-full" style={{ background: color }}></div><span>{label} <strong>{pct}</strong></span></div>
                 ))}
               </div>
@@ -73,7 +73,7 @@ export default function AdminAnalytics() {
           <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
             <h3 className="font-bold text-[#0A1A3A] mb-4">Engagement</h3>
             <div className="grid grid-cols-3 gap-4 mb-6">
-              {[['Tiempo promedio','4:32'],['Bounce rate','34%'],['Pags/sesion','3.2']].map(([label,val]) => (
+              {[['Tiempo promedio','4:32'],['Bounce rate','34%'],['Págs/sesión','3.2']].map(([label,val]) => (
                 <div key={label} className="bg-[#f7f9fc] p-4 rounded-lg text-center"><p className="text-xs text-slate-500 mb-1">{label}</p><p className="text-xl font-bold text-[#0A1A3A]">{val}</p></div>
               ))}
             </div>
@@ -92,10 +92,10 @@ export default function AdminAnalytics() {
 
         {/* Most Visited Pages */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-          <h3 className="font-bold text-[#0A1A3A] mb-4">Paginas mas visitadas</h3>
+          <h3 className="font-bold text-[#0A1A3A] mb-4">Páginas más visitadas</h3>
           <table className="w-full text-sm">
             <thead><tr className="border-b border-slate-100">
-              {['Pagina','Visitas','Tiempo prom.','Bounce rate'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
+              {['Página','Visitas','Tiempo prom.','Bounce rate'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
             </tr></thead>
             <tbody className="divide-y divide-slate-50">
               {pages.map((p, i) => (
@@ -114,7 +114,7 @@ export default function AdminAnalytics() {
         <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
           <h3 className="font-bold text-[#0A1A3A] mb-4">Rendimiento de Referidos</h3>
           <div className="grid md:grid-cols-3 gap-4 mb-4">
-            {[['Clicks en links referidos','234'],['Registros via referido','34'],['Conversion referidos','14.5%']].map(([label,val]) => (
+            {[['Clicks en links referidos','234'],['Registros via referido','34'],['Conversión referidos','14.5%']].map(([label,val]) => (
               <div key={label} className="bg-[#f7f9fc] p-4 rounded-lg"><p className="text-xs text-slate-500">{label}</p><p className="text-xl font-bold text-[#0A1A3A]">{val}</p></div>
             ))}
           </div>

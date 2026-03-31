@@ -19,9 +19,9 @@ export default function JugadorDashboard() {
             <h3 className="font-bold text-[#0A1A3A] mb-4" style={{fontFamily:"'Noto Serif'"}}>Actividad Reciente</h3>
             <div className="space-y-4">
               {[
-                {icon:'description',text:'Nuevo informe disponible: Analisis Marzo 2026',date:'Hace 2 dias',color:'text-blue-600'},
+                {icon:'description',text:'Nuevo informe disponible: Análisis Marzo 2026',date:'Hace 2 días',color:'text-blue-600'},
                 {icon:'check_circle',text:'Plan de Mercado completado',date:'Hace 1 semana',color:'text-green-600'},
-                {icon:'school',text:'Inscripcion confirmada: Curso Scouting Sep 2026',date:'Hace 2 semanas',color:'text-purple-600'},
+                {icon:'school',text:'Inscripción confirmada: Curso Scouting Sep 2026',date:'Hace 2 semanas',color:'text-purple-600'},
                 {icon:'payment',text:'Pago procesado: Plan de Mercado - \u20AC250',date:'Hace 3 semanas',color:'text-amber-600'},
               ].map((a,i)=>(
                 <div key={i} className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50">
@@ -44,7 +44,7 @@ export default function JugadorDashboard() {
                 <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">Completado</span>
               </div>
               <div className="flex items-center justify-between p-4 bg-[#f2f4f7] rounded-lg">
-                <div><h4 className="font-semibold text-sm">Informe Tecnico</h4><p className="text-xs text-slate-500 mt-0.5">Contratado: 15/01/2026</p></div>
+                <div><h4 className="font-semibold text-sm">Informe Técnico</h4><p className="text-xs text-slate-500 mt-0.5">Contratado: 15/01/2026</p></div>
                 <span className="text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800">En progreso</span>
               </div>
             </div>
@@ -55,12 +55,12 @@ export default function JugadorDashboard() {
         <div className="space-y-6">
           <FifaCard name="Juan Perez" position="MCO" rating={76} stats={{RIT:72,REG:80,TIR:68,DEF:55,PAS:78,FIS:70}} level="semi" />
           <div className="bg-white rounded-xl border border-slate-100 p-6">
-            <h3 className="font-bold text-[#0A1A3A] mb-3 text-sm">Codigo de Referido</h3>
+            <h3 className="font-bold text-[#0A1A3A] mb-3 text-sm">Código de Referido</h3>
             <div className="bg-[#f2f4f7] rounded-lg p-3 flex items-center justify-between">
               <code className="text-sm font-mono text-[#0A1A3A]">JUAN-ML2026</code>
               <button className="text-[#445d94] hover:text-[#0A1A3A]"><Icon name="content_copy" className="text-lg" /></button>
             </div>
-            <p className="text-xs text-slate-500 mt-2">Comparte y obtene 10% de descuento</p>
+            <p className="text-xs text-slate-500 mt-2">Comparte y obtén un 10% de descuento</p>
           </div>
         </div>
       </div>

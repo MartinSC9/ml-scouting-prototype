@@ -8,24 +8,24 @@ export default function AdminDashboard() {
     { label: 'Servicios', value: '18', change: '+5%', barW: '65%', barColor: 'bg-[#445d94]' },
     { label: 'Leads Curso', value: '83', change: '+22%', barW: '83%', barColor: 'bg-[#6483c6]' },
     { label: 'Ingresos', value: '\u20AC4.8k', change: '+15%', barW: '15%', barColor: 'bg-[#0A1A3A]' },
-    { label: 'Conversion', value: '8.5%', change: '+1.2%', barW: '45%', barColor: 'bg-[#2b467a]' },
-    { label: 'Diagnosticos', value: '156', change: '+30%', barW: '70%', barColor: 'bg-[#aec6ff]' },
+    { label: 'Conversión', value: '8.5%', change: '+1.2%', barW: '45%', barColor: 'bg-[#2b467a]' },
+    { label: 'Diagnósticos', value: '156', change: '+30%', barW: '70%', barColor: 'bg-[#aec6ff]' },
   ]
 
   const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
   const barHeights = ['40%','45%','55%','50%','65%','75%','85%','70%','80%','90%','85%','95%']
 
   const recentActivity = [
-    { user: 'Carlos Ruiz', action: 'Diagnostico completado', status: 'EXITO', statusBg: 'bg-green-100 text-green-700', time: 'Hoy, 14:20' },
+    { user: 'Carlos Ruiz', action: 'Diagnóstico completado', status: 'ÉXITO', statusBg: 'bg-green-100 text-green-700', time: 'Hoy, 14:20' },
     { user: 'Elena M.', action: 'Nuevo Lead Curso', status: 'NUEVO', statusBg: 'bg-blue-100 text-blue-700', time: 'Hoy, 13:45' },
-    { user: 'Juan Torres', action: 'Suscripcion Premium', status: 'PAGO', statusBg: 'bg-purple-100 text-purple-700', time: 'Hoy, 12:10' },
+    { user: 'Juan Torres', action: 'Suscripción Premium', status: 'PAGO', statusBg: 'bg-purple-100 text-purple-700', time: 'Hoy, 12:10' },
     { user: 'S. Fernandez', action: 'Informe enviado', status: 'ENVIADO', statusBg: 'bg-slate-100 text-slate-600', time: 'Hoy, 11:30' },
     { user: 'Mario Gil', action: 'Ticket soporte', status: 'PENDIENTE', statusBg: 'bg-orange-100 text-orange-700', time: 'Hoy, 10:05' },
   ]
 
   const meetings = [
     { date: '25 Oct, 10:00', player: 'Andres M.', type: 'Diagnostico Inicial', hasLink: true },
-    { date: '25 Oct, 11:30', player: 'Lucia D.', type: 'Mentoria Semanal', hasLink: true },
+    { date: '25 Oct, 11:30', player: 'Lucía D.', type: 'Mentoría Semanal', hasLink: true },
     { date: '26 Oct, 16:00', player: 'Beto V.', type: 'Seguimiento Plan', hasLink: false },
   ]
 
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
               <div className="flex justify-between items-center mb-8">
                 <h3 className="text-xl font-bold text-[#0A1A3A]" style={{ fontFamily: "'Noto Serif'" }}>Ingresos mensuales</h3>
                 <select className="bg-[#f2f4f7] border-none text-xs font-bold rounded-lg px-3 py-1.5">
-                  <option>Ultimos 12 meses</option>
+                  <option>Últimos 12 meses</option>
                 </select>
               </div>
               <div className="h-64 flex items-end justify-between gap-2 px-2 relative">
@@ -99,7 +99,7 @@ export default function AdminDashboard() {
           <div className="space-y-8">
             {/* Service Distribution */}
             <div className="bg-white p-6 rounded-xl shadow-[0_10px_40px_rgba(10,26,58,0.03)]">
-              <h3 className="text-xl font-bold text-[#0A1A3A] mb-6" style={{ fontFamily: "'Noto Serif'" }}>Distribucion de servicios</h3>
+              <h3 className="text-xl font-bold text-[#0A1A3A] mb-6" style={{ fontFamily: "'Noto Serif'" }}>Distribución de servicios</h3>
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                   <circle cx="18" cy="18" fill="none" r="16" stroke="#e0e3e6" strokeWidth="4" />
@@ -113,7 +113,7 @@ export default function AdminDashboard() {
                 </div>
               </div>
               <div className="space-y-3">
-                {[['#0a1a3a','Scouting Elite','45%'],['#445d94','Analisis Video','30%'],['#a7c0fd','Mentoria','25%']].map(([color,label,pct]) => (
+                {[['#0a1a3a','Scouting Élite','45%'],['#445d94','Análisis Video','30%'],['#a7c0fd','Mentoría','25%']].map(([color,label,pct]) => (
                   <div key={label} className="flex justify-between items-center">
                     <span className="text-xs font-medium text-slate-600 flex items-center gap-2"><div className="w-2 h-2 rounded-full" style={{ background: color }}></div>{label}</span>
                     <span className="text-xs font-bold text-[#0A1A3A]">{pct}</span>
@@ -126,7 +126,7 @@ export default function AdminDashboard() {
             <div className="bg-white p-6 rounded-xl shadow-[0_10px_40px_rgba(10,26,58,0.03)]">
               <h3 className="text-xl font-bold text-[#0A1A3A] mb-6" style={{ fontFamily: "'Noto Serif'" }}>Jugadores por nivel</h3>
               <div className="space-y-4">
-                {[['Futbol Base',120,'48.5%','bg-[#0A1A3A]'],['Amateur / Regional',85,'34.4%','bg-[#445d94]'],['Semi-Pro',32,'13.0%','bg-[#a7c0fd]'],['Profesional',10,'4.1%','bg-[#6483c6]']].map(([label,count,w,color]) => (
+                {[['Fútbol Base',120,'48.5%','bg-[#0A1A3A]'],['Amateur / Regional',85,'34.4%','bg-[#445d94]'],['Semi-Pro',32,'13.0%','bg-[#a7c0fd]'],['Profesional',10,'4.1%','bg-[#6483c6]']].map(([label,count,w,color]) => (
                   <div key={label}>
                     <div className="flex justify-between text-xs font-bold mb-1">
                       <span className="text-slate-600">{label}</span>
@@ -149,7 +149,7 @@ export default function AdminDashboard() {
                 <div className="absolute top-[55%] left-[30%] w-2 h-2 bg-[#0A1A3A] rounded-full opacity-50"></div>
                 <div className="absolute top-[45%] left-[75%] w-2 h-2 bg-[#0A1A3A] rounded-full opacity-50"></div>
               </div>
-              <p className="text-[10px] text-slate-400 mt-4 font-bold text-center uppercase tracking-widest">Principales: Espana, Argentina, Mexico</p>
+              <p className="text-[10px] text-slate-400 mt-4 font-bold text-center uppercase tracking-widest">Principales: España, Argentina, México</p>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function AdminDashboard() {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead className="bg-slate-50 text-[10px] uppercase tracking-wider font-bold text-slate-500">
-                  <tr><th className="px-6 py-4">Usuario</th><th className="px-6 py-4">Accion</th><th className="px-6 py-4">Estado</th><th className="px-6 py-4 text-right">Fecha</th></tr>
+                  <tr><th className="px-6 py-4">Usuario</th><th className="px-6 py-4">Acción</th><th className="px-6 py-4">Estado</th><th className="px-6 py-4 text-right">Fecha</th></tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50 text-sm">
                   {recentActivity.map((a, i) => (
@@ -184,7 +184,7 @@ export default function AdminDashboard() {
           {/* Meetings */}
           <div className="bg-white rounded-xl shadow-[0_10px_40px_rgba(10,26,58,0.03)] overflow-hidden">
             <div className="p-6 flex justify-between items-center border-b border-slate-50">
-              <h3 className="text-xl font-bold text-[#0A1A3A]" style={{ fontFamily: "'Noto Serif'" }}>Proximas Reuniones</h3>
+              <h3 className="text-xl font-bold text-[#0A1A3A]" style={{ fontFamily: "'Noto Serif'" }}>Próximas Reuniones</h3>
               <button className="bg-[#0A1A3A] text-white text-[10px] uppercase font-bold px-4 py-2 rounded shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2">
                 <Icon name="add" className="text-sm" /> Agendar
               </button>
@@ -192,7 +192,7 @@ export default function AdminDashboard() {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead className="bg-slate-50 text-[10px] uppercase tracking-wider font-bold text-slate-500">
-                  <tr><th className="px-6 py-4">Fecha / Hora</th><th className="px-6 py-4">Jugador</th><th className="px-6 py-4">Tipo</th><th className="px-6 py-4 text-right">Accion</th></tr>
+                  <tr><th className="px-6 py-4">Fecha / Hora</th><th className="px-6 py-4">Jugador</th><th className="px-6 py-4">Tipo</th><th className="px-6 py-4 text-right">Acción</th></tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50 text-sm">
                   {meetings.map((m, i) => (

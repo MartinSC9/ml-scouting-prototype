@@ -16,8 +16,8 @@ export default function JugadorPerfil() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-[#0A1A3A]" style={{fontFamily:"'Noto Serif'"}}>Juan Perez</h1>
-                <p className="text-sm text-slate-500 mt-1">22 anos · Argentina · Mediocampista Ofensivo</p>
-                <p className="text-sm text-slate-500">Racing Club · Primera Division</p>
+                <p className="text-sm text-slate-500 mt-1">22 años · Argentina · Mediocampista Ofensivo</p>
+                <p className="text-sm text-slate-500">Racing Club · Primera División</p>
                 <span className="inline-block mt-2 text-xs font-semibold px-3 py-1 rounded-full bg-[#a7c0fd] text-[#0A1A3A]">Semi Profesional</span>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default function JugadorPerfil() {
                 <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">Completado</span>
               </div>
               <div className="flex items-center justify-between p-4 bg-[#f2f4f7] rounded-lg">
-                <div><h4 className="font-semibold text-sm">Informe Tecnico</h4><p className="text-xs text-slate-500">Contratado: 15/01/2026</p></div>
+                <div><h4 className="font-semibold text-sm">Informe Técnico</h4><p className="text-xs text-slate-500">Contratado: 15/01/2026</p></div>
                 <span className="text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800">En progreso</span>
               </div>
             </div>
@@ -47,7 +47,7 @@ export default function JugadorPerfil() {
           <div className="bg-white rounded-xl border border-slate-100 p-6">
             <h2 className="font-bold text-[#0A1A3A] mb-4" style={{fontFamily:"'Noto Serif'"}}>Mis Informes</h2>
             <div className="space-y-3">
-              {[{t:'Informe Marzo 2026',d:'15/03/2026'},{t:'Analisis Partido vs Independiente',d:'02/03/2026'},{t:'Informe Inicial',d:'20/01/2026'}].map((r,i)=>(
+              {[{t:'Informe Marzo 2026',d:'15/03/2026'},{t:'Análisis Partido vs Independiente',d:'02/03/2026'},{t:'Informe Inicial',d:'20/01/2026'}].map((r,i)=>(
                 <div key={i} className="flex items-center justify-between p-4 bg-[#f2f4f7] rounded-lg">
                   <div><h4 className="font-semibold text-sm">{r.t}</h4><p className="text-xs text-slate-500">{r.d}</p></div>
                   <button className="p-2 text-[#445d94] hover:bg-[#d9e2ff]/30 rounded-lg"><Icon name="download" /></button>
@@ -64,7 +64,7 @@ export default function JugadorPerfil() {
                 {['Fecha','Servicio','Monto','Estado'].map(h=><th key={h} className="text-left py-2 font-semibold text-slate-500">{h}</th>)}
               </tr></thead>
               <tbody>
-                {[{f:'01/03/2026',s:'Plan de Mercado',m:'\u20AC250',e:'Completado'},{f:'15/01/2026',s:'Informe Tecnico',m:'\u20AC150',e:'Completado'}].map((p,i)=>(
+                {[{f:'01/03/2026',s:'Plan de Mercado',m:'\u20AC250',e:'Completado'},{f:'15/01/2026',s:'Informe Técnico',m:'\u20AC150',e:'Completado'}].map((p,i)=>(
                   <tr key={i} className="border-b border-slate-50">
                     <td className="py-3 text-slate-500">{p.f}</td><td className="py-3">{p.s}</td><td className="py-3 font-medium">{p.m}</td>
                     <td className="py-3"><span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">{p.e}</span></td>

@@ -70,7 +70,7 @@ export default function Login() {
             <Logo size={140} />
           </Link>
           <h1 className="text-4xl font-bold leading-tight mb-4" style={{ fontFamily: "'Noto Serif'" }}>
-            Tu carrera futbolistica,<br />
+            Tu carrera futbolística,<br />
             <span className="text-[#7bf1fc]">en tus manos.</span>
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed mb-12">
@@ -79,9 +79,9 @@ export default function Login() {
 
           <div className="space-y-4 text-left">
             {[
-              { icon: 'analytics', title: 'Diagnostico Deportivo', desc: 'Evalua tu rendimiento con metricas profesionales' },
-              { icon: 'description', title: 'Informes Personalizados', desc: 'Recibe analisis detallados de tu perfil' },
-              { icon: 'school', title: 'Cursos de Scouting', desc: 'Aprende como posicionarte en el mercado' },
+              { icon: 'analytics', title: 'Diagnóstico Deportivo', desc: 'Evalúa tu rendimiento con métricas profesionales' },
+              { icon: 'description', title: 'Informes Personalizados', desc: 'Recibe análisis detallados de tu perfil' },
+              { icon: 'school', title: 'Cursos de Scouting', desc: 'Aprende cómo posicionarte en el mercado' },
             ].map((f, i) => (
               <div key={i} className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
                 <div className="w-10 h-10 rounded-lg bg-[#006970]/30 flex items-center justify-center flex-shrink-0">
@@ -200,12 +200,12 @@ export default function Login() {
           </div>
 
           <p className="text-center text-xs text-slate-400 mt-6">
-            ¿No tenes cuenta? <Link to="/registro" className="text-[#006970] font-semibold hover:underline">Registrate</Link>
+            ¿No tienes cuenta? <Link to="/registro" className="text-[#006970] font-semibold hover:underline">Regístrate</Link>
           </p>
           <div className="flex justify-center gap-3 mt-3 text-[10px] text-slate-400">
-            <Link to="/legal?tab=privacidad" className="hover:text-slate-600 transition">Politica de Privacidad</Link>
+            <Link to="/legal?tab=privacidad" className="hover:text-slate-600 transition">Política de Privacidad</Link>
             <span>·</span>
-            <Link to="/legal?tab=terminos" className="hover:text-slate-600 transition">Terminos de Uso</Link>
+            <Link to="/legal?tab=terminos" className="hover:text-slate-600 transition">Términos de Uso</Link>
           </div>
         </div>
       </div>

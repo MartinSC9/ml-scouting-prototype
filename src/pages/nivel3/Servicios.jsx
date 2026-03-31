@@ -8,19 +8,19 @@ const services = [
   {
     id: 'diagnostico',
     icon: 'person_search',
-    title: 'Diagnostico con Scout Profesional 1 a 1',
+    title: 'Diagnóstico con Scout Profesional 1 a 1',
     price: '\u20AC100',
     features: [
-      'Sesion 1 a 1 con scout profesional',
-      'Analisis de tu situacion actual de juego',
-      'Orientacion sobre que mejorar y donde estas parado',
-      'Opinion profesional sobre tu perfil como jugador',
+      'Sesión 1 a 1 con scout profesional',
+      'Análisis de tu situación actual de juego',
+      'Orientación sobre qué mejorar y dónde estás parado',
+      'Opinión profesional sobre tu perfil como jugador',
     ],
-    desc: 'Disenado para entender tu situacion actual de juego, que cuestiones mejorar y donde estas parado hoy futbolisticamente y que te falta para un proximo paso.',
-    detail: 'Un scout profesional analiza tu perfil en una sesion individual. Evaluamos tu posicion, tu nivel competitivo, tus fortalezas y las areas donde necesitas mejorar. Al finalizar, recibis una devolucion honesta y orientacion clara sobre tus proximos pasos.',
+    desc: 'Diseñado para entender tu situación actual de juego, qué cuestiones mejorar y dónde estás parado hoy futbolísticamente y qué te falta para un próximo paso.',
+    detail: 'Un scout profesional analiza tu perfil en una sesión individual. Evaluamos tu posición, tu nivel competitivo, tus fortalezas y las áreas donde necesitas mejorar. Al finalizar, recibes una devolución honesta y orientación clara sobre tus próximos pasos.',
     link: 'https://mlscouting.gumroad.com/l/diagosticodeperfilconscoutprofesional',
-    idealFor: 'Jugadores que quieren una opinion profesional antes de invertir en un plan mas completo.',
-    duration: 'Sesion de 45-60 minutos',
+    idealFor: 'Jugadores que quieren una opinión profesional antes de invertir en un plan más completo.',
+    duration: 'Sesión de 45-60 minutos',
   },
   {
     id: 'plan-de-mercado',
@@ -29,71 +29,71 @@ const services = [
     price: '\u20AC200',
     popular: true,
     features: [
-      'Analisis personalizado del material del futbolista',
+      'Análisis personalizado del material del futbolista',
       'Informe profesional de scouting',
-      'Video de analisis tecnico del jugador',
-      'Guia de ligas y equipos donde tu perfil encaja',
+      'Video de análisis técnico del jugador',
+      'Guía de ligas y equipos donde tu perfil encaja',
       'Contactos de clubes o estructuras donde presentar tu perfil',
-      'Sesion 1 a 1 con devolucion tecnica',
-      'Optimizacion del perfil del jugador',
-      'Asesoria administrativa',
+      'Sesión 1 a 1 con devolución técnica',
+      'Optimización del perfil del jugador',
+      'Asesoría administrativa',
     ],
-    desc: 'Analizamos tu perfil y tu material, definimos a que ligas o equipos puedes apuntar, te entregamos informe, video, estrategia y contactos.',
-    detail: 'Nuestro servicio mas popular. Analizamos tu material audiovisual, creamos un informe profesional de scouting, un video de analisis tecnico, y definimos una estrategia con ligas y clubes donde tu perfil encaja. Ademas te entregamos contactos reales y te asesoramos en lo administrativo.',
+    desc: 'Analizamos tu perfil y tu material, definimos a qué ligas o equipos puedes apuntar, te entregamos informe, video, estrategia y contactos.',
+    detail: 'Nuestro servicio más popular. Analizamos tu material audiovisual, creamos un informe profesional de scouting, un video de análisis técnico, y definimos una estrategia con ligas y clubes donde tu perfil encaja. Además te entregamos contactos reales y te asesoramos en lo administrativo.',
     link: 'https://mlscouting.gumroad.com/l/plandemercadopersonalizado',
     idealFor: 'Jugadores que ya tienen material y quieren una estrategia clara para posicionarse en el mercado.',
-    duration: 'Entrega en 7-10 dias habiles',
+    duration: 'Entrega en 7-10 días hábiles',
   },
   {
     id: 'evaluacion',
     icon: 'rocket_launch',
-    title: 'Evaluacion Individual Orientada al Salto de Nivel',
+    title: 'Evaluación Individual Orientada al Salto de Nivel',
     price: '\u20AC600',
     features: [
       'Todo lo del Plan de Mercado',
-      'Analisis con partidos completos',
+      'Análisis con partidos completos',
       'Posicionamiento en el mercado hasta septiembre',
       'Ofrecimiento de tu informe y material a clubes',
     ],
-    desc: 'La opcion mas completa. Se trabaja con partidos completos, analisis profesional y se te posiciona en el mercado realizando nosotros la oferta a los clubes.',
-    detail: 'Incluye todo lo del Plan de Mercado pero con un nivel de profundidad superior. Trabajamos con partidos completos (no solo highlights), te posicionamos activamente en el mercado y somos nosotros quienes ofrecen tu perfil directamente a los clubes. Acompanamiento continuo hasta septiembre.',
+    desc: 'La opción más completa. Se trabaja con partidos completos, análisis profesional y se te posiciona en el mercado realizando nosotros la oferta a los clubes.',
+    detail: 'Incluye todo lo del Plan de Mercado pero con un nivel de profundidad superior. Trabajamos con partidos completos (no solo highlights), te posicionamos activamente en el mercado y somos nosotros quienes ofrecen tu perfil directamente a los clubes. Acompañamiento continuo hasta septiembre.',
     link: 'https://calendly.com/lujanmarco15/30min',
     idealFor: 'Jugadores con nivel competitivo que buscan dar el salto a una liga superior.',
-    duration: 'Acompanamiento continuo por temporada',
+    duration: 'Acompañamiento continuo por temporada',
   },
   {
     id: 'perfil-video',
     icon: 'videocam',
-    title: 'Asesoria para Perfil y Video',
+    title: 'Asesoría para Perfil y Video',
     price: '\u20AC35',
     features: [
-      'Como armar tu video de highlights',
-      'Como presentar tu perfil a clubes',
-      'Guia para enviar material correctamente',
+      'Cómo armar tu video de highlights',
+      'Cómo presentar tu perfil a clubes',
+      'Guía para enviar material correctamente',
     ],
-    desc: 'Si todavia no tienes bien estructurado tu perfil o tu material, este servicio te ayuda.',
-    detail: 'Te ensenamos paso a paso como armar un video de highlights profesional, como estructurar tu perfil para presentarlo a clubes y agencias, y como enviar tu material de forma correcta para que no termine ignorado.',
+    desc: 'Si todavía no tienes bien estructurado tu perfil o tu material, este servicio te ayuda.',
+    detail: 'Te enseñamos paso a paso cómo armar un video de highlights profesional, cómo estructurar tu perfil para presentarlo a clubes y agencias, y cómo enviar tu material de forma correcta para que no termine ignorado.',
     link: 'https://mlscouting.gumroad.com/l/mcgcsu',
-    idealFor: 'Jugadores que aun no tienen su material listo o no saben como presentarse.',
-    duration: 'Guia + sesion de consulta',
+    idealFor: 'Jugadores que aún no tienen su material listo o no saben cómo presentarse.',
+    duration: 'Guía + sesión de consulta',
     small: true,
   },
 ]
 
 const comparison = [
-  ['Sesion 1 a 1 con scout profesional', true, true, true, false],
-  ['Analisis de situacion actual de juego', true, true, true, false],
+  ['Sesión 1 a 1 con scout profesional', true, true, true, false],
+  ['Análisis de situación actual de juego', true, true, true, false],
   ['Informe profesional de scouting', false, true, true, false],
-  ['Video de analisis tecnico', false, true, true, false],
-  ['Guia de ligas y equipos', false, true, true, false],
+  ['Video de análisis técnico', false, true, true, false],
+  ['Guía de ligas y equipos', false, true, true, false],
   ['Contactos de clubes', false, true, true, false],
-  ['Optimizacion del perfil del jugador', false, true, true, false],
-  ['Asesoria administrativa', false, true, true, false],
-  ['Analisis con partidos completos', false, false, true, false],
+  ['Optimización del perfil del jugador', false, true, true, false],
+  ['Asesoría administrativa', false, true, true, false],
+  ['Análisis con partidos completos', false, false, true, false],
   ['Posicionamiento en el mercado', false, false, true, false],
   ['Ofrecimiento de material a clubes', false, false, true, false],
-  ['Guia para armar video de highlights', false, false, false, true],
-  ['Guia para presentar perfil a clubes', false, false, false, true],
+  ['Guía para armar video de highlights', false, false, false, true],
+  ['Guía para presentar perfil a clubes', false, false, false, true],
 ]
 
 export default function Servicios() {
@@ -134,7 +134,7 @@ export default function Servicios() {
         <section className="bg-[#0A1A3A] py-20 px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl font-bold text-white mb-4" style={{fontFamily:"'Noto Serif'"}}>Servicios para Jugadores</h1>
-            <p className="text-slate-300 text-lg">Soluciones profesionales para cada etapa de tu carrera futbolistica.</p>
+            <p className="text-slate-300 text-lg">Soluciones profesionales para cada etapa de tu carrera futbolística.</p>
           </div>
         </section>
 
@@ -148,12 +148,12 @@ export default function Servicios() {
                     <Icon name="quiz" className="text-[#445d94]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-[#0A1A3A] text-sm">No sabes cual necesitas?</p>
-                    <p className="text-slate-500 text-xs">Hace el diagnostico gratuito y te recomendamos el servicio ideal para tu caso.</p>
+                    <p className="font-semibold text-[#0A1A3A] text-sm">¿No sabes cuál necesitas?</p>
+                    <p className="text-slate-500 text-xs">Haz el diagnóstico gratuito y te recomendamos el servicio ideal para tu caso.</p>
                   </div>
                 </div>
                 <span className="hidden sm:flex items-center gap-1 text-[#445d94] font-semibold text-sm whitespace-nowrap group-hover:gap-2 transition-all">
-                  Hacer diagnostico <Icon name="arrow_forward" className="text-sm" />
+                  Hacer diagnóstico <Icon name="arrow_forward" className="text-sm" />
                 </span>
               </div>
             </Link>
@@ -166,7 +166,7 @@ export default function Servicios() {
             <div className="grid md:grid-cols-4 gap-4">
               {services.map((s) => (
                 <button key={s.id} onClick={() => toggle(s.id)} className={`text-left bg-white rounded-xl p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all relative flex flex-col cursor-pointer ${open === s.id ? 'ring-2 ring-[#445d94] border-transparent' : s.popular ? 'border-2 border-[#0A1A3A]' : 'border border-slate-100'}`}>
-                  {s.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A1A3A] text-white text-[10px] px-3 py-0.5 rounded-full font-semibold">Mas popular</span>}
+                  {s.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0A1A3A] text-white text-[10px] px-3 py-0.5 rounded-full font-semibold">Más popular</span>}
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 bg-[#0A1A3A] rounded-lg flex items-center justify-center flex-shrink-0"><Icon name={s.icon} className="text-white" /></div>
                     <p className="text-xl font-bold text-[#0A1A3A]">{s.price}</p>
@@ -190,7 +190,7 @@ export default function Servicios() {
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-[#0A1A3A] rounded-lg flex items-center justify-center"><Icon name={openService.icon} className="text-white text-xl" /></div>
                     <span className="text-2xl font-bold text-[#0A1A3A]">{openService.price}</span>
-                    {openService.popular && <span className="bg-[#445d94] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Mas popular</span>}
+                    {openService.popular && <span className="bg-[#445d94] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Más popular</span>}
                   </div>
                   <h2 className="text-2xl font-bold text-[#0A1A3A] mb-4" style={{fontFamily:"'Noto Serif'"}}>{openService.title}</h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-5">{openService.detail}</p>
@@ -202,11 +202,11 @@ export default function Servicios() {
                     <p className="text-sm"><span className="font-semibold text-[#0A1A3A]">Ideal para: </span><span className="text-slate-600">{openService.idealFor}</span></p>
                   </div>
                   <a href={openService.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#0A1A3A] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0A1A3A]/90 hover:scale-[1.03] active:scale-95 transition-all cursor-pointer">
-                    {openService.link.includes('calendly') ? 'Agendar Reunion' : 'Contratar Servicio'}
+                    {openService.link.includes('calendly') ? 'Agendar Reunión' : 'Contratar Servicio'}
                   </a>
                 </div>
                 <div className="bg-[#0A1A3A] p-8 md:p-10 flex flex-col justify-center">
-                  <h4 className="text-white font-bold mb-5">Que incluye:</h4>
+                  <h4 className="text-white font-bold mb-5">Qué incluye:</h4>
                   <ul className="space-y-3">
                     {openService.features.map((f, fi) => (
                       <li key={fi} className="flex items-start gap-3 text-sm text-slate-200">
@@ -228,10 +228,10 @@ export default function Servicios() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#0A1A3A] text-white">
-                    <th className="text-left p-4 font-semibold">Caracteristica</th>
-                    <th className="p-4 font-semibold text-center whitespace-nowrap">Diagnostico<br/><span className="font-normal text-slate-300">{'\u20AC'}100</span></th>
+                    <th className="text-left p-4 font-semibold">Característica</th>
+                    <th className="p-4 font-semibold text-center whitespace-nowrap">Diagnóstico<br/><span className="font-normal text-slate-300">{'\u20AC'}100</span></th>
                     <th className="p-4 font-semibold text-center whitespace-nowrap">Plan de Mercado<br/><span className="font-normal text-slate-300">{'\u20AC'}200</span></th>
-                    <th className="p-4 font-semibold text-center whitespace-nowrap">Evaluacion<br/><span className="font-normal text-slate-300">{'\u20AC'}600</span></th>
+                    <th className="p-4 font-semibold text-center whitespace-nowrap">Evaluación<br/><span className="font-normal text-slate-300">{'\u20AC'}600</span></th>
                     <th className="p-4 font-semibold text-center whitespace-nowrap">Perfil y Video<br/><span className="font-normal text-slate-300">{'\u20AC'}35</span></th>
                   </tr>
                 </thead>
@@ -255,9 +255,9 @@ export default function Servicios() {
         {/* CTA */}
         <section className="py-12 px-8 bg-[#0A1A3A]">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-white mb-3" style={{fontFamily:"'Noto Serif'"}}>No sabes cual elegir?</h2>
-            <p className="text-slate-300 text-sm mb-6">Hace el diagnostico gratuito y te recomendamos el servicio ideal.</p>
-            <Link to="/diagnostico" className="inline-block bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition">Comenzar Diagnostico</Link>
+            <h2 className="text-2xl font-bold text-white mb-3" style={{fontFamily:"'Noto Serif'"}}>¿No sabes cuál elegir?</h2>
+            <p className="text-slate-300 text-sm mb-6">Haz el diagnóstico gratuito y te recomendamos el servicio ideal.</p>
+            <Link to="/diagnostico" className="inline-block bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 transition">Comenzar Diagnóstico</Link>
           </div>
         </section>
 

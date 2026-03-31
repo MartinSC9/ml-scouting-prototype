@@ -18,7 +18,7 @@ export default function AdminConfiguracion() {
   ]
 
   return (
-    <AdminLayout activeItem="configuracion" title="Configuracion" subtitle="Ajustes de la plataforma" level={3}>
+    <AdminLayout activeItem="configuracion" title="Configuración" subtitle="Ajustes de la plataforma" level={3}>
       <section className="p-8">
         <div className="flex gap-8">
           {/* Vertical Tabs */}
@@ -47,8 +47,8 @@ export default function AdminConfiguracion() {
                 </div>
                 <div className="mb-4"><label className="block text-sm font-medium text-slate-700 mb-1">Email</label><input type="email" defaultValue="marco@mlscouting.com" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div><label className="block text-sm font-medium text-slate-700 mb-1">Nueva contrasena</label><input type="password" placeholder="********" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
-                  <div><label className="block text-sm font-medium text-slate-700 mb-1">Confirmar contrasena</label><input type="password" placeholder="********" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
+                  <div><label className="block text-sm font-medium text-slate-700 mb-1">Nueva contraseña</label><input type="password" placeholder="********" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
+                  <div><label className="block text-sm font-medium text-slate-700 mb-1">Confirmar contraseña</label><input type="password" placeholder="********" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
                 </div>
                 <button className="bg-[#0A1A3A] text-white px-6 py-2.5 rounded-lg text-sm font-semibold">Guardar cambios</button>
               </div>
@@ -58,9 +58,9 @@ export default function AdminConfiguracion() {
             {activeTab === 'servicios' && (
               <div className="space-y-4">
                 {[
-                  { name: 'Informe Tecnico', price: 150, desc: 'Analisis completo de capacidades tecnicas, fisicas y tacticas.' },
+                  { name: 'Informe Técnico', price: 150, desc: 'Análisis completo de capacidades técnicas, físicas y tácticas.' },
                   { name: 'Plan de Mercado', price: 250, desc: 'Estrategia personalizada para posicionarte en mercados adecuados.' },
-                  { name: 'Representacion', price: 500, desc: 'Acompanamiento integral con acceso a red de clubes y agentes.' },
+                  { name: 'Representación', price: 500, desc: 'Acompañamiento integral con acceso a red de clubes y agentes.' },
                 ].map(s => (
                   <div key={s.name} className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                     <div className="flex items-center justify-between mb-4">
@@ -73,7 +73,7 @@ export default function AdminConfiguracion() {
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div><label className="block text-xs font-medium text-slate-500 mb-1">Precio ({'\u20AC'})</label><input type="number" defaultValue={s.price} className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm" /></div>
                     </div>
-                    <div><label className="block text-xs font-medium text-slate-500 mb-1">Descripcion</label><textarea rows="2" defaultValue={s.desc} className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm"></textarea></div>
+                    <div><label className="block text-xs font-medium text-slate-500 mb-1">Descripción</label><textarea rows="2" defaultValue={s.desc} className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm"></textarea></div>
                   </div>
                 ))}
                 <button className="bg-[#0A1A3A] text-white px-6 py-2.5 rounded-lg text-sm font-semibold">Guardar cambios</button>
@@ -83,7 +83,7 @@ export default function AdminConfiguracion() {
             {/* Pagos */}
             {activeTab === 'pagos' && (
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-                <h3 className="font-bold text-[#0A1A3A] text-lg mb-6">Configuracion de Pagos (Stripe)</h3>
+                <h3 className="font-bold text-[#0A1A3A] text-lg mb-6">Configuración de Pagos (Stripe)</h3>
                 <div className="space-y-4">
                   {[['Stripe Public Key','pk_live_*********************'],['Stripe Secret Key','sk_live_*********************'],['Webhook Secret','whsec_*********************']].map(([label,val]) => (
                     <div key={label}><label className="block text-sm font-medium text-slate-700 mb-1">{label}</label><input type="password" defaultValue={val} className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm font-mono" /></div>
@@ -97,10 +97,10 @@ export default function AdminConfiguracion() {
             {activeTab === 'emails' && (
               <div className="space-y-4">
                 {[
-                  { title: 'Bienvenida', subject: 'Bienvenido a ML Scouting', body: 'Hola {nombre}, gracias por registrarte en ML Scouting. Estamos emocionados de acompanarte en tu carrera futbolistica.' },
-                  { title: 'Confirmacion de compra', subject: 'Confirmacion de tu compra - {servicio}', body: 'Hola {nombre}, tu compra de {servicio} ha sido confirmada. Nos pondremos en contacto pronto para los proximos pasos.' },
-                  { title: 'Recordatorio de reunion', subject: 'Recordatorio: Tu reunion con ML Scouting es manana', body: 'Hola {nombre}, te recordamos que tenes una reunion agendada para manana a las {hora}.' },
-                  { title: 'Informe listo', subject: 'Tu informe esta listo para descargar', body: 'Hola {nombre}, tu {tipo_informe} esta listo. Podes descargarlo desde tu panel de jugador.' },
+                  { title: 'Bienvenida', subject: 'Bienvenido a ML Scouting', body: 'Hola {nombre}, gracias por registrarte en ML Scouting. Estamos emocionados de acompañarte en tu carrera futbolística.' },
+                  { title: 'Confirmación de compra', subject: 'Confirmación de tu compra - {servicio}', body: 'Hola {nombre}, tu compra de {servicio} ha sido confirmada. Nos pondremos en contacto pronto para los próximos pasos.' },
+                  { title: 'Recordatorio de reunión', subject: 'Recordatorio: Tu reunión con ML Scouting es mañana', body: 'Hola {nombre}, te recordamos que tienes una reunión agendada para mañana a las {hora}.' },
+                  { title: 'Informe listo', subject: 'Tu informe está listo para descargar', body: 'Hola {nombre}, tu {tipo_informe} está listo. Puedes descargarlo desde tu panel de jugador.' },
                 ].map(e => (
                   <div key={e.title} className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                     <h4 className="font-bold text-[#0A1A3A] mb-3">{e.title}</h4>
@@ -116,8 +116,8 @@ export default function AdminConfiguracion() {
             {activeTab === 'whatsapp' && (
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                 <h3 className="font-bold text-[#0A1A3A] text-lg mb-6">WhatsApp Business</h3>
-                <div className="mb-4"><label className="block text-sm font-medium text-slate-700 mb-1">Numero de WhatsApp</label><input type="tel" defaultValue="+54 9 11 2345-6789" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
-                <div className="mb-6"><label className="block text-sm font-medium text-slate-700 mb-1">Mensaje de bienvenida</label><textarea rows="4" defaultValue="Hola! Gracias por contactar a ML Scouting. Soy Marco Lujan. Contame en que puedo ayudarte: servicios de scouting, curso profesional o informacion general." className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm"></textarea></div>
+                <div className="mb-4"><label className="block text-sm font-medium text-slate-700 mb-1">Número de WhatsApp</label><input type="tel" defaultValue="+54 9 11 2345-6789" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" /></div>
+                <div className="mb-6"><label className="block text-sm font-medium text-slate-700 mb-1">Mensaje de bienvenida</label><textarea rows="4" defaultValue="¡Hola! Gracias por contactar a ML Scouting. Soy Marco Lujan. Cuéntame en qué puedo ayudarte: servicios de scouting, curso profesional o información general." className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm"></textarea></div>
                 <button className="bg-[#0A1A3A] text-white px-6 py-2.5 rounded-lg text-sm font-semibold">Guardar</button>
               </div>
             )}
@@ -128,9 +128,9 @@ export default function AdminConfiguracion() {
                 <h3 className="font-bold text-[#0A1A3A] text-lg mb-6">Idiomas</h3>
                 <div className="space-y-4">
                   {[
-                    { flag: 'ES', name: 'Espanol', desc: 'Idioma principal', checked: true },
-                    { flag: 'EN', name: 'English', desc: 'Traduccion parcial', checked: true },
-                    { flag: 'PT', name: 'Portugues', desc: 'Traduccion parcial', checked: false },
+                    { flag: 'ES', name: 'Español', desc: 'Idioma principal', checked: true },
+                    { flag: 'EN', name: 'English', desc: 'Traducción parcial', checked: true },
+                    { flag: 'PT', name: 'Portugués', desc: 'Traducción parcial', checked: false },
                   ].map(lang => (
                     <div key={lang.flag} className="flex items-center justify-between p-4 bg-[#f7f9fc] rounded-lg">
                       <div className="flex items-center gap-3">
@@ -155,9 +155,9 @@ export default function AdminConfiguracion() {
                   {[
                     { title: 'Nuevo registro de jugador', desc: 'Recibir email cuando un jugador se registra', freq: 'Inmediato' },
                     { title: 'Nueva compra de servicio', desc: 'Recibir email cuando se realiza una compra', freq: 'Inmediato' },
-                    { title: 'Diagnostico completado', desc: 'Notificar cuando alguien completa el diagnostico', freq: 'Inmediato' },
-                    { title: 'Nuevo mensaje de contacto', desc: 'Notificar cuando alguien envia un formulario', freq: 'Inmediato' },
-                    { title: 'Resumen semanal', desc: 'Resumen de metricas clave cada semana', freq: 'Semanal' },
+                    { title: 'Diagnostico completado', desc: 'Notificar cuando alguien completa el diagnóstico', freq: 'Inmediato' },
+                    { title: 'Nuevo mensaje de contacto', desc: 'Notificar cuando alguien envía un formulario', freq: 'Inmediato' },
+                    { title: 'Resumen semanal', desc: 'Resumen de métricas clave cada semana', freq: 'Semanal' },
                   ].map(n => (
                     <div key={n.title} className="flex items-center justify-between">
                       <div><p className="text-sm font-medium text-[#0A1A3A]">{n.title}</p><p className="text-xs text-slate-500">{n.desc}</p></div>
@@ -194,12 +194,12 @@ export default function AdminConfiguracion() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Meta Title</label>
-                    <input type="text" defaultValue="ML Scouting - Scouting Profesional de Futbol" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
+                    <input type="text" defaultValue="ML Scouting - Scouting Profesional de Fútbol" className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm" />
                     <p className="text-xs text-slate-400 mt-1">50/60 caracteres</p>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Meta Description</label>
-                    <textarea rows="2" defaultValue="Impulsamos carreras futbolisticas con scouting profesional, analisis de datos y una red global de clubes. Informe tecnico, plan de mercado y representacion." className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm"></textarea>
+                    <textarea rows="2" defaultValue="Impulsamos carreras futbolísticas con scouting profesional, análisis de datos y una red global de clubes. Informe técnico, plan de mercado y representación." className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm"></textarea>
                     <p className="text-xs text-slate-400 mt-1">148/160 caracteres</p>
                   </div>
                   <div>

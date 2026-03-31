@@ -57,7 +57,7 @@ export default function PlayerNavbar({ activeItem }) {
                   <span className="flex items-center gap-2"><Icon name="home" className="text-lg text-slate-400" /> Ir al sitio</span>
                 </Link>
                 <button onClick={() => { setMenuOpen(false); logout() }} className="w-full text-left px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2">
-                  <Icon name="logout" className="text-lg" /> Cerrar sesion
+                  <Icon name="logout" className="text-lg" /> Cerrar sesión
                 </button>
               </div>
             </>

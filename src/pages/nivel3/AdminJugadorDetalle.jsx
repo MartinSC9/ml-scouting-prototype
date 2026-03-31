@@ -14,7 +14,7 @@ export default function AdminJugadorDetalle() {
       <button className="border border-slate-200 text-slate-600 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1"><Icon name="edit" className="text-lg" />Editar</button>
       <button className="border border-slate-200 text-slate-600 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1"><Icon name="upload" className="text-lg" />Subir Informe</button>
       <button className="bg-[#0A1A3A] text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-1"><Icon name="picture_as_pdf" className="text-lg" />Generar Informe PDF</button>
-      <button className="border border-slate-200 text-slate-600 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1"><Icon name="notifications" className="text-lg" />Enviar Notificacion</button>
+      <button className="border border-slate-200 text-slate-600 px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1"><Icon name="notifications" className="text-lg" />Enviar Notificación</button>
     </div>
   )
 
@@ -44,7 +44,7 @@ export default function AdminJugadorDetalle() {
                 <img className="w-full h-full object-cover" alt="Mateo Lopez" src={images.playerPhoto} />
               </div>
               <h3 className="font-bold text-[#0A1A3A] text-lg" style={{ fontFamily: "'Noto Serif'" }}>Mateo Lopez</h3>
-              <p className="text-sm text-slate-500">Mediocampista Central · 22 anos</p>
+              <p className="text-sm text-slate-500">Mediocampista Central · 22 años</p>
               <span className="inline-block mt-2 text-xs bg-[#0A1A3A] text-white px-3 py-1 rounded-full">Elite</span>
             </div>
 
@@ -63,7 +63,7 @@ export default function AdminJugadorDetalle() {
             <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
               <h4 className="font-semibold text-[#0A1A3A] text-sm mb-4">Datos Personales</h4>
               <dl className="space-y-3 text-sm">
-                {[['Email','mateo.lopez@email.com'],['Telefono','+54 11 2345-6789'],['Pais','Argentina'],['Club','Independiente'],['Altura','1.78m'],['Peso','72kg'],['Pie','Diestro'],['Registro','10 Jun 2026']].map(([k,v]) => (
+                {[['Email','mateo.lopez@email.com'],['Teléfono','+54 11 2345-6789'],['País','Argentina'],['Club','Independiente'],['Altura','1.78m'],['Peso','72kg'],['Pie','Diestro'],['Registro','10 Jun 2026']].map(([k,v]) => (
                   <div key={k} className="flex justify-between"><dt className="text-slate-500">{k}</dt><dd className="text-slate-700">{v}</dd></div>
                 ))}
               </dl>
@@ -88,7 +88,7 @@ export default function AdminJugadorDetalle() {
             {activeTab === 'servicios' && (
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 space-y-4">
                 <div className="flex items-center justify-between p-4 bg-[#f7f9fc] rounded-lg">
-                  <div className="flex items-center gap-3"><Icon name="assessment" className="text-[#445d94]" /><div><p className="text-sm font-medium text-[#0A1A3A]">Informe Tecnico</p><p className="text-xs text-slate-500">Contratado: 15 Jul 2026 · Completado: 25 Jul 2026</p></div></div>
+                  <div className="flex items-center gap-3"><Icon name="assessment" className="text-[#445d94]" /><div><p className="text-sm font-medium text-[#0A1A3A]">Informe Técnico</p><p className="text-xs text-slate-500">Contratado: 15 Jul 2026 · Completado: 25 Jul 2026</p></div></div>
                   <span className="text-xs bg-green-50 text-green-700 px-3 py-1 rounded-full">Completado</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-[#f7f9fc] rounded-lg">
@@ -101,7 +101,7 @@ export default function AdminJugadorDetalle() {
             {/* Tab: Informes */}
             {activeTab === 'informes' && (
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 space-y-4">
-                {[['Informe Tecnico Completo','28 pags · 25 Jul 2026'],['Analisis de Mercados Objetivo','15 pags · 5 Sep 2026']].map(([title,desc]) => (
+                {[['Informe Técnico Completo','28 pags · 25 Jul 2026'],['Análisis de Mercados Objetivo','15 pags · 5 Sep 2026']].map(([title,desc]) => (
                   <div key={title} className="flex items-center justify-between p-4 bg-[#f7f9fc] rounded-lg">
                     <div className="flex items-center gap-3"><Icon name="picture_as_pdf" className="text-red-400" /><div><p className="text-sm font-medium text-[#0A1A3A]">{title}</p><p className="text-xs text-slate-500">{desc}</p></div></div>
                     <button className="text-sm text-[#0A1A3A] font-medium flex items-center gap-1"><Icon name="download" className="text-lg" />Descargar</button>
@@ -114,8 +114,8 @@ export default function AdminJugadorDetalle() {
             {activeTab === 'notas' && (
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                 <div className="space-y-4 mb-6">
-                  <div className="p-4 bg-[#f7f9fc] rounded-lg"><p className="text-xs text-slate-400 mb-1">Marco Lujan · 20 Ago 2026</p><p className="text-sm text-slate-600">Jugador con excelente vision de juego. Necesita mejorar resistencia fisica para adaptarse al futbol europeo. Mercados recomendados: Portugal, Belgica.</p></div>
-                  <div className="p-4 bg-[#f7f9fc] rounded-lg"><p className="text-xs text-slate-400 mb-1">Marco Lujan · 15 Jul 2026</p><p className="text-sm text-slate-600">Primera reunion. Muy motivado y con buena actitud. Tiene videos de calidad. Perfil interesante para ligas intermedias de Europa.</p></div>
+                  <div className="p-4 bg-[#f7f9fc] rounded-lg"><p className="text-xs text-slate-400 mb-1">Marco Lujan · 20 Ago 2026</p><p className="text-sm text-slate-600">Jugador con excelente visión de juego. Necesita mejorar resistencia física para adaptarse al fútbol europeo. Mercados recomendados: Portugal, Bélgica.</p></div>
+                  <div className="p-4 bg-[#f7f9fc] rounded-lg"><p className="text-xs text-slate-400 mb-1">Marco Lujan · 15 Jul 2026</p><p className="text-sm text-slate-600">Primera reunión. Muy motivado y con buena actitud. Tiene videos de calidad. Perfil interesante para ligas intermedias de Europa.</p></div>
                 </div>
                 <textarea rows="3" placeholder="Agregar nota..." className="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm mb-2"></textarea>
                 <button className="bg-[#0A1A3A] text-white px-4 py-2 rounded-lg text-sm font-semibold">Guardar nota</button>
@@ -130,7 +130,7 @@ export default function AdminJugadorDetalle() {
                     {['Fecha','Servicio','Monto','Estado'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
                   </tr></thead>
                   <tbody className="divide-y divide-slate-50">
-                    {[['15 Jul 2026','Informe Tecnico','\u20AC150'],['20 Ago 2026','Plan de Mercado','\u20AC250']].map(([f,s,m], i) => (
+                    {[['15 Jul 2026','Informe Técnico','\u20AC150'],['20 Ago 2026','Plan de Mercado','\u20AC250']].map(([f,s,m], i) => (
                       <tr key={i}><td className="p-3 text-slate-600">{f}</td><td className="p-3">{s}</td><td className="p-3 font-medium">{m}</td><td className="p-3"><span className="text-xs bg-green-50 text-green-700 px-2 py-1 rounded-full">Pagado</span></td></tr>
                     ))}
                   </tbody>
@@ -141,8 +141,8 @@ export default function AdminJugadorDetalle() {
             {/* Tab: Comunicaciones */}
             {activeTab === 'comunicaciones' && (
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 space-y-4">
-                <div className="p-4 bg-[#f7f9fc] rounded-lg"><div className="flex items-center gap-2 mb-2"><Icon name="email" className="text-lg text-[#445d94]" /><p className="text-xs text-slate-400">Email · 20 Ago 2026</p></div><p className="text-sm font-medium text-[#0A1A3A]">Confirmacion de contratacion - Plan de Mercado</p><p className="text-xs text-slate-500">Enviado automaticamente</p></div>
-                <div className="p-4 bg-[#f7f9fc] rounded-lg"><div className="flex items-center gap-2 mb-2"><Icon name="email" className="text-lg text-[#445d94]" /><p className="text-xs text-slate-400">Email · 25 Jul 2026</p></div><p className="text-sm font-medium text-[#0A1A3A]">Tu Informe Tecnico esta listo</p><p className="text-xs text-slate-500">Enviado manualmente por Marco</p></div>
+                <div className="p-4 bg-[#f7f9fc] rounded-lg"><div className="flex items-center gap-2 mb-2"><Icon name="email" className="text-lg text-[#445d94]" /><p className="text-xs text-slate-400">Email · 20 Ago 2026</p></div><p className="text-sm font-medium text-[#0A1A3A]">Confirmación de contratación - Plan de Mercado</p><p className="text-xs text-slate-500">Enviado automaticamente</p></div>
+                <div className="p-4 bg-[#f7f9fc] rounded-lg"><div className="flex items-center gap-2 mb-2"><Icon name="email" className="text-lg text-[#445d94]" /><p className="text-xs text-slate-400">Email · 25 Jul 2026</p></div><p className="text-sm font-medium text-[#0A1A3A]">Tu Informe Técnico está listo</p><p className="text-xs text-slate-500">Enviado manualmente por Marco</p></div>
                 <div className="p-4 bg-[#f7f9fc] rounded-lg"><div className="flex items-center gap-2 mb-2"><Icon name="chat" className="text-lg text-green-500" /><p className="text-xs text-slate-400">WhatsApp · 10 Jul 2026</p></div><p className="text-sm font-medium text-[#0A1A3A]">Primera consulta sobre servicios</p><p className="text-xs text-slate-500">Conversacion inicial</p></div>
               </div>
             )}
@@ -150,7 +150,7 @@ export default function AdminJugadorDetalle() {
             {/* Tab: Progreso */}
             {activeTab === 'progreso' && (
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-                <h4 className="font-semibold text-[#0A1A3A] mb-4">Evolucion del Rating</h4>
+                <h4 className="font-semibold text-[#0A1A3A] mb-4">Evolución del Rating</h4>
                 <div className="h-48 bg-[#f7f9fc] rounded-lg flex items-end justify-around px-4 pb-4 gap-2">
                   {[['60%','Jun'],['65%','Jul'],['70%','Ago'],['78%','Sep'],['20%','Oct']].map(([h,m], i) => (
                     <div key={m} className="flex flex-col items-center gap-1">

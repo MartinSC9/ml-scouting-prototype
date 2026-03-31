@@ -28,7 +28,7 @@ export default function Curso() {
             <div>
               <span className="inline-block bg-white/20 text-white text-xs px-3 py-1 rounded-full mb-4 font-medium">Próxima edición: Septiembre 2026</span>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight" style={{fontFamily:"'Noto Serif'"}}>Curso de Scouting Profesional</h1>
-              <p className="text-slate-300 text-lg mb-8 leading-relaxed">Aprendé a detectar talento como un verdadero profesional. Formación con herramientas de análisis modernas, técnicas de observación y mentorías con especialistas del fútbol internacional.</p>
+              <p className="text-slate-300 text-lg mb-8 leading-relaxed">Aprende a detectar talento como un verdadero profesional. Formación con herramientas de análisis modernas, técnicas de observación y mentorías con especialistas del fútbol internacional.</p>
               <div className="flex gap-6 mb-10">
                 {[{v:'6',l:'Módulos',icon:'school'},{v:'24',l:'Clases',icon:'play_circle'},{v:'3',l:'Meses',icon:'calendar_month'},{v:'83',l:'En espera',icon:'groups'}].map((s,i)=>(
                   <div key={i} className="text-center">
@@ -106,7 +106,7 @@ export default function Curso() {
         <section className="bg-[#0A1A3A] py-12 px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-white mb-3" style={{fontFamily:"'Noto Serif'"}}>Cupos limitados para la próxima edición</h2>
-            <p className="text-slate-300 text-sm mb-6">Ya hay 83 personas en lista de espera. Asegurá tu lugar.</p>
+            <p className="text-slate-300 text-sm mb-6">Ya hay 83 personas en lista de espera. Asegura tu lugar.</p>
             <button onClick={scrollToForm} className="cursor-pointer bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold hover:bg-slate-100 hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-200">Reservar mi lugar</button>
           </div>
         </section>
@@ -183,7 +183,7 @@ export default function Curso() {
         {/* Waitlist */}
         <section ref={formRef} className="py-16 px-8 bg-[#0A1A3A]">
           <div className="max-w-md mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-3" style={{fontFamily:"'Noto Serif'"}}>Unite a la lista de espera</h2>
+            <h2 className="text-3xl font-bold text-white mb-3" style={{fontFamily:"'Noto Serif'"}}>Únete a la lista de espera</h2>
             <p className="text-slate-300 text-sm mb-8">Sé el primero en enterarte cuando se abran las inscripciones.</p>
             <form className="bg-white rounded-2xl p-8 shadow-xl space-y-5 text-left">
               <div>
@@ -197,7 +197,7 @@ export default function Curso() {
               <div>
                 <label className="block text-sm font-medium text-[#191c1e] mb-1.5">País</label>
                 <select className="w-full border border-[#c5c6cf] rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#445d94] focus:border-[#445d94]">
-                  <option value="">Seleccioná tu país</option><option>Argentina</option><option>España</option><option>México</option><option>Colombia</option><option>Chile</option><option>Otro</option>
+                  <option value="">Selecciona tu país</option><option>Argentina</option><option>España</option><option>México</option><option>Colombia</option><option>Chile</option><option>Otro</option>
                 </select>
               </div>
               <button type="submit" className="cursor-pointer w-full bg-[#0A1A3A] text-white py-3.5 rounded-lg font-semibold text-sm hover:bg-[#0A1A3A]/90 hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-200">Unirme a la Lista de Espera</button>

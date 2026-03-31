@@ -3,7 +3,7 @@ import AdminLayout from '../../components/AdminLayout'
 export default function AdminReferidos() {
   const referrals = [
     { referrer: 'Mateo Lopez', referred: 'Nicolas Perez', code: 'ML-MATEO2026', date: '10 Sep 2026', status: 'Convertido', statusBg: 'bg-green-50 text-green-700', service: 'Plan de Mercado', discount: '\u20AC25', discountColor: 'text-green-600 font-medium' },
-    { referrer: 'Mateo Lopez', referred: 'Tomas Garcia', code: 'ML-MATEO2026', date: '18 Sep 2026', status: 'Convertido', statusBg: 'bg-green-50 text-green-700', service: 'Informe Tecnico', discount: '\u20AC15', discountColor: 'text-green-600 font-medium' },
+    { referrer: 'Mateo Lopez', referred: 'Tomas Garcia', code: 'ML-MATEO2026', date: '18 Sep 2026', status: 'Convertido', statusBg: 'bg-green-50 text-green-700', service: 'Informe Técnico', discount: '\u20AC15', discountColor: 'text-green-600 font-medium' },
     { referrer: 'Mateo Lopez', referred: 'Martin Rodriguez', code: 'ML-MATEO2026', date: '25 Sep 2026', status: 'Registrado', statusBg: 'bg-yellow-50 text-yellow-700', service: '-', discount: '\u20AC20 (pend.)', discountColor: 'text-slate-400' },
     { referrer: 'Lucas Martinez', referred: 'Jorge Alvarez', code: 'ML-LUCAS2026', date: '5 Oct 2026', status: 'Convertido', statusBg: 'bg-green-50 text-green-700', service: 'Plan de Mercado', discount: '\u20AC25', discountColor: 'text-green-600 font-medium' },
     { referrer: 'Federico Gomez', referred: 'Sebastian Diaz', code: 'ML-FEDE2026', date: '8 Oct 2026', status: 'Registrado', statusBg: 'bg-yellow-50 text-yellow-700', service: '-', discount: '-', discountColor: 'text-slate-400' },
@@ -15,7 +15,7 @@ export default function AdminReferidos() {
         {/* Stats */}
         <div className="grid md:grid-cols-4 gap-4">
           <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100"><p className="text-xs text-slate-500 font-semibold uppercase mb-1">Total Referidos</p><p className="text-2xl font-bold text-[#0A1A3A]">34</p></div>
-          <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100"><p className="text-xs text-slate-500 font-semibold uppercase mb-1">Convertidos</p><p className="text-2xl font-bold text-green-600">12</p><span className="text-xs text-slate-500">35% conversion</span></div>
+          <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100"><p className="text-xs text-slate-500 font-semibold uppercase mb-1">Convertidos</p><p className="text-2xl font-bold text-green-600">12</p><span className="text-xs text-slate-500">35% conversión</span></div>
           <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100"><p className="text-xs text-slate-500 font-semibold uppercase mb-1">Descuentos Emitidos</p><p className="text-2xl font-bold text-[#0A1A3A]">{'\u20AC'}480</p></div>
           <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100"><p className="text-xs text-slate-500 font-semibold uppercase mb-1">Ingresos por Referidos</p><p className="text-2xl font-bold text-[#0A1A3A]">{'\u20AC'}3,200</p></div>
         </div>
@@ -42,7 +42,7 @@ export default function AdminReferidos() {
           <h3 className="font-bold text-[#0A1A3A] mb-4">Todos los Referidos</h3>
           <table className="w-full text-sm">
             <thead><tr className="border-b border-slate-100">
-              {['Referidor','Referido','Codigo','Fecha','Estado','Servicio','Descuento'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
+              {['Referidor','Referido','Código','Fecha','Estado','Servicio','Descuento'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
             </tr></thead>
             <tbody className="divide-y divide-slate-50">
               {referrals.map((r, i) => (

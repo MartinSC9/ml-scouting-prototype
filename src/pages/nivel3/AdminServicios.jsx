@@ -8,29 +8,29 @@ const servicios = [
     precio: '€250',
     estado: 'activo',
     vendidos: 18,
-    desc: 'Analisis completo del mercado para posicionar al jugador ante clubes objetivo.',
+    desc: 'Análisis completo del mercado para posicionar al jugador ante clubes objetivo.',
   },
   {
     id: 2,
-    nombre: 'Informe Tecnico Individual',
+    nombre: 'Informe Técnico Individual',
     precio: '€150',
     estado: 'activo',
     vendidos: 32,
-    desc: 'Evaluacion detallada de rendimiento con metricas y recomendaciones.',
+    desc: 'Evaluación detallada de rendimiento con métricas y recomendaciones.',
   },
   {
     id: 3,
-    nombre: 'Sesion de Scouting en Vivo',
+    nombre: 'Sesión de Scouting en Vivo',
     precio: '€100',
     estado: 'activo',
     vendidos: 12,
-    desc: 'Sesion personalizada de analisis en vivo con un scout profesional.',
+    desc: 'Sesión personalizada de análisis en vivo con un scout profesional.',
   },
 ]
 
 export default function AdminServicios() {
   return (
-    <AdminLayout activeItem="servicios" title="Servicios" subtitle="Gestion de servicios para jugadores">
+    <AdminLayout activeItem="servicios" title="Servicios" subtitle="Gestión de servicios para jugadores">
       <div className="p-8 space-y-6">
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4">

@@ -3,11 +3,11 @@ import Icon from '../../components/Icon'
 
 export default function AdminCursos() {
   const modules = [
-    { n: '01', title: 'Introduccion al Scouting', hours: '4 clases · 6h', status: '100% completado', statusColor: 'text-green-600', open: true, lessons: ['Que es el scouting','Tipos de scout','Mercado futbolistico actual','Evaluacion Modulo 1'], lessonIcons: ['play_circle','play_circle','play_circle','description'] },
-    { n: '02', title: 'Herramientas de Analisis', hours: '4 clases · 8h', status: '85% completado', statusColor: 'text-green-600' },
-    { n: '03', title: 'Creacion de Informes', hours: '5 clases · 8h', status: 'En curso', statusColor: 'text-blue-600' },
-    { n: '04', title: 'Analisis Tactico', hours: '4 clases · 6h', status: 'Bloqueado', locked: true },
-    { n: '05', title: 'Practicas en Vivo', hours: '3 clases · 9h', status: 'Bloqueado', locked: true },
+    { n: '01', title: 'Introducción al Scouting', hours: '4 clases · 6h', status: '100% completado', statusColor: 'text-green-600', open: true, lessons: ['Qué es el scouting','Tipos de scout','Mercado futbolístico actual','Evaluación Módulo 1'], lessonIcons: ['play_circle','play_circle','play_circle','description'] },
+    { n: '02', title: 'Herramientas de Análisis', hours: '4 clases · 8h', status: '85% completado', statusColor: 'text-green-600' },
+    { n: '03', title: 'Creación de Informes', hours: '5 clases · 8h', status: 'En curso', statusColor: 'text-blue-600' },
+    { n: '04', title: 'Análisis Táctico', hours: '4 clases · 6h', status: 'Bloqueado', locked: true },
+    { n: '05', title: 'Prácticas en Vivo', hours: '3 clases · 9h', status: 'Bloqueado', locked: true },
     { n: '06', title: 'Red de Contactos', hours: '3 clases · 5h', status: 'Bloqueado', locked: true },
   ]
 
@@ -25,15 +25,15 @@ export default function AdminCursos() {
   ]
 
   return (
-    <AdminLayout activeItem="curso" title="Curso Scouting" subtitle="Gestion del curso y alumnos" level={3}>
+    <AdminLayout activeItem="curso" title="Curso Scouting" subtitle="Gestión del curso y alumnos" level={3}>
       <section className="p-8 space-y-8">
         {/* Active Course */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
           <div className="flex items-start justify-between mb-6">
             <div>
               <span className="text-xs bg-green-50 text-green-700 px-2 py-1 rounded-full mb-2 inline-block">Activo</span>
-              <h3 className="text-xl font-bold text-[#0A1A3A]" style={{ fontFamily: "'Noto Serif'" }}>Scouting Profesional - Edicion Septiembre 2026</h3>
-              <p className="text-sm text-slate-500 mt-1">6 modulos · 24 clases · 42 horas totales</p>
+              <h3 className="text-xl font-bold text-[#0A1A3A]" style={{ fontFamily: "'Noto Serif'" }}>Scouting Profesional - Edición Septiembre 2026</h3>
+              <p className="text-sm text-slate-500 mt-1">6 módulos · 24 clases · 42 horas totales</p>
             </div>
             <div className="flex gap-2">
               <button className="border border-slate-200 text-slate-600 px-4 py-2 rounded-lg text-sm font-medium">Editar Curso</button>
@@ -41,7 +41,7 @@ export default function AdminCursos() {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[['Alumnos inscritos','18'],['Promedio progreso','42%'],['Tasa completacion','78%'],['Ingresos curso','\u20AC11,700']].map(([label,val]) => (
+            {[['Alumnos inscritos','18'],['Promedio progreso','42%'],['Tasa completación','78%'],['Ingresos curso','\u20AC11,700']].map(([label,val]) => (
               <div key={label} className="bg-[#f7f9fc] p-4 rounded-lg"><p className="text-xs text-slate-500">{label}</p><p className="text-2xl font-bold text-[#0A1A3A]">{val}</p></div>
             ))}
           </div>
@@ -50,7 +50,7 @@ export default function AdminCursos() {
         {/* Modules */}
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-bold text-[#0A1A3A]" style={{ fontFamily: "'Noto Serif'" }}>Modulos del Curso</h3>
+            <h3 className="text-lg font-bold text-[#0A1A3A]" style={{ fontFamily: "'Noto Serif'" }}>Módulos del Curso</h3>
             <button className="text-sm text-[#0A1A3A] font-medium flex items-center gap-1"><Icon name="add" className="text-lg" />Agregar Clase</button>
           </div>
           <div className="space-y-3">
@@ -92,7 +92,7 @@ export default function AdminCursos() {
           <h3 className="text-lg font-bold text-[#0A1A3A] mb-4" style={{ fontFamily: "'Noto Serif'" }}>Alumnos Inscritos</h3>
           <table className="w-full text-sm">
             <thead><tr className="border-b border-slate-100">
-              {['Nombre','Email','Progreso','Ultimo acceso','Estado'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
+              {['Nombre','Email','Progreso','Último acceso','Estado'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
             </tr></thead>
             <tbody className="divide-y divide-slate-50">
               {students.map((s, i) => (
@@ -121,7 +121,7 @@ export default function AdminCursos() {
           </div>
           <table className="w-full text-sm">
             <thead><tr className="border-b border-slate-100">
-              {['Nombre','Email','Fecha inscripcion','Estado'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
+              {['Nombre','Email','Fecha inscripción','Estado'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
             </tr></thead>
             <tbody className="divide-y divide-slate-50">
               {waitlist.map((w, i) => (

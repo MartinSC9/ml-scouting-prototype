@@ -4,10 +4,10 @@ import Icon from '../../components/Icon'
 export default function AdminFinanzas() {
   const transactions = [
     { date: '15 Oct 2026', player: 'Mateo Lopez', service: 'Plan de Mercado', amount: '\u20AC250', method: 'Tarjeta', status: 'Pagado', statusBg: 'bg-green-50 text-green-700' },
-    { date: '12 Oct 2026', player: 'Lucas Martinez', service: 'Representacion', amount: '\u20AC500', method: 'PayPal', status: 'Pagado', statusBg: 'bg-green-50 text-green-700' },
-    { date: '10 Oct 2026', player: 'Santiago Ruiz', service: 'Informe Tecnico', amount: '\u20AC150', method: 'Tarjeta', status: 'Pagado', statusBg: 'bg-green-50 text-green-700' },
+    { date: '12 Oct 2026', player: 'Lucas Martinez', service: 'Representación', amount: '\u20AC500', method: 'PayPal', status: 'Pagado', statusBg: 'bg-green-50 text-green-700' },
+    { date: '10 Oct 2026', player: 'Santiago Ruiz', service: 'Informe Técnico', amount: '\u20AC150', method: 'Tarjeta', status: 'Pagado', statusBg: 'bg-green-50 text-green-700' },
     { date: '8 Oct 2026', player: 'Andres Ramirez', service: 'Plan de Mercado', amount: '\u20AC250', method: 'Transferencia', status: 'Pendiente', statusBg: 'bg-yellow-50 text-yellow-700' },
-    { date: '5 Oct 2026', player: 'Federico Gomez', service: 'Representacion', amount: '\u20AC500', method: 'Tarjeta', status: 'Pagado', statusBg: 'bg-green-50 text-green-700' },
+    { date: '5 Oct 2026', player: 'Federico Gomez', service: 'Representación', amount: '\u20AC500', method: 'Tarjeta', status: 'Pagado', statusBg: 'bg-green-50 text-green-700' },
   ]
 
   const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
@@ -27,10 +27,10 @@ export default function AdminFinanzas() {
         {/* Metric Cards */}
         <div className="grid md:grid-cols-4 gap-4">
           {[
-            ['Ingresos Totales','\u20AC24,800','+18% vs ano anterior','text-green-600'],
+            ['Ingresos Totales','\u20AC24,800','+18% vs año anterior','text-green-600'],
             ['Ingresos Este Mes','\u20AC4,800','+32% vs mes anterior','text-green-600'],
-            ['Promedio Mensual','\u20AC2,066','Ultimos 12 meses','text-slate-500'],
-            ['Servicio Mas Vendido','Plan de Mercado','42% del total','text-slate-500'],
+            ['Promedio Mensual','\u20AC2,066','Últimos 12 meses','text-slate-500'],
+            ['Servicio Más Vendido','Plan de Mercado','42% del total','text-slate-500'],
           ].map(([label,value,sub,subColor]) => (
             <div key={label} className="bg-white p-5 rounded-xl shadow-sm border border-slate-100">
               <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">{label}</p>
@@ -67,7 +67,7 @@ export default function AdminFinanzas() {
                 <text x="100" y="115" textAnchor="middle" fill="#75777f" fontSize="10">Total</text>
               </svg>
               <div className="space-y-3">
-                {[['#0A1A3A','Plan de Mercado','\u20AC10,500 · 42%'],['#445d94','Representacion','\u20AC7,500 · 30%'],['#a7c0fd','Informe Tecnico','\u20AC4,500 · 18%'],['#e0e3e6','Curso','\u20AC2,300 · 10%']].map(([color,label,sub]) => (
+                {[['#0A1A3A','Plan de Mercado','\u20AC10,500 · 42%'],['#445d94','Representación','\u20AC7,500 · 30%'],['#a7c0fd','Informe Técnico','\u20AC4,500 · 18%'],['#e0e3e6','Curso','\u20AC2,300 · 10%']].map(([color,label,sub]) => (
                   <div key={label} className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full" style={{ background: color }}></div>
                     <div><p className="text-sm font-medium text-slate-700">{label}</p><p className="text-xs text-slate-500">{sub}</p></div>
@@ -85,13 +85,13 @@ export default function AdminFinanzas() {
             <div className="flex gap-3">
               <input type="date" className="border border-slate-200 rounded-lg px-3 py-1.5 text-sm" />
               <input type="date" className="border border-slate-200 rounded-lg px-3 py-1.5 text-sm" />
-              <select className="border border-slate-200 rounded-lg px-3 py-1.5 text-sm"><option>Todos los servicios</option><option>Informe Tecnico</option><option>Plan de Mercado</option><option>Representacion</option><option>Curso</option></select>
+              <select className="border border-slate-200 rounded-lg px-3 py-1.5 text-sm"><option>Todos los servicios</option><option>Informe Técnico</option><option>Plan de Mercado</option><option>Representación</option><option>Curso</option></select>
               <select className="border border-slate-200 rounded-lg px-3 py-1.5 text-sm"><option>Todos los estados</option><option>Pagado</option><option>Pendiente</option><option>Reembolsado</option></select>
             </div>
           </div>
           <table className="w-full text-sm">
             <thead><tr className="border-b border-slate-100">
-              {['Fecha','Jugador','Servicio','Monto','Metodo','Estado','Factura'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
+              {['Fecha','Jugador','Servicio','Monto','Método','Estado','Factura'].map(h => <th key={h} className="text-left p-3 text-xs font-semibold text-slate-500 uppercase">{h}</th>)}
             </tr></thead>
             <tbody className="divide-y divide-slate-50">
               {transactions.map((t, i) => (

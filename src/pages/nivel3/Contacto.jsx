@@ -26,8 +26,8 @@ export default function Contacto() {
 
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#0A1A3A] mb-2" style={{fontFamily:"'Noto Serif'"}}>Contactanos</h1>
-            <p className="text-slate-500">Estamos aca para ayudarte</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#0A1A3A] mb-2" style={{fontFamily:"'Noto Serif'"}}>Contáctanos</h1>
+            <p className="text-slate-500">Estamos aquí para ayudarte</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <form className="bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm space-y-4">
@@ -41,15 +41,15 @@ export default function Contacto() {
                   <option value="">Selecciona un asunto</option><option>Consulta sobre servicios</option><option>Consulta sobre el curso</option><option>Otro</option>
                 </select>
               </div>
-              <div><label className="block text-sm font-medium mb-1">Mensaje</label><textarea rows={3} className="w-full border border-[#c5c6cf] rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#445d94] resize-none" placeholder="Escribi tu mensaje..."></textarea></div>
+              <div><label className="block text-sm font-medium mb-1">Mensaje</label><textarea rows={3} className="w-full border border-[#c5c6cf] rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#445d94] resize-none" placeholder="Escribe tu mensaje..."></textarea></div>
               <button type="submit" className="w-full bg-[#0A1A3A] text-white py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition">Enviar Consulta</button>
             </form>
             <div className="space-y-3">
               {[
                 {icon:'mail',title:'Email',desc:'contacto@ml-scouting.com'},
                 {icon:'photo_camera',title:'Instagram',desc:'@mlscoutingacademy'},
-                {icon:'chat',title:'WhatsApp',desc:'Escribinos por WhatsApp',isBtn:true},
-                {icon:'location_on',title:'Ubicacion',desc:'Argentina'},
+                {icon:'chat',title:'WhatsApp',desc:'Escríbenos por WhatsApp',isBtn:true},
+                {icon:'location_on',title:'Ubicación',desc:'Argentina'},
               ].map((c,i)=>(
                 <div key={i} className="bg-white rounded-xl p-4 border border-slate-100 flex items-center gap-4">
                   <div className="w-10 h-10 bg-[#d9e2ff] rounded-lg flex items-center justify-center flex-shrink-0"><Icon name={c.icon} className="text-[#0A1A3A] text-xl" /></div>
