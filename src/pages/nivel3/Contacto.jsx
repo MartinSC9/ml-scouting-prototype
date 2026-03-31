@@ -6,38 +6,38 @@ export default function Contacto() {
   return (
     <div className="bg-[#f7f9fc] text-[#191c1e]">
       <Navbar activeItem="contacto" />
-      <section className="pt-32 pb-20 px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#0A1A3A] mb-4" style={{fontFamily:"'Noto Serif'"}}>Contactanos</h1>
-            <p className="text-slate-500 text-lg">Estamos aca para ayudarte</p>
+      <section className="pt-24 pb-10 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#0A1A3A] mb-2" style={{fontFamily:"'Noto Serif'"}}>Contactanos</h1>
+            <p className="text-slate-500">Estamos aca para ayudarte</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <form className="bg-white rounded-2xl p-8 md:p-10 border border-slate-100 shadow-sm space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div><label className="block text-sm font-medium mb-1.5">Nombre</label><input type="text" className="w-full border border-[#c5c6cf] rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#445d94]" placeholder="Tu nombre"/></div>
-                <div><label className="block text-sm font-medium mb-1.5">Apellido</label><input type="text" className="w-full border border-[#c5c6cf] rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#445d94]" placeholder="Tu apellido"/></div>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <form className="bg-white rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                <div><label className="block text-sm font-medium mb-1">Nombre</label><input type="text" className="w-full border border-[#c5c6cf] rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#445d94]" placeholder="Tu nombre"/></div>
+                <div><label className="block text-sm font-medium mb-1">Apellido</label><input type="text" className="w-full border border-[#c5c6cf] rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#445d94]" placeholder="Tu apellido"/></div>
               </div>
-              <div><label className="block text-sm font-medium mb-1.5">Email</label><input type="email" className="w-full border border-[#c5c6cf] rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#445d94]" placeholder="tu@email.com"/></div>
-              <div><label className="block text-sm font-medium mb-1.5">Asunto</label>
-                <select className="w-full border border-[#c5c6cf] rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#445d94]">
+              <div><label className="block text-sm font-medium mb-1">Email</label><input type="email" className="w-full border border-[#c5c6cf] rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#445d94]" placeholder="tu@email.com"/></div>
+              <div><label className="block text-sm font-medium mb-1">Asunto</label>
+                <select className="w-full border border-[#c5c6cf] rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#445d94]">
                   <option value="">Selecciona un asunto</option><option>Consulta sobre servicios</option><option>Consulta sobre el curso</option><option>Otro</option>
                 </select>
               </div>
-              <div><label className="block text-sm font-medium mb-1.5">Mensaje</label><textarea rows={5} className="w-full border border-[#c5c6cf] rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-[#445d94] resize-none" placeholder="Escribi tu mensaje..."></textarea></div>
-              <button type="submit" className="w-full bg-[#0A1A3A] text-white py-3.5 rounded-lg font-semibold text-sm hover:opacity-90 transition">Enviar Consulta</button>
+              <div><label className="block text-sm font-medium mb-1">Mensaje</label><textarea rows={3} className="w-full border border-[#c5c6cf] rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-[#445d94] resize-none" placeholder="Escribi tu mensaje..."></textarea></div>
+              <button type="submit" className="w-full bg-[#0A1A3A] text-white py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition">Enviar Consulta</button>
             </form>
-            <div className="space-y-6">
+            <div className="space-y-3">
               {[
                 {icon:'mail',title:'Email',desc:'contacto@ml-scouting.com'},
                 {icon:'photo_camera',title:'Instagram',desc:'@mlscoutingacademy'},
                 {icon:'chat',title:'WhatsApp',desc:'Escribinos por WhatsApp',isBtn:true},
                 {icon:'location_on',title:'Ubicacion',desc:'Argentina'},
               ].map((c,i)=>(
-                <div key={i} className="bg-white rounded-xl p-6 border border-slate-100 flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#d9e2ff] rounded-lg flex items-center justify-center flex-shrink-0"><Icon name={c.icon} className="text-[#0A1A3A]" /></div>
+                <div key={i} className="bg-white rounded-xl p-4 border border-slate-100 flex items-center gap-4">
+                  <div className="w-10 h-10 bg-[#d9e2ff] rounded-lg flex items-center justify-center flex-shrink-0"><Icon name={c.icon} className="text-[#0A1A3A] text-xl" /></div>
                   <div>
-                    <h3 className="font-semibold mb-1">{c.title}</h3>
+                    <h3 className="font-semibold text-sm mb-0.5">{c.title}</h3>
                     {c.isBtn?<button className="text-[#445d94] text-sm font-medium hover:underline">{c.desc}</button>:<p className="text-slate-500 text-sm">{c.desc}</p>}
                   </div>
                 </div>

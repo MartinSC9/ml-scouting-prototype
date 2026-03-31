@@ -146,38 +146,33 @@ export default function Curso() {
             <div className="text-center mb-10">
               <span className="text-[#445d94] font-bold tracking-widest text-xs uppercase mb-3 block">Resolvemos tus dudas</span>
               <h2 className="text-3xl font-bold text-[#0A1A3A] mb-2" style={{fontFamily:"'Noto Serif'"}}>Preguntas Frecuentes</h2>
-              <p className="text-slate-500 text-sm">Marco responde las dudas mas comunes sobre el curso.</p>
+              <p className="text-slate-500 text-sm">Marco responde cada pregunta en video.</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="space-y-3">
               {[
-                {title:'Preguntas frecuentes',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Intro-FAQS.mp4'},
-                {title:'Necesito estudios previos?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Necesito-tener-algun-estudio-previo-para-realizar-el-curso.mp4'},
-              ].map((v,i)=>(
-                <div key={i} className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-                  <video className="w-full aspect-video object-cover bg-black" controls playsInline preload="metadata" poster="https://ml-scouting.com/wp-content/uploads/2025/02/curso_scouting.png">
-                    <source src={v.video} type="video/mp4" />
-                  </video>
-                  <div className="p-4">
-                    <p className="font-bold text-[#0A1A3A] text-sm">{v.title}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="max-w-3xl mx-auto space-y-3">
-              {[
-                {q:'Puedo hacerlo desde cualquier parte del mundo?',a:'Si, las clases son online en vivo con acceso a grabaciones. Podes participar desde cualquier pais.'},
-                {q:'Otorgan certificacion?',a:'Si, certificacion oficial de ML Scouting al completar el curso y las practicas.'},
-                {q:'Hay posibilidades reales de trabajo?',a:'Si, nuestros egresados trabajan en clubes de diferentes ligas. Te conectamos con oportunidades reales.'},
-                {q:'Cual es el precio?',a:'El precio se anunciara cuando abramos inscripciones. Unite a la lista de espera para ser el primero en enterarte.'},
+                {q:'Necesito tener algun estudio previo para realizar el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Necesito-tener-algun-estudio-previo-para-realizar-el-curso.mp4'},
+                {q:'Puedo realizar el curso desde cualquier parte del mundo?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Puedo-realizar-el-curso-desde-cualquier-parte-del-mundo.mp4'},
+                {q:'Por que plataformas se da el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Por-que-plataformas-se-da-el-curso.mp4'},
+                {q:'Como es la metodologia de las clases del curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Como-es-la-metodologia-de-las-clases-del-curso.mp4'},
+                {q:'Otorgan alguna certificacion oficial al finalizar el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Otorgan-alguna-certificacion-oficial-al-finalizar-el-curso.mp4'},
+                {q:'Cuales son las plataformas que nos ensenan a utilizar en el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Cuales-son-las-plataformas-que-nos-ensenan-a-utilizar-en-el-curso.mp4'},
+                {q:'Quienes son los invitados de las clases? Los alumnos pueden interactuar con ellos?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Quienes-son-los-invitados-de-las-clases-Los-alumnos-pueden-interactuar-con-ellos.mp4'},
+                {q:'Como funciona la red de contactos que ofrecemos?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Como-funciona-la-red-de-contactos-que-ofrecemos.mp4'},
+                {q:'En que estadios se realizan las practicas y en que consisten?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/En-que-estadios-se-realizan-las-practicas-y-en-que-consisten.mp4'},
+                {q:'En las practicas los alumnos tienen contacto con el club donde la realizan?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/En-las-practicas-los-alumnos-tienen-contacto-con-el-club-donde-la-realizan.mp4'},
+                {q:'Cuales son las posibilidades reales de conseguir trabajo una vez finalizado el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Cuales-son-las-posibilidades-reales-de-conseguir-trabajo-una-vez-finalizado-el-curso.mp4'},
               ].map((f,i)=>(
                 <details key={i} className="bg-[#f7f9fc] rounded-xl border border-slate-100 overflow-hidden group">
                   <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-[#0A1A3A] text-sm">
                     {f.q}
                     <Icon name="expand_more" className="text-slate-400 transition-transform group-open:rotate-180" />
                   </summary>
-                  <div className="px-5 pb-5 text-slate-500 text-sm">{f.a}</div>
+                  <div className="px-5 pb-5">
+                    <video className="w-full rounded-lg aspect-video object-cover bg-black" controls playsInline preload="metadata" poster="https://ml-scouting.com/wp-content/uploads/2025/02/curso_scouting.png">
+                      <source src={f.video} type="video/mp4" />
+                    </video>
+                  </div>
                 </details>
               ))}
             </div>

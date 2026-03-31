@@ -93,7 +93,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              {icon:'sports_soccer',title:'Servicios para Jugadores',desc:'Diagnostico, Plan de Mercado, Evaluacion profesional y asesoria para perfil y video. Desde €35.',link:'/nivel-3/servicios',cta:'Ver servicios',popular:true},
+              {icon:'sports_soccer',title:'Servicios para Jugadores',desc:'Diagnostico, Plan de Mercado, Evaluacion profesional y asesoria para perfil y video. Desde €35.',link:'/nivel-3/servicios#diagnostico',cta:'Ver servicios',cta2:'Hacer diagnostico',link2:'/nivel-3/diagnostico',popular:true},
               {icon:'groups',title:'Asesoria para Clubes',desc:'Trabajamos con clubes para identificar y recomendar jugadores que se adapten a sus necesidades tacticas.',link:'/nivel-3/contacto',cta:'Contactar'},
               {icon:'school',title:'Curso de Scouting',desc:'Aprende las metodologias y herramientas del scouting profesional. Proxima edicion disponible.',link:'/nivel-3/curso',cta:'Ver curso'},
             ].map((s,i)=>(
@@ -106,9 +106,12 @@ export default function Home() {
                   <h3 className={`text-lg font-bold ${s.popular ? 'text-white' : 'text-[#0A1A3A]'}`}>{s.title}</h3>
                 </div>
                 <p className={`text-sm leading-relaxed mb-6 flex-1 ${s.popular ? 'text-slate-300' : 'text-slate-500'}`}>{s.desc}</p>
-                <Link to={s.link} className={`block text-center py-2.5 rounded-lg font-semibold text-sm transition-all ${s.popular ? 'bg-white text-[#0A1A3A] hover:bg-slate-100' : 'bg-[#0A1A3A] text-white hover:bg-[#0A1A3A]/90'}`}>
-                  {s.cta}
-                </Link>
+                <div className={`flex gap-2 ${s.cta2 ? '' : 'flex-col'}`}>
+                  <Link to={s.link} className={`block text-center py-2.5 rounded-lg font-semibold text-sm transition-all flex-1 ${s.popular ? 'bg-white text-[#0A1A3A] hover:bg-slate-100' : 'bg-[#0A1A3A] text-white hover:bg-[#0A1A3A]/90'}`}>
+                    {s.cta}
+                  </Link>
+                  {s.cta2 && <Link to={s.link2} className="block text-center py-2.5 rounded-lg font-semibold text-sm transition-all flex-1 border border-white/30 text-white hover:bg-white/10">{s.cta2}</Link>}
+                </div>
               </div>
             ))}
           </div>

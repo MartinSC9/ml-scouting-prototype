@@ -8,6 +8,7 @@ import N3Curso from './pages/nivel3/Curso'
 import N3Blog from './pages/nivel3/Blog'
 import N3BlogArticulo from './pages/nivel3/BlogArticulo'
 import N3Contacto from './pages/nivel3/Contacto'
+import N3Legal from './pages/nivel3/Legal'
 import N3JugadorDashboard from './pages/nivel3/JugadorDashboard'
 import N3JugadorPerfil from './pages/nivel3/JugadorPerfil'
 import N3JugadorCursos from './pages/nivel3/JugadorCursos'
@@ -37,6 +38,7 @@ export default function App() {
       <Route path="/nivel-3/blog" element={<N3Blog />} />
       <Route path="/nivel-3/blog-articulo" element={<N3BlogArticulo />} />
       <Route path="/nivel-3/contacto" element={<N3Contacto />} />
+      <Route path="/nivel-3/legal" element={<N3Legal />} />
       <Route path="/nivel-3/jugador-dashboard" element={<N3JugadorDashboard />} />
       <Route path="/nivel-3/jugador-perfil" element={<N3JugadorPerfil />} />
       <Route path="/nivel-3/jugador-cursos" element={<N3JugadorCursos />} />

@@ -110,10 +110,28 @@ export default function Diagnostico() {
   const [mounted, setMounted] = useState(false)
   const [animating, setAnimating] = useState(false)
   const [showResult, setShowResult] = useState(false)
+  const [analyzing, setAnalyzing] = useState(false)
+  const [showCards, setShowCards] = useState(false)
   const [textInput, setTextInput] = useState('')
   const totalSteps = steps.length
 
   useEffect(() => { setMounted(true) }, [])
+
+  // When result shows, trigger analyzing animation then reveal cards
+  useEffect(() => {
+    if (showResult) {
+      setAnalyzing(true)
+      setShowCards(false)
+      const t = setTimeout(() => {
+        setAnalyzing(false)
+        setShowCards(true)
+      }, 2800)
+      return () => clearTimeout(t)
+    } else {
+      setAnalyzing(false)
+      setShowCards(false)
+    }
+  }, [showResult])
 
   const progress = showResult ? 100 : ((step + 1) / totalSteps) * 100
 
@@ -194,6 +212,65 @@ export default function Diagnostico() {
       setTextInput('')
     }
   }, [step, isTextStep, answers])
+
+  // Derive profile insights from answers
+  const getProfileInsights = () => {
+    const age = steps[0].options[answers[0]]?.label || ''
+    const position = answers[1] || ''
+    const hasHighlights = answers[2] === 0
+    const unsureHighlights = answers[2] === 1
+    const level = steps[3].options[answers[3]]?.label || ''
+    const hasFullGames = answers[4] === 0
+    const difficulty = steps[5].options[answers[5]]?.label || ''
+
+    // Readiness score based on answers
+    let readiness = 30
+    if (answers[0] === 1 || answers[0] === 2) readiness += 15 // ideal age
+    if (hasHighlights) readiness += 20
+    if (unsureHighlights) readiness += 10
+    if (answers[3] === 0 || answers[3] === 1) readiness += 20 // pro or semi-pro
+    if (answers[3] === 2) readiness += 10
+    if (hasFullGames) readiness += 15
+    readiness = Math.min(readiness, 95)
+
+    // Material score
+    let material = 20
+    if (hasHighlights) material += 40
+    if (unsureHighlights) material += 20
+    if (hasFullGames) material += 40
+    material = Math.min(material, 100)
+
+    // Visibility score (low = needs more help)
+    let visibility = 15
+    if (answers[5] === 2) visibility += 20 // already sending but no response
+    if (answers[5] === 3) visibility = 10 // no contacts at all
+    visibility = Math.min(visibility, 100)
+
+    return {
+      age, position, level, difficulty,
+      hasHighlights, hasFullGames, unsureHighlights,
+      readiness, material, visibility,
+      insights: [
+        { icon: 'person', label: 'Edad', value: age },
+        { icon: 'sports_soccer', label: 'Posicion', value: position },
+        { icon: 'military_tech', label: 'Nivel actual', value: level },
+      ],
+      scores: [
+        { label: 'Preparacion del perfil', value: readiness, color: readiness >= 60 ? '#22c55e' : readiness >= 40 ? '#eab308' : '#ef4444' },
+        { label: 'Material audiovisual', value: material, color: material >= 60 ? '#22c55e' : material >= 40 ? '#eab308' : '#ef4444' },
+        { label: 'Visibilidad en el mercado', value: visibility, color: visibility >= 40 ? '#22c55e' : visibility >= 25 ? '#eab308' : '#ef4444' },
+      ],
+      summary: !hasHighlights && !hasFullGames
+        ? 'Tu material audiovisual es tu punto mas debil. Sin video, los clubes no pueden evaluarte. Es clave resolver esto primero.'
+        : visibility <= 20
+        ? 'Tenes buen material pero muy poca visibilidad. Necesitas una estrategia de posicionamiento para llegar a los clubes correctos.'
+        : unsureHighlights
+        ? 'Tenes material pero puede no estar bien estructurado. Un perfil mal presentado puede cerrarte puertas aunque tengas nivel.'
+        : 'Tenes una base solida. El siguiente paso es maximizar tu exposicion y posicionarte en las ligas adecuadas para tu perfil.',
+    }
+  }
+
+  const profile = showResult ? getProfileInsights() : null
 
   return (
     <div className="bg-[#f7f9fc] text-[#191c1e]">
@@ -383,6 +460,36 @@ export default function Diagnostico() {
           box-shadow: 0 0 0 4px rgba(68, 93, 148, 0.1);
           outline: none;
         }
+
+        .dx3-analyzing-dots span {
+          animation: dx3-dot 1.4s infinite;
+          opacity: 0;
+        }
+        .dx3-analyzing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .dx3-analyzing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes dx3-dot {
+          0%, 80%, 100% { opacity: 0; }
+          40% { opacity: 1; }
+        }
+
+        .dx3-bar-fill {
+          animation: dx3-barGrow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          transform-origin: left;
+        }
+        @keyframes dx3-barGrow {
+          from { width: 0%; }
+        }
+
+        .dx3-profile-fade > * {
+          opacity: 0;
+          transform: translateY(12px);
+          animation: dx3-slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .dx3-profile-fade > *:nth-child(1) { animation-delay: 0.1s; }
+        .dx3-profile-fade > *:nth-child(2) { animation-delay: 0.25s; }
+        .dx3-profile-fade > *:nth-child(3) { animation-delay: 0.4s; }
+        .dx3-profile-fade > *:nth-child(4) { animation-delay: 0.55s; }
+        .dx3-profile-fade > *:nth-child(5) { animation-delay: 0.7s; }
       `}</style>
 
       <Navbar activeItem="diagnostico" transparent />
@@ -405,19 +512,6 @@ export default function Diagnostico() {
               >
                 Comencemos
               </button>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                {[
-                  { icon: 'insights', title: 'Analisis de Mercado', desc: 'Cruzamos tus datos con requerimientos actuales de ligas profesionales.' },
-                  { icon: 'verified_user', title: 'Privacidad Total', desc: 'Tus datos son analizados exclusivamente por nuestro equipo de scouting.' },
-                  { icon: 'timer', title: 'Resultado Inmediato', desc: 'Recibe una hoja de ruta preliminar al finalizar el formulario.' },
-                ].map((c, i) => (
-                  <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-xl text-center">
-                    <Icon name={c.icon} className="text-[#a7c0fd] text-3xl mb-3" />
-                    <h4 className="text-white font-bold text-sm mb-1">{c.title}</h4>
-                    <p className="text-slate-400 text-xs leading-relaxed">{c.desc}</p>
-                  </div>
-                ))}
-              </div>
             </>
           )}
         </div>
@@ -527,9 +621,6 @@ export default function Diagnostico() {
                     <Icon name="arrow_back" className="text-sm" /> Volver
                   </button>
                   <div className="flex items-center gap-4">
-                    <div className="text-xs text-[#45464e]/60 font-medium hidden sm:block">
-                      Presiona <span className="dx3-kbd bg-[#eceef1] px-1.5 py-0.5 rounded border border-[#c3c6ce] inline-block">Enter</span> para continuar
-                    </div>
                     {!isTextStep && answers[step] != null && (
                       <button
                         onClick={goNext}
@@ -544,12 +635,76 @@ export default function Diagnostico() {
             ) : (
               /* Result Screen */
               <div className="dx3-result-enter">
-                <div className="text-center mb-10">
-                  <div className="dx3-check-anim inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#445d94]/10 mb-6">
-                    <Icon name="check_circle" filled className="text-[#445d94] text-5xl" />
+                {analyzing ? (
+                  /* Analyzing Phase */
+                  <div className="text-center py-16">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#445d94]/10 mb-6">
+                      <Icon name="analytics" className="text-[#445d94] text-4xl dx3-analyzing-spin" style={{ animation: 'spin 2s linear infinite' }} />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl text-[#0A1A3A] font-bold italic mb-3" style={{fontFamily:"'Noto Serif'"}}>Analizando tu perfil<span className="dx3-analyzing-dots"><span>.</span><span>.</span><span>.</span></span></h2>
+                    <p className="text-[#45464e] max-w-md mx-auto">Evaluando tus respuestas para darte una recomendacion personalizada</p>
+                    <div className="mt-8 max-w-xs mx-auto">
+                      <div className="h-1.5 bg-[#eceef1] rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-[#445d94] to-[#a7c0fd] rounded-full" style={{ animation: 'dx3-analyzeBar 2.5s ease-in-out forwards' }} />
+                      </div>
+                    </div>
+                    <style>{`
+                      @keyframes spin { to { transform: rotate(360deg); } }
+                      @keyframes dx3-analyzeBar { from { width: 0%; } to { width: 100%; } }
+                    `}</style>
                   </div>
-                  <h2 className="text-2xl md:text-3xl text-[#0A1A3A] font-bold italic mb-4" style={{fontFamily:"'Noto Serif'"}}>RESULTADO: ESTAS SON LAS OPCIONES QUE ENCAJAN CONTIGO</h2>
-                  <p className="text-[#45464e] text-lg max-w-xl mx-auto">Segun lo que respondiste, estas son las opciones que mejor encajan con tu situacion actual.</p>
+                ) : (
+                  /* Results Phase */
+                  <>
+                {/* Profile Analysis */}
+                <div className="dx3-profile-fade mb-10">
+                  <div className="text-center mb-8">
+                    <div className="dx3-check-anim inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#445d94]/10 mb-4">
+                      <Icon name="check_circle" filled className="text-[#445d94] text-4xl" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl text-[#0A1A3A] font-bold italic mb-2" style={{fontFamily:"'Noto Serif'"}}>Tu Analisis de Perfil</h2>
+                    <p className="text-[#45464e] text-sm max-w-lg mx-auto">Basado en tus respuestas, este es el panorama de tu situacion actual</p>
+                  </div>
+
+                  {/* Profile summary chips */}
+                  <div className="flex flex-wrap justify-center gap-3 mb-8">
+                    {profile?.insights.map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm">
+                        <Icon name={item.icon} className="text-[#445d94] text-base" />
+                        <span className="text-[#45464e]">{item.label}:</span>
+                        <span className="font-semibold text-[#0A1A3A]">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Score bars */}
+                  <div className="bg-white rounded-xl border border-slate-100 p-6 mb-6">
+                    <div className="space-y-4">
+                      {profile?.scores.map((score, i) => (
+                        <div key={i}>
+                          <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-sm font-medium text-[#0A1A3A]">{score.label}</span>
+                            <span className="text-sm font-bold" style={{ color: score.color }}>{score.value}%</span>
+                          </div>
+                          <div className="h-2.5 bg-[#eceef1] rounded-full overflow-hidden">
+                            <div className="h-full rounded-full dx3-bar-fill" style={{ width: `${score.value}%`, backgroundColor: score.color, animationDelay: `${i * 0.2}s` }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Key insight */}
+                  <div className="bg-[#0A1A3A] rounded-xl p-5 flex items-start gap-3">
+                    <Icon name="lightbulb" className="text-[#a7c0fd] text-xl flex-shrink-0 mt-0.5" />
+                    <p className="text-white/90 text-sm leading-relaxed">{profile?.summary}</p>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="text-center mb-8">
+                  <h3 className="text-xl md:text-2xl text-[#0A1A3A] font-bold italic" style={{fontFamily:"'Noto Serif'"}}>Servicios recomendados para tu caso</h3>
+                  <p className="text-[#45464e] text-sm mt-1">Estas son las opciones que mejor encajan con tu situacion</p>
                 </div>
 
                 {/* Service Recommendation Cards */}
@@ -628,6 +783,8 @@ export default function Diagnostico() {
                     Volver a realizar el diagnostico
                   </button>
                 </div>
+                  </>
+                )}
               </div>
             )}
           </div>
