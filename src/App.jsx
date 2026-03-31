@@ -1,9 +1,11 @@
 import { Routes, Route, Navigate, useLocation, useNavigationType } from 'react-router-dom'
 import { useEffect } from 'react'
 import ScrollToTopButton from './components/ScrollToTopButton'
+import { AuthProvider } from './core/contexts/AuthContext'
 
 // Nivel 3 pages
 import N3Home from './pages/nivel3/Home'
+import N3Login from './pages/nivel3/Login'
 import N3Servicios from './pages/nivel3/Servicios'
 import N3Diagnostico from './pages/nivel3/Diagnostico'
 import N3Curso from './pages/nivel3/Curso'
@@ -27,6 +29,7 @@ import N3AdminFinanzas from './pages/nivel3/AdminFinanzas'
 import N3AdminReferidos from './pages/nivel3/AdminReferidos'
 import N3AdminAnalytics from './pages/nivel3/AdminAnalytics'
 import N3AdminConfiguracion from './pages/nivel3/AdminConfiguracion'
+import N3AdminServicios from './pages/nivel3/AdminServicios'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -47,11 +50,12 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <>
+    <AuthProvider>
     <ScrollToTop />
     <ScrollToTopButton />
     <Routes>
       <Route path="/" element={<N3Home />} />
+      <Route path="/login" element={<N3Login />} />
       <Route path="/servicios-para-jugadores" element={<N3Servicios />} />
       <Route path="/diagnostico" element={<N3Diagnostico />} />
       <Route path="/curso" element={<N3Curso />} />
@@ -69,6 +73,7 @@ export default function App() {
       <Route path="/admin/jugadores" element={<N3AdminJugadores />} />
       <Route path="/admin/jugador-detalle" element={<N3AdminJugadorDetalle />} />
       <Route path="/admin/crm" element={<N3AdminCrm />} />
+      <Route path="/admin/servicios" element={<N3AdminServicios />} />
       <Route path="/admin/cursos" element={<N3AdminCursos />} />
       <Route path="/admin/blog" element={<N3AdminBlog />} />
       <Route path="/admin/finanzas" element={<N3AdminFinanzas />} />
@@ -78,6 +83,6 @@ export default function App() {
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-    </>
+    </AuthProvider>
   )
 }

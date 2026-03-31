@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import Icon from './Icon'
 import Logo from './Logo'
+import { useAuth } from '../core/contexts/AuthContext'
 
 const n3Items = [
   { key: 'dashboard', icon: 'dashboard', label: 'Dashboard', href: '/admin/dashboard' },
   { key: 'jugadores', icon: 'groups', label: 'Jugadores', href: '/admin/jugadores' },
-  { key: 'servicios', icon: 'handshake', label: 'Servicios', href: '/admin/cursos' },
+  { key: 'servicios', icon: 'handshake', label: 'Servicios', href: '/admin/servicios' },
   { key: 'curso', icon: 'school', label: 'Curso Scouting', href: '/admin/cursos' },
   { key: 'blog', icon: 'article', label: 'Blog', href: '/admin/blog' },
   { key: 'crm', icon: 'hub', label: 'Leads / CRM', href: '/admin/crm' },
@@ -18,6 +19,7 @@ const n3Items = [
 export default function AdminSidebar({ activeItem }) {
   const items = n3Items
   const accentColor = '#006970'
+  const { user, logout } = useAuth()
 
   return (
     <aside className="h-screen w-64 bg-white flex flex-col py-4 shrink-0 z-50 shadow-[2px_0_12px_rgba(0,0,0,0.06)]">
@@ -50,6 +52,14 @@ export default function AdminSidebar({ activeItem }) {
           )
         })}
       </nav>
+      <div className="mt-auto mx-2 pt-4 border-t border-slate-100">
+        <a href="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-50 hover:text-[#0A1A3A] rounded-lg transition-all text-sm font-medium">
+          <Icon name="home" /> Ir al sitio
+        </a>
+        <button onClick={logout} className="w-full flex items-center gap-3 px-4 py-2.5 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
+          <Icon name="logout" /> Cerrar sesion
+        </button>
+      </div>
     </aside>
   )
 }

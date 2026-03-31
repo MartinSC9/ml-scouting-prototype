@@ -36,8 +36,28 @@ export default function Navbar({ activeItem, transparent = false, hero = false }
             if (location.pathname === '/') { scrollTo() } else { navigate('/#servicios') }
           }} className={linkClass(['servicios','curso','diagnostico'].includes(activeItem)) + ' cursor-pointer'}>Servicios</button>
 
-          <NavLink to="/blog" className={({ isActive }) => linkClass(isActive || activeItem === 'blog')}>Blog</NavLink>
+          <button onClick={() => {
+            const scrollTo = () => {
+              const el = document.getElementById('blog')
+              if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); return true }
+              return false
+            }
+            if (location.pathname === '/') { scrollTo() } else { navigate('/#blog') }
+          }} className={linkClass(activeItem === 'blog') + ' cursor-pointer'}>Blog</button>
           <NavLink to="/contacto" className={({ isActive }) => linkClass(isActive || activeItem === 'contacto')}>Contacto</NavLink>
+
+          <a
+            href="/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`ml-4 px-5 py-2 rounded-lg font-semibold text-sm transition-all ${
+              transparent && !scrolled
+                ? 'bg-white text-[#0A1A3A] hover:bg-slate-100'
+                : 'bg-[#0A1A3A] text-white hover:bg-[#0f2a43]'
+            }`}
+          >
+            Ingresar
+          </a>
         </div>
       </div>
     </nav>

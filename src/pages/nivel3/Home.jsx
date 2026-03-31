@@ -43,10 +43,10 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6" style={{fontFamily:"'Noto Serif'"}}>Impulsamos el futbol con scouting profesional, estrategia y experiencia</h1>
           <p className="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">Ayudamos a clubes, jugadores y profesionales del futbol a alcanzar su maximo potencial con asesorias especializadas, servicios personalizados y formacion en scouting.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/servicios-para-jugadores" className="flex items-center gap-2 bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold text-sm hover:bg-slate-100 transition"><Icon name="sports_soccer" className="text-lg" />Soy Jugador</Link>
-            <Link to="/contacto" className="flex items-center gap-2 border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition"><Icon name="stadium" className="text-lg" />Soy Club</Link>
-            <Link to="/curso" className="flex items-center gap-2 border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition"><Icon name="search" className="text-lg" />Quiero ser Scout</Link>
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 w-full max-w-md sm:max-w-none mx-auto">
+            <Link to="/servicios-para-jugadores" className="flex items-center justify-center gap-2 bg-white text-[#0A1A3A] px-8 py-3 rounded-lg font-semibold text-sm hover:bg-slate-100 transition"><Icon name="sports_soccer" className="text-lg" />Soy Jugador</Link>
+            <Link to="/contacto" className="flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition"><Icon name="stadium" className="text-lg" />Soy Club</Link>
+            <Link to="/curso" className="flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-sm hover:bg-white/10 transition"><Icon name="search" className="text-lg" />Quiero ser Scout</Link>
           </div>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* Blog Preview */}
-      <section className="py-20 px-8">
+      <section id="blog" className="py-20 px-8 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-12">
             <div><h2 className="text-3xl font-bold text-[#0A1A3A]" style={{fontFamily:"'Noto Serif'"}}>Blog</h2><p className="text-slate-500 mt-1">Articulos sobre scouting, mercado y desarrollo profesional.</p></div>
@@ -181,12 +181,12 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {cat:'Scouting',title:'Como preparar tu video highlight para scouts',desc:'Consejos clave para que tu video destaque entre cientos de jugadores.',date:'15 Oct 2026 · 5 min lectura',bg:'bg-[#a7c0fd]/30'},
-              {cat:'Mercado',title:'Las ligas europeas que mas buscan talento sudamericano',desc:'Un analisis de las oportunidades en Portugal, Italia y Belgica.',date:'10 Oct 2026 · 8 min lectura',bg:'bg-[#d9e2ff]/30'},
-              {cat:'Para Jugadores',title:'5 errores que cometen los jugadores al buscar club',desc:'Evita estos errores comunes que pueden arruinar tu oportunidad.',date:'5 Oct 2026 · 6 min lectura',bg:'bg-[#d9e2ff]/30'},
+              {cat:'Scouting',title:'Como preparar tu video highlight para scouts',desc:'Consejos clave para que tu video destaque entre cientos de jugadores.',date:'15 Oct 2026 · 5 min lectura',img:'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop'},
+              {cat:'Mercado',title:'Las ligas europeas que mas buscan talento sudamericano',desc:'Un analisis de las oportunidades en Portugal, Italia y Belgica.',date:'10 Oct 2026 · 8 min lectura',img:'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&h=400&fit=crop'},
+              {cat:'Para Jugadores',title:'5 errores que cometen los jugadores al buscar club',desc:'Evita estos errores comunes que pueden arruinar tu oportunidad.',date:'5 Oct 2026 · 6 min lectura',img:'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&h=400&fit=crop'},
             ].map((a,i)=>(
               <Link key={i} to="/blog-articulo" className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-md transition group">
-                <div className={`h-40 ${a.bg} flex items-center justify-center`}><Icon name="article" className="text-[#445d94]/40" style={{fontSize:'40px'}} /></div>
+                <div className="h-40 overflow-hidden"><img src={a.img} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
                 <div className="p-5">
                   <span className="text-xs bg-slate-100 px-2 py-1 rounded-full text-slate-600">{a.cat}</span>
                   <h3 className="font-bold text-[#0A1A3A] mt-2 group-hover:underline">{a.title}</h3>

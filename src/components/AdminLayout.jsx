@@ -1,6 +1,9 @@
 import AdminSidebar from './AdminSidebar'
+import { useAuth } from '../core/contexts/AuthContext'
 
 export default function AdminLayout({ activeItem, title, subtitle, level = 3, headerActions, children }) {
+  const { user } = useAuth()
+
   return (
     <div className="bg-[#f7f9fc] text-[#191c1e] flex h-screen overflow-hidden">
       <AdminSidebar activeItem={activeItem} level={level} />
@@ -12,14 +15,10 @@ export default function AdminLayout({ activeItem, title, subtitle, level = 3, he
           </div>
           <div className="flex items-center gap-4">
             {headerActions}
-            {!headerActions && (
-              <>
-                <span className="text-sm font-semibold text-[#0A1A3A]">Hola, Marco</span>
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${level === 2 ? 'from-[#0f2a43] to-[#2cb1bc]' : 'from-[#001529] to-[#006970]'} flex items-center justify-center shadow-md`}>
-                  <span className="material-symbols-outlined text-white text-lg">person</span>
-                </div>
-              </>
-            )}
+            <span className="text-sm font-semibold text-[#0A1A3A]">Hola, {user?.firstName || 'Admin'}</span>
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#001529] to-[#006970] flex items-center justify-center shadow-md">
+              <span className="text-white text-sm font-bold">{user ? `${user.firstName[0]}${user.lastName[0]}` : 'A'}</span>
+            </div>
           </div>
         </header>
         {children}
