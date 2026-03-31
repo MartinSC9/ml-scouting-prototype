@@ -56,44 +56,47 @@ export default function Login() {
   return (
     <div className="min-h-screen flex">
       {/* Left panel - info */}
-      <div className="hidden lg:flex lg:w-[45%] bg-[#0A1A3A] text-white flex-col justify-between p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-[45%] bg-[#0A1A3A] text-white flex-col items-center justify-center p-12 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,1) 2px, rgba(255,255,255,1) 3px)`
         }} />
+        {/* Gradient accents */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#006970]/[0.08] rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-[#445d94]/[0.06] rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative z-10">
-          <Link to="/">
-            <Logo size={80} />
+        <div className="relative z-10 text-center max-w-md">
+          <Link to="/" className="inline-block mb-10">
+            <Logo size={140} />
           </Link>
-          <h1 className="text-4xl font-bold mt-12 leading-tight" style={{ fontFamily: "'Noto Serif'" }}>
+          <h1 className="text-4xl font-bold leading-tight mb-4" style={{ fontFamily: "'Noto Serif'" }}>
             Tu carrera futbolistica,<br />
             <span className="text-[#7bf1fc]">en tus manos.</span>
           </h1>
-          <p className="text-slate-400 mt-4 text-lg leading-relaxed max-w-md">
+          <p className="text-slate-400 text-lg leading-relaxed mb-12">
             Accede a tu perfil, servicios de scouting y seguimiento de rendimiento en un solo lugar.
           </p>
+
+          <div className="space-y-4 text-left">
+            {[
+              { icon: 'analytics', title: 'Diagnostico Deportivo', desc: 'Evalua tu rendimiento con metricas profesionales' },
+              { icon: 'description', title: 'Informes Personalizados', desc: 'Recibe analisis detallados de tu perfil' },
+              { icon: 'school', title: 'Cursos de Scouting', desc: 'Aprende como posicionarte en el mercado' },
+            ].map((f, i) => (
+              <div key={i} className="flex items-center gap-4 bg-white/5 rounded-xl p-4">
+                <div className="w-10 h-10 rounded-lg bg-[#006970]/30 flex items-center justify-center flex-shrink-0">
+                  <Icon name={f.icon} className="text-[#7bf1fc] text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-sm">{f.title}</h3>
+                  <p className="text-slate-400 text-xs mt-0.5">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="relative z-10 space-y-6">
-          {[
-            { icon: 'analytics', title: 'Diagnostico Deportivo', desc: 'Evalua tu rendimiento con metricas profesionales' },
-            { icon: 'description', title: 'Informes Personalizados', desc: 'Recibe analisis detallados de tu perfil' },
-            { icon: 'school', title: 'Cursos de Scouting', desc: 'Aprende como posicionarte en el mercado' },
-          ].map((f, i) => (
-            <div key={i} className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#006970]/30 flex items-center justify-center flex-shrink-0">
-                <Icon name={f.icon} className="text-[#7bf1fc] text-xl" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm">{f.title}</h3>
-                <p className="text-slate-500 text-xs mt-0.5">{f.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <p className="relative z-10 text-slate-600 text-xs">&copy; {new Date().getFullYear()} ML Scouting. Todos los derechos reservados.</p>
+        <p className="absolute bottom-6 text-slate-600 text-xs">&copy; {new Date().getFullYear()} ML Scouting. Todos los derechos reservados.</p>
       </div>
 
       {/* Right panel - form */}
