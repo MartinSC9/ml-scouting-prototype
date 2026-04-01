@@ -16,50 +16,67 @@ const n3Items = [
   { key: 'configuracion', icon: 'settings', label: 'Configuración', href: '/admin/configuracion' },
 ]
 
-export default function AdminSidebar({ activeItem }) {
+export default function AdminSidebar({ activeItem, mobileOpen, onMobileClose }) {
   const items = n3Items
   const accentColor = '#006970'
   const { user, logout } = useAuth()
 
   return (
-    <aside className="h-screen w-64 bg-white flex flex-col py-4 shrink-0 z-50 shadow-[2px_0_12px_rgba(0,0,0,0.06)]">
-      <div className="px-6 mb-8 flex items-center gap-3">
-        <Logo size={32} />
-        <div>
-          <h1 className="font-bold text-[#0A1A3A] text-lg tracking-tight leading-tight">ML Scouting</h1>
-          <p className="text-[10px] text-slate-500 font-medium">Panel de Administración</p>
+    <>
+      {/* Mobile overlay */}
+      {mobileOpen && (
+        <div className="fixed inset-0 bg-black/40 z-40 md:hidden" onClick={onMobileClose} />
+      )}
+
+      <aside className={`
+        fixed md:static inset-y-0 left-0 z-50
+        h-screen w-64 bg-white flex flex-col py-4 shrink-0 shadow-[2px_0_12px_rgba(0,0,0,0.06)]
+        transform transition-transform duration-300 ease-in-out
+        ${mobileOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0
+      `}>
+        <div className="px-6 mb-8 flex items-center gap-3">
+          <Logo size={32} />
+          <div className="flex-1 min-w-0">
+            <h1 className="font-bold text-[#0A1A3A] text-lg tracking-tight leading-tight">ML Scouting</h1>
+            <p className="text-[10px] text-slate-500 font-medium">Panel de Administración</p>
+          </div>
+          {/* Mobile close button */}
+          <button onClick={onMobileClose} className="md:hidden p-1 text-slate-400 hover:text-[#0A1A3A]">
+            <Icon name="close" />
+          </button>
         </div>
-      </div>
-      <nav className="flex-1 space-y-1">
-        {items.map((item) => {
-          const isActive = activeItem === item.key
-          return (
-            <Link
-              key={item.key}
-              to={item.href}
-              className={`mx-2 my-0.5 rounded-lg flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-out group relative ${
-                isActive
-                  ? 'bg-[#0A1A3A] text-white shadow-md shadow-[#0A1A3A]/20'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-[#0A1A3A] hover:translate-x-0.5'
-              }`}
-            >
-              {isActive && (
-                <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 bg-[${accentColor}] rounded-r-full`} />
-              )}
-              <Icon name={item.icon} filled={isActive} className={`transition-transform duration-200 ${!isActive ? 'group-hover:scale-110' : ''}`} />
-              <span className="text-sm font-medium">{item.label}</span>
-            </Link>
-          )
-        })}
-      </nav>
-      <div className="mt-auto mx-2 pt-4 border-t border-slate-100">
-        <a href="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-50 hover:text-[#0A1A3A] rounded-lg transition-all text-sm font-medium">
-          <Icon name="home" /> Ir al sitio
-        </a>
-        <button onClick={logout} className="w-full flex items-center gap-3 px-4 py-2.5 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
-          <Icon name="logout" /> Cerrar sesión
-        </button>
-      </div>
-    </aside>
+        <nav className="flex-1 space-y-1 overflow-y-auto">
+          {items.map((item) => {
+            const isActive = activeItem === item.key
+            return (
+              <Link
+                key={item.key}
+                to={item.href}
+                onClick={onMobileClose}
+                className={`mx-2 my-0.5 rounded-lg flex items-center px-4 py-3 gap-3 transition-all duration-200 ease-out group relative ${
+                  isActive
+                    ? 'bg-[#0A1A3A] text-white shadow-md shadow-[#0A1A3A]/20'
+                    : 'text-slate-600 hover:bg-slate-50 hover:text-[#0A1A3A] hover:translate-x-0.5'
+                }`}
+              >
+                {isActive && (
+                  <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 bg-[${accentColor}] rounded-r-full`} />
+                )}
+                <Icon name={item.icon} filled={isActive} className={`transition-transform duration-200 ${!isActive ? 'group-hover:scale-110' : ''}`} />
+                <span className="text-sm font-medium">{item.label}</span>
+              </Link>
+            )
+          })}
+        </nav>
+        <div className="mt-auto mx-2 pt-4 border-t border-slate-100">
+          <a href="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-50 hover:text-[#0A1A3A] rounded-lg transition-all text-sm font-medium">
+            <Icon name="home" /> Ir al sitio
+          </a>
+          <button onClick={logout} className="w-full flex items-center gap-3 px-4 py-2.5 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
+            <Icon name="logout" /> Cerrar sesión
+          </button>
+        </div>
+      </aside>
+    </>
   )
 }

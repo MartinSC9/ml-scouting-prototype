@@ -12,42 +12,66 @@ export default function AdminBlog() {
   ]
 
   const headerActions = (
-    <div className="flex items-center gap-4">
-      <button className="bg-[#0A1A3A] text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-1"><Icon name="add" className="text-lg" />Nuevo Artículo</button>
-      <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center"><Icon name="person" className="text-slate-400" /></div>
+    <div className="flex items-center gap-2 md:gap-4">
+      <button className="bg-[#0A1A3A] text-white px-3 md:px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-1"><Icon name="add" className="text-lg" /><span className="hidden sm:inline">Nuevo Artículo</span><span className="sm:hidden">Nuevo</span></button>
+      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-slate-200 flex items-center justify-center"><Icon name="person" className="text-slate-400" /></div>
     </div>
   )
 
   return (
     <AdminLayout activeItem="blog" title="Blog" subtitle="Gestión de artículos" level={3} headerActions={headerActions}>
-      <section className="p-8">
-        <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-100">
-                {['Título','Categoría','Estado','Fecha','Vistas','Acciones'].map(h => (
-                  <th key={h} className="text-left p-4 text-xs font-semibold text-slate-500 uppercase">{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-50">
-              {articles.map((a, i) => (
-                <tr key={i} className="hover:bg-slate-50">
-                  <td className="p-4 text-[#0A1A3A] font-medium">{a.title}</td>
-                  <td className="p-4"><span className={`text-xs ${a.catBg} px-2 py-1 rounded-full`}>{a.cat}</span></td>
-                  <td className="p-4"><span className={`text-xs ${a.statusBg} px-2 py-1 rounded-full`}>{a.status}</span></td>
-                  <td className="p-4 text-slate-500">{a.date}</td>
-                  <td className="p-4 text-slate-600">{a.views}</td>
-                  <td className="p-4">
-                    <div className="flex gap-1">
-                      <button className="p-1 text-slate-400 hover:text-[#0A1A3A]"><Icon name="edit" className="text-lg" /></button>
-                      <button className="p-1 text-slate-400 hover:text-red-500"><Icon name="delete" className="text-lg" /></button>
-                    </div>
-                  </td>
+      <section className="p-4 md:p-8">
+        {/* Mobile card view */}
+        <div className="md:hidden space-y-3">
+          {articles.map((a, i) => (
+            <div key={i} className="bg-white rounded-xl shadow-sm border border-slate-100 p-4">
+              <div className="flex justify-between items-start gap-2 mb-2">
+                <p className="text-sm font-medium text-[#0A1A3A]">{a.title}</p>
+                <div className="flex gap-1 shrink-0">
+                  <button className="p-2 text-slate-400 hover:text-[#0A1A3A]"><Icon name="edit" className="text-lg" /></button>
+                  <button className="p-2 text-slate-400 hover:text-red-500"><Icon name="delete" className="text-lg" /></button>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className={`text-xs ${a.catBg} px-2 py-0.5 rounded-full`}>{a.cat}</span>
+                <span className={`text-xs ${a.statusBg} px-2 py-0.5 rounded-full`}>{a.status}</span>
+                {a.date !== '-' && <span className="text-xs text-slate-400">{a.date}</span>}
+                {a.views !== '-' && <span className="text-xs text-slate-500">{a.views} vistas</span>}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop table */}
+        <div className="hidden md:block bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-100">
+                  {['Título','Categoría','Estado','Fecha','Vistas','Acciones'].map(h => (
+                    <th key={h} className="text-left p-4 text-xs font-semibold text-slate-500 uppercase">{h}</th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="divide-y divide-slate-50">
+                {articles.map((a, i) => (
+                  <tr key={i} className="hover:bg-slate-50">
+                    <td className="p-4 text-[#0A1A3A] font-medium">{a.title}</td>
+                    <td className="p-4"><span className={`text-xs ${a.catBg} px-2 py-1 rounded-full`}>{a.cat}</span></td>
+                    <td className="p-4"><span className={`text-xs ${a.statusBg} px-2 py-1 rounded-full`}>{a.status}</span></td>
+                    <td className="p-4 text-slate-500">{a.date}</td>
+                    <td className="p-4 text-slate-600">{a.views}</td>
+                    <td className="p-4">
+                      <div className="flex gap-1">
+                        <button className="p-1 text-slate-400 hover:text-[#0A1A3A]"><Icon name="edit" className="text-lg" /></button>
+                        <button className="p-1 text-slate-400 hover:text-red-500"><Icon name="delete" className="text-lg" /></button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </AdminLayout>
