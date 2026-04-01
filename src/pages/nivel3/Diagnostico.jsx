@@ -144,6 +144,12 @@ export default function Diagnostico() {
 
   const hasAnswer = isTextStep ? textInput.trim() !== '' : answers[step] != null
 
+  const scrollToQuiz = useCallback(() => {
+    if (quizRef.current) {
+      window.scrollTo({ top: quizRef.current.offsetTop - 100, behavior: 'smooth' })
+    }
+  }, [])
+
   const goNext = useCallback(() => {
     if (isTextStep) {
       if (textInput.trim() === '') return
@@ -159,13 +165,15 @@ export default function Diagnostico() {
         setShowResult(true)
       }
       setAnimating(false)
+      scrollToQuiz()
     }, 300)
-  }, [step, answers, totalSteps, isTextStep, textInput])
+  }, [step, answers, totalSteps, isTextStep, textInput, scrollToQuiz])
 
   const goBack = useCallback(() => {
     if (showResult) {
       setShowResult(false)
       setAnimating(false)
+      scrollToQuiz()
       return
     }
     if (step === 0) return
@@ -173,8 +181,9 @@ export default function Diagnostico() {
     setTimeout(() => {
       setStep(s => s - 1)
       setAnimating(false)
+      scrollToQuiz()
     }, 300)
-  }, [step, showResult])
+  }, [step, showResult, scrollToQuiz])
 
   // Auto-advance after option selection
   const handleSelect = useCallback((optIndex) => {
@@ -188,9 +197,10 @@ export default function Diagnostico() {
           setShowResult(true)
         }
         setAnimating(false)
+        scrollToQuiz()
       }, 300)
     }, 400)
-  }, [step, totalSteps])
+  }, [step, totalSteps, scrollToQuiz])
 
   // Keyboard navigation
   useEffect(() => {

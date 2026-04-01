@@ -173,7 +173,7 @@ export default function Servicios() {
                   </div>
                   <h3 className="text-sm font-bold text-[#0A1A3A] mb-2 leading-snug">{s.title}</h3>
                   <p className="text-slate-500 text-xs leading-relaxed mb-4 flex-1">{s.desc}</p>
-                  <span className={`block text-center py-2 rounded-lg text-xs font-semibold transition-colors ${open === s.id ? 'bg-[#445d94] text-white' : 'bg-[#0A1A3A] text-white'}`}>{open === s.id ? 'Ocultar' : 'Ver detalle'}</span>
+                  <span className={`flex items-center justify-center gap-1 py-2 rounded-lg text-xs font-semibold transition-colors ${open === s.id ? 'bg-[#445d94] text-white' : 'bg-[#0A1A3A] text-white'}`}>{open === s.id ? 'Ocultar' : 'Ver detalle'} <Icon name={open === s.id ? 'expand_less' : 'expand_more'} className="text-sm" /></span>
                 </button>
               ))}
             </div>
