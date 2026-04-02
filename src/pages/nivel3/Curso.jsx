@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
@@ -14,9 +14,35 @@ const modules = [
   {n:'06',title:'Red y Mercado',desc:'Networking en la industria, mercado de fichajes, cómo acceder a oportunidades laborales y prácticas reales con clubes.',icon:'handshake'},
 ]
 
+const faqs = [
+  {q:'¿Necesito tener algún estudio previo para realizar el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Necesito-tener-algun-estudio-previo-para-realizar-el-curso.mp4'},
+  {q:'¿Puedo realizar el curso desde cualquier parte del mundo?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Puedo-realizar-el-curso-desde-cualquier-parte-del-mundo.mp4'},
+  {q:'¿Por qué plataformas se da el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Por-que-plataformas-se-da-el-curso.mp4'},
+  {q:'¿Cómo es la metodología de las clases del curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Como-es-la-metodologia-de-las-clases-del-curso.mp4'},
+  {q:'¿Otorgan alguna certificación oficial al finalizar el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Otorgan-alguna-certificacion-oficial-al-finalizar-el-curso.mp4'},
+  {q:'¿Cuáles son las plataformas que nos enseñan a utilizar en el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Cuales-son-las-plataformas-que-nos-ensenan-a-utilizar-en-el-curso.mp4'},
+  {q:'¿Quiénes son los invitados de las clases? ¿Los alumnos pueden interactuar con ellos?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Quienes-son-los-invitados-de-las-clases-Los-alumnos-pueden-interactuar-con-ellos.mp4'},
+  {q:'¿Cómo funciona la red de contactos que ofrecemos?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Como-funciona-la-red-de-contactos-que-ofrecemos.mp4'},
+  {q:'¿En qué estadios se realizan las prácticas y en qué consisten?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/En-que-estadios-se-realizan-las-practicas-y-en-que-consisten.mp4'},
+  {q:'¿En las prácticas los alumnos tienen contacto con el club donde la realizan?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/En-las-practicas-los-alumnos-tienen-contacto-con-el-club-donde-la-realizan.mp4'},
+  {q:'¿Cuáles son las posibilidades reales de conseguir trabajo una vez finalizado el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Cuales-son-las-posibilidades-reales-de-conseguir-trabajo-una-vez-finalizado-el-curso.mp4'},
+]
+
 export default function Curso() {
   const formRef = useRef(null)
+  const faqRef = useRef(null)
+  const faqListRef = useRef(null)
+  const closeFaqDetails = () => faqListRef.current?.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'))
   const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  const [faqSearch, setFaqSearch] = useState('')
+  const [showAllFaqs, setShowAllFaqs] = useState(false)
+  const filteredFaqs = useMemo(() => {
+    if (!faqSearch.trim()) return faqs
+    const terms = faqSearch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    return faqs.filter(f => f.q.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(terms))
+  }, [faqSearch])
+  const isSearching = faqSearch.trim().length > 0
+  const visibleFaqs = isSearching ? filteredFaqs : (showAllFaqs ? faqs : faqs.slice(0, 4))
 
   return (
     <div className="bg-[#f7f9fc] text-[#191c1e]">
@@ -156,7 +182,7 @@ export default function Curso() {
         </section>
 
         {/* FAQ with Videos */}
-        <section className="py-16 px-8 bg-white">
+        <section ref={faqRef} className="py-16 px-8 bg-white">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <span className="text-[#445d94] font-bold tracking-widest text-xs uppercase mb-3 block">Resolvemos tus dudas</span>
@@ -164,21 +190,29 @@ export default function Curso() {
               <p className="text-slate-500 text-sm">Marco responde cada pregunta en video.</p>
             </div>
 
-            <div className="space-y-3">
-              {[
-                {q:'¿Necesito tener algún estudio previo para realizar el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Necesito-tener-algun-estudio-previo-para-realizar-el-curso.mp4'},
-                {q:'¿Puedo realizar el curso desde cualquier parte del mundo?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Puedo-realizar-el-curso-desde-cualquier-parte-del-mundo.mp4'},
-                {q:'¿Por qué plataformas se da el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Por-que-plataformas-se-da-el-curso.mp4'},
-                {q:'¿Cómo es la metodología de las clases del curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Como-es-la-metodologia-de-las-clases-del-curso.mp4'},
-                {q:'¿Otorgan alguna certificación oficial al finalizar el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Otorgan-alguna-certificacion-oficial-al-finalizar-el-curso.mp4'},
-                {q:'¿Cuáles son las plataformas que nos enseñan a utilizar en el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Cuales-son-las-plataformas-que-nos-ensenan-a-utilizar-en-el-curso.mp4'},
-                {q:'¿Quiénes son los invitados de las clases? ¿Los alumnos pueden interactuar con ellos?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Quienes-son-los-invitados-de-las-clases-Los-alumnos-pueden-interactuar-con-ellos.mp4'},
-                {q:'¿Cómo funciona la red de contactos que ofrecemos?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Como-funciona-la-red-de-contactos-que-ofrecemos.mp4'},
-                {q:'¿En qué estadios se realizan las prácticas y en qué consisten?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/En-que-estadios-se-realizan-las-practicas-y-en-que-consisten.mp4'},
-                {q:'¿En las prácticas los alumnos tienen contacto con el club donde la realizan?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/En-las-practicas-los-alumnos-tienen-contacto-con-el-club-donde-la-realizan.mp4'},
-                {q:'¿Cuáles son las posibilidades reales de conseguir trabajo una vez finalizado el curso?',video:'https://ml-scouting.com/wp-content/uploads/2025/05/Cuales-son-las-posibilidades-reales-de-conseguir-trabajo-una-vez-finalizado-el-curso.mp4'},
-              ].map((f,i)=>(
-                <details key={i} className="bg-[#f7f9fc] rounded-xl border border-slate-100 overflow-hidden group">
+            {/* Search */}
+            <div className="relative max-w-lg mx-auto mb-8">
+              <Icon name="search" className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                value={faqSearch}
+                onChange={e => { setFaqSearch(e.target.value); setShowAllFaqs(false); closeFaqDetails() }}
+                placeholder="Buscar pregunta..."
+                className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 bg-[#f7f9fc] text-sm focus:ring-2 focus:ring-[#445d94] focus:border-[#445d94] focus:bg-white transition-colors"
+              />
+              {faqSearch && (
+                <button onClick={() => setFaqSearch('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer">
+                  <Icon name="close" className="text-lg" />
+                </button>
+              )}
+            </div>
+
+            <div ref={faqListRef} className="space-y-3">
+              {visibleFaqs.length === 0 && (
+                <p className="text-center text-slate-400 text-sm py-8">No se encontraron preguntas para "{faqSearch}"</p>
+              )}
+              {visibleFaqs.map((f,i)=>(
+                <details key={f.q} className="bg-[#f7f9fc] rounded-xl border border-slate-100 overflow-hidden group">
                   <summary className="flex items-center gap-3 p-5 cursor-pointer font-semibold text-[#0A1A3A] text-sm">
                     <Icon name="play_circle" filled className="text-[#445d94] text-xl flex-shrink-0" />
                     <span className="flex-1">{f.q}</span>
@@ -192,6 +226,14 @@ export default function Curso() {
                 </details>
               ))}
             </div>
+            {!isSearching && faqs.length > 4 && (
+              <div className="text-center mt-6">
+                <button onClick={() => setShowAllFaqs(v => { if (v) setTimeout(() => faqRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50); return !v })} className="cursor-pointer inline-flex items-center gap-1.5 text-[#445d94] font-semibold text-sm hover:text-[#0A1A3A] transition">
+                  {showAllFaqs ? 'Ver menos' : `Ver más preguntas (${faqs.length - 4})`}
+                  <Icon name={showAllFaqs ? 'expand_less' : 'expand_more'} className="text-lg" />
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
