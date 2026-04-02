@@ -183,7 +183,7 @@ export default function Curso() {
 
         {/* FAQ with Videos */}
         <section ref={faqRef} className="py-16 px-8 bg-white">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <span className="text-[#445d94] font-bold tracking-widest text-xs uppercase mb-3 block">Resolvemos tus dudas</span>
               <h2 className="text-3xl font-bold text-[#0A1A3A] mb-2" style={{fontFamily:"'Noto Serif'"}}>Preguntas Frecuentes</h2>
@@ -212,7 +212,7 @@ export default function Curso() {
                 <p className="text-center text-slate-400 text-sm py-8">No se encontraron preguntas para "{faqSearch}"</p>
               )}
               {visibleFaqs.map((f,i)=>(
-                <details key={f.q} className="bg-[#f7f9fc] rounded-xl border border-slate-100 overflow-hidden group">
+                <details key={f.q} className="bg-[#f7f9fc] rounded-xl border border-slate-100 overflow-hidden group" onToggle={e => { if (e.target.open) setTimeout(() => e.target.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300) }}>
                   <summary className="flex items-center gap-3 p-5 cursor-pointer font-semibold text-[#0A1A3A] text-sm">
                     <Icon name="play_circle" filled className="text-[#445d94] text-xl flex-shrink-0" />
                     <span className="flex-1">{f.q}</span>
